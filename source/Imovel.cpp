@@ -1,16 +1,17 @@
 #include "Imovel.h"
 
 //Construtores e Destrutores da classe
-Imovel::Imovel(){
+Imovel::Imovel(void){
+
 	disponibilidadeAluguel = -1;
 	disponibilidadeVenda =  -1;
 	tipoDeOferta = -1;
 	valor = -1;
-	enderecos = Endereco();
+	endereco = Endereco();
 
 }
 Imovel::Imovel(int disponibilidadeAluguel, int disponibilidadeVenda,
-		int tipoDeOferta, double valor, Endereco enderecos
+		int tipoDeOferta, double valor, Endereco endereco
 		)
 {
 	
@@ -18,11 +19,27 @@ Imovel::Imovel(int disponibilidadeAluguel, int disponibilidadeVenda,
 	this->disponibilidadeAluguel =  disponibilidadeAluguel;
 	this->tipoDeOferta = tipoDeOferta;
 	this->valor = valor;
-	this->enderecos = enderecos;
+	this->endereco = endereco;
 
 }
 
 
-Imovel::~Imovel(){
+Imovel::~Imovel(void){
 
 }
+
+//Metodos da classe
+
+double Imovel::getValor(void){
+
+}
+int Imovel::getTipoDeOferta(void){
+
+
+}
+
+Endereco Imovel::getEndereco(void){
+
+
+}
+
