@@ -35,7 +35,9 @@ class Endereco {
         std::string getCidade(void);
         std::string getBairro(void);
         std::string getLogradouro(void);
+    //Metodos da classe
 
+        std::string getEndereco(void);
 };
 
 #endif

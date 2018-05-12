@@ -68,3 +68,16 @@ std::string Endereco::getBairro(void){
 std::string Endereco::getLogradouro(void){
     return logradouro;
 }
+
+
+// Metodos da classe
+
+std::string Endereco::getEndereco(void){
+
+    return  "Cidade: "+cidade+"\n"+
+            "Bairro: "+bairro+"\n"+
+            "Logradouro: "+logradouro+"\n"+
+            "CEP: "+cep+"\n"+
+            "Numero: "+std::to_string(numero)+"\n";
+
+}
