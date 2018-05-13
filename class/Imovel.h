@@ -32,8 +32,6 @@ class Imovel {
         virtual Endereco getEndereco(void);
 
 
-
-
 };
 
 

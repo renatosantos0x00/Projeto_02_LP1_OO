@@ -31,15 +31,16 @@ Imovel::~Imovel(void){
 //Metodos da classe
 
 double Imovel::getValor(void){
+	return valor;
 
 }
 int Imovel::getTipoDeOferta(void){
-
+	return tipoDeOferta;
 
 }
 
 Endereco Imovel::getEndereco(void){
-
+	return endereco;
 
 }
 
