@@ -1,9 +1,10 @@
 #ifndef CASA_H
 #define CASA_H
 
-#include "Imovel.h" // Herda da classe abstrata imovel 
+#include "Imovel.h" // Herda da classe abstrata imovel
 
 class Casa : public Imovel{
+
 	private:
 		int numeroDePavimetos;
 		int numeroDeQuartos;
@@ -18,11 +19,15 @@ class Casa : public Imovel{
 				double areaDoTerrreno, double areaConstruida, int disponibilidadeAluguel, int disponibilidadeVenda,
         		int tipoDeOferta, double valor, Endereco endereco
         		);
-		
+
 		virtual~Casa();
 
-	//Metodos da classe
-	
+	//Metodos da class
+
+		virtual std::string getDescricao(void);
+
+
+
 };
 
 

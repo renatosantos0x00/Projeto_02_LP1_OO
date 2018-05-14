@@ -13,11 +13,11 @@ areaConstruida = -1;
 
 }
 
-Casa::Casa(int numeroDePavimetos, int numeroDeQuartos,double areaDoTerrreno, 
+Casa::Casa(int numeroDePavimetos, int numeroDeQuartos,double areaDoTerrreno,
 			double areaConstruida, int disponibilidadeAluguel, int disponibilidadeVenda,
 			int tipoDeOferta, double valor, Endereco endereco):
-	
-	Imovel(disponibilidadeAluguel, disponibilidadeVenda, tipoDeOferta, valor,  endereco )
+
+	Imovel(disponibilidadeAluguel, disponibilidadeVenda, tipoDeOferta, valor,  endereco)
 {
 
 this->numeroDePavimetos = numeroDePavimetos;
@@ -33,3 +33,8 @@ Casa::~Casa(){
 }
 
 //Metodos da classe
+
+std::string Casa::getDescricao(void){
+
+
+}

@@ -1,6 +1,6 @@
 #ifndef IMOVEL_H
 #define IMOVEL_H
-#include <string.h> 
+#include <string.h>
 
 #include "Endereco.h"
 
@@ -24,12 +24,12 @@ class Imovel {
         virtual~Imovel(void);
 
     //Metodos da classe
-        virtual std::string getDescricao(void) = 0; //vitual puro, 
+        virtual std::string getDescricao(void) = 0; //vitual puro,
                                                     // a classe que herdar é obrigada a implementar
-        
+
         virtual double getValor(void);
         virtual int getTipoDeOferta(void);
-        virtual Endereco getEndereco(void);
+        virtual std::string getEndereco(void);
 
 
 };

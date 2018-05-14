@@ -14,7 +14,7 @@ Imovel::Imovel(int disponibilidadeAluguel, int disponibilidadeVenda,
 		int tipoDeOferta, double valor, Endereco endereco
 		)
 {
-	
+
 	this->disponibilidadeVenda = disponibilidadeVenda;
 	this->disponibilidadeAluguel =  disponibilidadeAluguel;
 	this->tipoDeOferta = tipoDeOferta;
@@ -39,8 +39,8 @@ int Imovel::getTipoDeOferta(void){
 
 }
 
-Endereco Imovel::getEndereco(void){
-	return endereco;
+std::string Imovel::getEndereco(void){
+	return endereco.getEndereco();
 
 }
 
