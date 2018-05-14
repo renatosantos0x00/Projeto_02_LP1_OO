@@ -19,9 +19,10 @@ class Apartamento : public Imovel{
 		Apartamento(string posicao, int numeroDeQuartos,
 					double valorCondominio, int vagasGaragem, double area, int disponibilidadeAluguel, int disponibilidadeVenda,
         			int tipoDeOferta, double valor, Endereco endereco);
-		virtual~Casa();
-
+		virtual ~Casa();
+		string getDescricao();
 	//Metodos da classe
+
 	
 };
 
