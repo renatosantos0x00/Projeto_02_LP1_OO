@@ -1,4 +1,5 @@
 #include "Casa.h"
+
 //Contrutores e destrutores da classe
 Casa::Casa():
 	Imovel()
@@ -35,6 +36,13 @@ Casa::~Casa(){
 //Metodos da classe
 
 std::string Casa::getDescricao(void){
+	std::string casa = 	"CASA \nNumero de Quartos: " + std::to_string(numeroDeQuartos) + "\n" +
+						"Numero de Pavimentos: " + std::to_string(numeroDePavimetos) + "\n" +
+						"Area do Terreno: " + std::to_string(areaDoTerrreno) + "\n" +
+						"Area Construida: " + std::to_string(areaConstruida) + "\n" +
+						"ENDRECO\n";
+	
+	return casa+getEndereco();
 
-
+	
 }

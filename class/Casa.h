@@ -1,5 +1,6 @@
 #ifndef CASA_H
 #define CASA_H
+#include <string>
 
 #include "Imovel.h" // Herda da classe abstrata imovel
 
