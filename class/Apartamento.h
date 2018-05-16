@@ -5,6 +5,7 @@
 #include "Imovel.h" // Herda da classe abstrata imovel 
 
 class Apartamento : public Imovel{
+	
 	private:
 		std::string posicao;
 		int numeroDeQuartos;
@@ -16,11 +17,11 @@ class Apartamento : public Imovel{
 	public:
 	//Contrutores e destrutores da classe
 		Apartamento();
-		Apartamento(string posicao, int numeroDeQuartos,
+		Apartamento(std::string posicao, int numeroDeQuartos,
 					double valorCondominio, int vagasGaragem, double area, int disponibilidadeAluguel, int disponibilidadeVenda,
         			int tipoDeOferta, double valor, Endereco endereco);
-		virtual ~Casa();
-		string getDescricao();
+		virtual ~Apartamento();
+		std::string getDescricao();
 	//Metodos da classe
 
 	
