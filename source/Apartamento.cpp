@@ -7,8 +7,8 @@
 Apartamento::Apartamento(){
 }
 
-Apartamento::Apartamento(std::string posicao, int numeroDeQuartos,
-						double valorCondominio, int vagasGaragem, double area, int disponibilidadeAluguel, int disponibilidadeVenda,
-        				int tipoDeOferta, double valor, Endereco endereco) : Imovel (disponibilidadeAluguel, disponibilidadeVenda,
-        				tipoDeOferta, valor, endereco){
+Apartamento::Apartamento(std::string posicao, int numeroDeQuartos, double valorCondominio,
+                    int vagasGaragem, double area, int tipoDeOferta, double valor, Endereco endereco);
+{
+
 }

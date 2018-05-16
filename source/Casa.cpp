@@ -14,11 +14,9 @@ areaConstruida = -1;
 
 }
 
-Casa::Casa(int numeroDePavimetos, int numeroDeQuartos,double areaDoTerrreno,
-			double areaConstruida, int disponibilidadeAluguel, int disponibilidadeVenda,
-			int tipoDeOferta, double valor, Endereco endereco):
-
-	Imovel(disponibilidadeAluguel, disponibilidadeVenda, tipoDeOferta, valor,  endereco)
+Casa::Casa(int numeroDePavimetos, int numeroDeQuartos, double areaDoTerrreno,
+			double areaConstruida, int tipoDeOferta, double valor, Endereco endereco):
+	Imovel(tipoDeOferta, valor, endereco)
 {
 
 this->numeroDePavimetos = numeroDePavimetos;
@@ -41,8 +39,8 @@ std::string Casa::getDescricao(void){
 						"Area do Terreno: " + std::to_string(areaDoTerrreno) + "\n" +
 						"Area Construida: " + std::to_string(areaConstruida) + "\n" +
 						"ENDRECO\n";
-	
+
 	return casa+getEndereco();
 
-	
+
 }

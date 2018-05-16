@@ -16,10 +16,8 @@ class Casa : public Imovel{
 	public:
 	//Contrutores e destrutores da classe
 		Casa();
-		Casa(int numeroDePavimetos, int numeroDeQuartos,
-				double areaDoTerrreno, double areaConstruida, int disponibilidadeAluguel, int disponibilidadeVenda,
-        		int tipoDeOferta, double valor, Endereco endereco
-        		);
+		Casa(int numeroDePavimetos, int numeroDeQuartos, double areaDoTerrreno,
+			double areaConstruida, int tipoDeOferta, double valor, Endereco endereco);
 
 		virtual~Casa();
 

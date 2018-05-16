@@ -6,9 +6,9 @@ Terreno::Terreno():Imovel(){
 	area = -1;
 }
 
-Terreno::Terreno(int disponibilidadeAluguel, int disponibilidadeVenda,int tipoDeOferta, double valor, Endereco endereco,
+Terreno::Terreno(int tipoDeOferta, double valor, Endereco endereco,
 				double area)
-		:Imovel(disponibilidadeAluguel, disponibilidadeVenda, tipoDeOferta, valor, endereco){
+		:Imovel(tipoDeOferta, valor, endereco){
 
 
 	this->area = area;
