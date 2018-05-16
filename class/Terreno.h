@@ -13,10 +13,9 @@ class Terreno : public Imovel{
 	public:
 		Terreno();
 		Terreno(int tipoDeOferta, double valor, Endereco endereco, double area);
-
 		double getArea();
 		void setArea(double area);
-
+		string getDescricao();
 };
 
 #endif

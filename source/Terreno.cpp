@@ -23,3 +23,10 @@ double Terreno::getArea(){
 void Terreno::setArea(double area){
 	this->area = area;
 }
+
+string Terreno::getDescricao(){
+	std::string terreno ="TERRENO \nArea: " + to_string(area) + "\n" +
+						 "ENDERECO\n";
+
+	return terreno+getEndereco();
+}
