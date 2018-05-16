@@ -2,7 +2,7 @@
 #							
 #							
 # Definição de Macros
-
+OPCAO = 
 NOME = scci
 COMPILADOR = g++
 CODIGO = source
@@ -17,16 +17,16 @@ all: prog
 
 prog: bib main
 	@echo "Compilado e linkando-->"$(NOME)
-	$(COMPILADOR) *.o -o $(NOME)
+	$(COMPILADOR) $(OPCAO) *.o -o $(NOME)
 
 bib: $(CODIGO) $(BIBLIOTECAS)
 	@echo "Compilado Bibliotecas: gerando objetos -> *.o\n"
-	$(COMPILADOR) -c $(CODIGO)/*.cpp -I$(BIBLIOTECAS)
+	$(COMPILADOR) $(OPCAO) -c $(CODIGO)/*.cpp -I$(BIBLIOTECAS)
 	ls -l *.o
 
 main: $(MAIN) $(BIBLIOTECAS)
 	@echo "Compilado : gerando objeto -> "$(MAIN)
-	$(COMPILADOR) -c $(MAIN) -I$(BIBLIOTECAS)
+	$(COMPILADOR) $(OPCAO) -c $(MAIN) -I$(BIBLIOTECAS)
 
 limpa:
 	@echo "Deletando arquivos objetos"
