@@ -39,9 +39,7 @@ cx:
 refaz: limpa cx prog
 
 d: bib
-	clear
 	@echo "Gerendo objetos\n"
-	ls -l *.o
 	rm *.o
 
 ajuda:
