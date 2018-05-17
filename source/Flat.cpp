@@ -1,5 +1,5 @@
-#include <iostream>
 #include <string>
+#include "Flat.h"
 
 Flat::Flat() : Imovel(){
 	this->areaFlat = 0;
