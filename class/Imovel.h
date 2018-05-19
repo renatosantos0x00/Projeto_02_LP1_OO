@@ -31,7 +31,6 @@ class Imovel {
         virtual int getTipoDeOferta(void);
         virtual std::string getEndereco(void);
 
-
 };
 
 

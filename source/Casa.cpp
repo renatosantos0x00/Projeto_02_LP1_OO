@@ -3,14 +3,13 @@
 //Contrutores e destrutores da classe
 Casa::Casa():
 	Imovel()
-
+	
 {
-numeroDePavimetos = -1;
-numeroDeQuartos = -1;
-areaDoTerrreno = -1;
-areaConstruida = -1;
 
-
+	numeroDePavimetos = -1;
+	numeroDeQuartos = -1;
+	areaDoTerrreno = -1;
+	areaConstruida = -1;
 
 }
 

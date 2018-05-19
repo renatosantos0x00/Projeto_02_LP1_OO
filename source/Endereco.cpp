@@ -21,9 +21,7 @@ Endereco::Endereco(std::string cidade, std::string bairro,
     this->bairro = bairro;
     this->logradouro = logradouro;
 
-
 }
-
 
 Endereco::~Endereco(){
 
@@ -79,5 +77,5 @@ std::string Endereco::getEndereco(void){
             "Logradouro: "+logradouro+"\n"+
             "CEP: "+cep+"\n"+
             "Numero: "+std::to_string(numero)+"\n";
-
+            
 }

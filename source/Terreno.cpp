@@ -15,6 +15,7 @@ Terreno::Terreno(int tipoDeOferta, double valor, Endereco endereco,
 
 }
 
+Terreno::~Terreno(){}
 
 double Terreno::getArea(){
 	return area;

@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Apartamento.h"
-#include "Terreno.h"
+#include "class/Apartamento.h"
+#include "class/Terreno.h"
 
 int main(int argc, char const *argv[])
 {

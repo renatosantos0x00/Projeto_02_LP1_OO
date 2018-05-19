@@ -15,6 +15,7 @@ class Casa : public Imovel{
 
 	public:
 	//Contrutores e destrutores da classe
+
 		Casa();
 		Casa(int numeroDePavimetos, int numeroDeQuartos, double areaDoTerrreno,
 			double areaConstruida, int tipoDeOferta, double valor, Endereco endereco);
@@ -24,8 +25,6 @@ class Casa : public Imovel{
 	//Metodos da class
 
 		virtual std::string getDescricao(void);
-
-
 
 };
 

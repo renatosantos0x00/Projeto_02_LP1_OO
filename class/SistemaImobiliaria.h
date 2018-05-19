@@ -7,12 +7,7 @@ class SistemaImobiliaria{
 
 	public:
 		SistemaImobiliaria();
-		SistemaImobiliaria()
+		SistemaImobiliaria();
 };
-
-
-
-
-
 
 #endif

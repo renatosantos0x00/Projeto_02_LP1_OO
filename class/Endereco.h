@@ -2,7 +2,6 @@
 #define ENDERECO_H
 #include <string>
 
-
 class Endereco {
     private:
 
