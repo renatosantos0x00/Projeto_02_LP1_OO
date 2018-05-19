@@ -28,8 +28,7 @@ string Apartamento::getDescricao(){
 								"\nValor do condominio: " + to_string(valorCondominio) + 
 								"\nVagas de garagem: " + to_string(vagasGaragem) + 
 								"\nArea: " + to_string(area) + 
-								"\nAndar: " + to_string(andar) +
-								"ENDERECO\n";
+								"\nAndar: " + to_string(andar);
 
 	return apartamento+getEndereco();
 }

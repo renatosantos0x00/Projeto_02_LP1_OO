@@ -33,11 +33,10 @@ Casa::~Casa(){
 //Metodos da classe
 
 std::string Casa::getDescricao(void){
-	std::string casa = 	"CASA \nNumero de Quartos: " + std::to_string(numeroDeQuartos) + "\n" +
-						"Numero de Pavimentos: " + std::to_string(numeroDePavimetos) + "\n" +
-						"Area do Terreno: " + std::to_string(areaDoTerrreno) + "\n" +
-						"Area Construida: " + std::to_string(areaConstruida) + "\n" +
-						"ENDERECO\n";
+	std::string casa = 	"CASA \n\nNumero de Quartos: " + std::to_string(numeroDeQuartos) +
+						"Numero de Pavimentos: " + std::to_string(numeroDePavimetos) +
+						"Area do Terreno: " + std::to_string(areaDoTerrreno) +
+						"Area Construida: " + std::to_string(areaConstruida);
 
 	return casa+getEndereco();
 

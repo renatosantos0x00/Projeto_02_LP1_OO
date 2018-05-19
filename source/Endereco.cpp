@@ -72,10 +72,10 @@ std::string Endereco::getLogradouro(void){
 
 std::string Endereco::getEndereco(void){
 
-    return  "Cidade: "+cidade+"\n"+
-            "Bairro: "+bairro+"\n"+
-            "Logradouro: "+logradouro+"\n"+
-            "CEP: "+cep+"\n"+
-            "Numero: "+std::to_string(numero)+"\n";
+    return  "\n\nENDERECO\n\nCidade: " +cidade+
+            "\nBairro: " +bairro+
+            "\nLogradouro: " +logradouro+
+            "\nCEP: " +cep+
+            "\nNumero: "+std::to_string(numero);
             
 }
