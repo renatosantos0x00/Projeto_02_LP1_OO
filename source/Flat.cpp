@@ -17,9 +17,6 @@ Flat::Flat(double areaFlat, double valorCondominio, char arCondicionado, char in
 		   : Imovel(tipoDeOferta, valor, endereco){
 	this->areaFlat = areaFlat;
     this->valorCondominio = valorCondominio;
-    if(arCondicionado == 's' || arCondicionado 'S'){
-    	this->arCondicionado = "sim"
-    }
 	this->arCondicionado = arCondicionado;
 	this->internet = internet;
 	this->tvACabo = tvACabo;
@@ -32,5 +29,16 @@ Flat::~Flat(){
 }
 
 string Flat::getDescricao(){
+	string flat = 	"FLAT \nArea: " + to_string(areaFlat) + "\n" +
+					"Valor do condominio: " + to_string(valorCondominio) + "\n" +
+					"Ar condicionado: " + (1,arCondicionado) + "\n" +
+					"Internet: " + (1,internet) + "\n" +
+					"TV a cabo: " + (1,tvACabo) + "\n" +
+					"Lavandaria: " + (1,lavanderia) + "\n" +
+					"Limpeza: " + (1,limpeza) + "\n" +
+					"Recepção 24 horas: " + (1,recepcao24) + "\n" +
+					"ENDERECO\n";
+
+	return flat+getEndereco();
 
 }

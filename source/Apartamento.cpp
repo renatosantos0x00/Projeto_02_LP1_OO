@@ -9,13 +9,14 @@ Apartamento::Apartamento() : Imovel(){
 }
 
 Apartamento::Apartamento(string posicao, int numeroDeQuartos, double valorCondominio,
-                    	 int vagasGaragem, double area, int tipoDeOferta, double valor, Endereco endereco) 
+                    	 int vagasGaragem, double area,int andar, int tipoDeOferta, double valor, Endereco endereco) 
 						 : Imovel(tipoDeOferta, valor, endereco){
 	this->posicao = posicao;
 	this->numeroDeQuartos = numeroDeQuartos;
 	this->valorCondominio = valorCondominio;
 	this->vagasGaragem = vagasGaragem;
 	this->area = area;
+	this->andar = andar;
 }
 
 Apartamento::~Apartamento(){
@@ -26,7 +27,8 @@ string Apartamento::getDescricao(){
 						"Numero de quartos: " + to_string(numeroDeQuartos) + "\n" +
 						"Valor do condominio: " + to_string(valorCondominio) + "\n" +
 						"Vagas de garagem: " + to_string(vagasGaragem) + "\n" +
-						"Area: " + to_string(area) + "\n" +
+						"Area: " + to_string(area) "\n" + 
+						"Andar: " + to_string(andar)"\n" +
 						"ENDERECO\n";
 
 	return apartamento+getEndereco();
