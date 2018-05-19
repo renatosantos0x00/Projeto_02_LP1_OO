@@ -23,13 +23,13 @@ Apartamento::~Apartamento(){
 }
 
 string Apartamento::getDescricao(){
-	std::string apartamento = 	"APARTAMENTO \nPosicao: " + posicao + "\n" +
-						"Numero de quartos: " + to_string(numeroDeQuartos) + "\n" +
-						"Valor do condominio: " + to_string(valorCondominio) + "\n" +
-						"Vagas de garagem: " + to_string(vagasGaragem) + "\n" +
-						"Area: " + to_string(area) "\n" + 
-						"Andar: " + to_string(andar)"\n" +
-						"ENDERECO\n";
+	std::string apartamento = 	"APARTAMENTO \n\nPosicao: " + posicao +
+								"\nNumero de quartos: " + to_string(numeroDeQuartos) + 
+								"\nValor do condominio: " + to_string(valorCondominio) + 
+								"\nVagas de garagem: " + to_string(vagasGaragem) + 
+								"\nArea: " + to_string(area) + 
+								"\nAndar: " + to_string(andar) +
+								"ENDERECO\n";
 
 	return apartamento+getEndereco();
 }

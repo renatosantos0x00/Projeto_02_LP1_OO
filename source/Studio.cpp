@@ -1,7 +1,7 @@
 #include <string>
 #include "Studio.h"
 
-Flat::Flat() : Imovel(){
+Studio::Studio() : Imovel(){
 	this->areaStudio = 0;
     this->valorCondominio = 0;
 	this->arCondicionado = ' ';
@@ -15,7 +15,7 @@ Flat::Flat() : Imovel(){
 	this->salaDeGinastica = ' ';
 }
 
-Flat::Flat(double areaStudio, double valorCondominio, char arCondicionado, char internet, char tvACabo,
+Studio::Studio(double areaStudio, double valorCondominio, char arCondicionado, char internet, char tvACabo,
 		   char lavanderia, char limpeza, char recepcao24, char piscina, char sauna, char salaDeGinastica, 
 		   int tipoDeOferta, double valor, Endereco endereco)
 		   : Imovel(tipoDeOferta, valor, endereco){
