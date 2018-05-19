@@ -12,16 +12,18 @@ class Apartamento : public Imovel{
 		double valorCondominio;
 		int vagasGaragem;
 		double area;
+		int andar;
 
 	public:
 	//Contrutores e destrutores da classe
 		Apartamento();
 		Apartamento(std::string posicao, int numeroDeQuartos, double valorCondominio,
-					int vagasGaragem, double area, int tipoDeOferta, double valor, Endereco endereco);
+					int vagasGaragem, double area,int andar, int tipoDeOferta, double valor, Endereco endereco);
 
 		virtual ~Apartamento();
 		std::string getDescricao();
 	//Metodos da classe
+		
 
 
 };
