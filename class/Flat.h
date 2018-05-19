@@ -8,12 +8,12 @@ class Flat : public Imovel{
 	private:
 		double areaFlat;
 	    double valorCondominio;
-	    char arCondicionado;
-	    char internet;
-	    char tvACabo;
-	    char lavanderia;
-	    char limpeza;
-		char recepcao24;
+	    std::string arCondicionado;
+	    std::string internet;
+	    std::string tvACabo;
+	    std::string lavanderia;
+	    std::string limpeza;
+		std::string recepcao24;
 
 	public:
 		Flat();
