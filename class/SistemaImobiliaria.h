@@ -8,7 +8,7 @@ class SistemaImobiliaria{
 		Imovel *imoveis[100];
 
 	public:
-		SistemaImobiliaria();
+		//SistemaImobiliaria();
 		virtual~SistemaImobiliaria();
 
 	//Metodos da classe;
