@@ -6,7 +6,7 @@ Terreno::Terreno():Imovel(){
 	area = -1;
 }
 
-Terreno::Terreno(int tipoDeOferta, double valor, Endereco endereco,
+Terreno::Terreno(int tipoDeOferta, double valor,
 				double area,string cidade, string bairro,string logradouro,string cep,int numero)
 		:Imovel(tipoDeOferta, valor, cidade, bairro,logradouro, cep,numero){
 

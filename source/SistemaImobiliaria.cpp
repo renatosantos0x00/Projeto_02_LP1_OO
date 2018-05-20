@@ -48,12 +48,12 @@ void cadastraImovel(Imovel *imovel){
 				cout<<"Area construida: ";
 				cin>>areaConstruida;
 				cout<<"Obrigado!";
-				imovel = new Casa(int numeroDePavimetos, int numeroDeQuartos, double areaDoTerrreno,
-						 double areaConstruida, int tipoDeOferta, double valor, string cidade,
-			 			 string bairro,string logradouro,string cep,int numero);
+				imovel = new Casa(numeroDePavimentos, numeroDeQuartos, areaDoTerreno,
+						 		areaConstruida, tipoDeOferta, valor, cidade,
+			 			 		bairro, logradouro, cep, numero);
 				break;
 			}
-			case(2):{
+			case 2:{
 				string posicao;
 				int numeroDeQuartos,vagasGaragem,andar;
 				double valorCondominio,area;
@@ -84,10 +84,10 @@ void cadastraImovel(Imovel *imovel){
 				cout<<"Valor do condominio: ";
 				cin>>valorCondominio;
 				cout<<"Obrigado!";
-				imovel = new Apartamento(string posicao, int numeroDeQuartos, double valorCondominio,
-						 int vagasGaragem, double area,int andar, int tipoDeOferta, 
-						 double valor, string cidade, string bairro, string logradouro,
-						 string cep, int numero);
+				imovel = new Apartamento(posicao, numeroDeQuartos, valorCondominio,
+						 				vagasGaragem, area, andar, tipoDeOferta, 
+						 				valor, cidade, bairro, logradouro,
+						 				cep, numero);
 				break;
 			}
 			case 3:{
@@ -109,13 +109,13 @@ void cadastraImovel(Imovel *imovel){
 				cout<<"Area total do terreno: ";
 				cin>>area;
 				cout<<"Obrigado!";
-				imovel = new Terreno(int tipoDeOferta, double valor, Endereco endereco, double area,
-						 string cidade, string bairro,string logradouro,string cep,int numero);
+				imovel = new Terreno(tipoDeOferta, valor, area,
+						 			cidade, bairro, logradouro, cep, numero);
 				break;
 			}
 			case 4:{
 				double areaFlat,valorCondominio;
-	    		string arCondicionado,internet,tvACabo,lavanderia,limpeza,recepcao24;
+	    		char arCondicionado,internet,tvACabo,lavanderia,limpeza,recepcao24;
 	    		cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
 				cin>>cidade;
 				cout<<"Bairro: ";
@@ -147,14 +147,14 @@ void cadastraImovel(Imovel *imovel){
 				cout<<"Recepcao 24 horas?(se sim: s, se nao: n): ";
 				cin>>recepcao24;
 				cout<<"Obrigado!";
-				imovel = new Flat(double areaFlat, double valorCondominio, char arCondicionado, char internet, char tvACabo,
-			 			 char lavanderia, char limpeza, char recepcao24, int tipoDeOferta, double valor, string cidade,
-			 			 string bairro,string logradouro,string cep,int numero);
+				imovel = new Flat(areaFlat, valorCondominio, arCondicionado, internet, tvACabo,
+			 			 		lavanderia, limpeza, recepcao24, tipoDeOferta, valor, cidade,
+			 			 		bairro, logradouro, cep, numero);
 			 	break;
 			}
-			case(5):{
-				double areaFlat,valorCondominio;
-	    		string arCondicionado,internet,tvACabo,lavanderia,limpeza,recepcao24,piscina,sauna,salaDeGinastica;
+			case 5:{
+				double areaStudio,valorCondominio;
+	    		char arCondicionado,internet,tvACabo,lavanderia,limpeza,recepcao24,piscina,sauna,salaDeGinastica;
 	    		cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
 				cin>>cidade;
 				cout<<"Bairro: ";
@@ -170,7 +170,7 @@ void cadastraImovel(Imovel *imovel){
 				cout<<"Se o imovel for para vender, digite 1, se for para alugar, digite 2: ";
 				cin>>tipoDeOferta;
 				cout<<"Area total do terreno: ";
-				cin>>areaFlat;
+				cin>>areaStudio;
 				cout<<"Valor do condominio: ";
 				cin>>valorCondominio;
 				cout<<"Agora algumas informacoes extras, diga se tem ar condicionado (se sim: s, se nao: n): ";

@@ -2,6 +2,11 @@
 #define SISTEMAIMOBILIARIA_H 
 
 #include "Imovel.h"
+#include "Casa.h"
+#include "Apartamento.h"
+#include "Terreno.h"
+#include "Flat.h"
+#include "Studio.h"
 
 class SistemaImobiliaria{
 	private:
