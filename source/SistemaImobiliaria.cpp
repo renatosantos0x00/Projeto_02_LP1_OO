@@ -17,20 +17,20 @@ void cadastraImovel(Imovel *imovel){
 	cout<<"Digite 4 se for um flat\n";
 	cout<<"Digite 5 se for um studio\n";
 	int a,numero,tipoDeOferta;
-	string cidade, bairro, logradouro, cep,
+	string cidade, bairro, logradouro, cep;
 	double valor;
 	cin>>a;
 	while(1){
 		switch(a){
-			case 1:
-				int numeroDePavimetos,numeroDeQuartos;
-				double areaDoTerrreno,areaConstruida;
-				cout<<"Indique o endereco do seu imovel, primeiramente a cidade: "
+			case 1:{
+				int numeroDePavimentos,numeroDeQuartos;
+				double areaDoTerreno,areaConstruida;
+				cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
 				cin>>cidade;
 				cout<<"Bairro: ";
 				cin>>bairro;
 				cout<<"Lougradouro: ";
-				cin>>lougradouro;
+				cin>>logradouro;
 				cout<<"CEP: ";
 				cin>>cep;
 				cout<<"Numero: ";
@@ -52,16 +52,17 @@ void cadastraImovel(Imovel *imovel){
 						 double areaConstruida, int tipoDeOferta, double valor, string cidade,
 			 			 string bairro,string logradouro,string cep,int numero);
 				break;
-			case(2):
+			}
+			case(2):{
 				string posicao;
 				int numeroDeQuartos,vagasGaragem,andar;
 				double valorCondominio,area;
-				cout<<"Indique o endereco do seu imovel, primeiramente a cidade: "
+				cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
 				cin>>cidade;
 				cout<<"Bairro: ";
 				cin>>bairro;
 				cout<<"Lougradouro: ";
-				cin>>lougradouro;
+				cin>>logradouro;
 				cout<<"CEP: ";
 				cin>>cep;
 				cout<<"Numero: ";
@@ -70,7 +71,7 @@ void cadastraImovel(Imovel *imovel){
 				cin>>valor;
 				cout<<"Se o imovel for para vender, digite 1, se for para alugar, digite 2: ";
 				cin>>tipoDeOferta;
-				cout<"Agora algumas informacoes extras, indique a posicao do apartamento (norte, sul, leste, oeste): ";
+				cout<<"Agora algumas informacoes extras, indique a posicao do apartamento (norte, sul, leste, oeste): ";
 				cin>>posicao;
 				cout<<"Numero de quarto: ";
 				cin>>numeroDeQuartos;
@@ -81,21 +82,22 @@ void cadastraImovel(Imovel *imovel){
 				cout<<"Qual o andar: ";
 				cin>>andar;
 				cout<<"Valor do condominio: ";
-				cin>>valorDoCondominio;
+				cin>>valorCondominio;
 				cout<<"Obrigado!";
-				imovel = Apartamento(string posicao, int numeroDeQuartos, double valorCondominio,
+				imovel = new Apartamento(string posicao, int numeroDeQuartos, double valorCondominio,
 						 int vagasGaragem, double area,int andar, int tipoDeOferta, 
 						 double valor, string cidade, string bairro, string logradouro,
 						 string cep, int numero);
 				break;
-			case(3):
+			}
+			case 3:{
 				double area;
-				cout<<"Indique o endereco do seu imovel, primeiramente a cidade: "
+				cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
 				cin>>cidade;
 				cout<<"Bairro: ";
 				cin>>bairro;
 				cout<<"Lougradouro: ";
-				cin>>lougradouro;
+				cin>>logradouro;
 				cout<<"CEP: ";
 				cin>>cep;
 				cout<<"Numero: ";
@@ -110,15 +112,16 @@ void cadastraImovel(Imovel *imovel){
 				imovel = new Terreno(int tipoDeOferta, double valor, Endereco endereco, double area,
 						 string cidade, string bairro,string logradouro,string cep,int numero);
 				break;
-			case(4):
+			}
+			case 4:{
 				double areaFlat,valorCondominio;
 	    		string arCondicionado,internet,tvACabo,lavanderia,limpeza,recepcao24;
-	    		cout<<"Indique o endereco do seu imovel, primeiramente a cidade: "
+	    		cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
 				cin>>cidade;
 				cout<<"Bairro: ";
 				cin>>bairro;
 				cout<<"Lougradouro: ";
-				cin>>lougradouro;
+				cin>>logradouro;
 				cout<<"CEP: ";
 				cin>>cep;
 				cout<<"Numero: ";
@@ -130,15 +133,15 @@ void cadastraImovel(Imovel *imovel){
 				cout<<"Area total do terreno: ";
 				cin>>areaFlat;
 				cout<<"Valor do condominio: ";
-				cin>>valorDoCondominio;
+				cin>>valorCondominio;
 				cout<<"Agora algumas informacoes extras, diga se tem ar condicionado (se sim: s, se nao: n): ";
-				cin>>arCondiconado;
+				cin>>arCondicionado;
 				cout<<"Internet?(se sim: s, se nao: n): ";
 				cin>>internet;
 				cout<<"TV a cabo?(se sim: s, se nao: n): ";
 				cin>>tvACabo;
 				cout<<"Lavandeiria?(se sim: s, se nao: n): ";
-				cin>>lavandeiria;
+				cin>>lavanderia;
 				cout<<"Limpeza?(se sim: s, se nao: n): ";
 				cin>>limpeza;
 				cout<<"Recepcao 24 horas?(se sim: s, se nao: n): ";
@@ -148,15 +151,16 @@ void cadastraImovel(Imovel *imovel){
 			 			 char lavanderia, char limpeza, char recepcao24, int tipoDeOferta, double valor, string cidade,
 			 			 string bairro,string logradouro,string cep,int numero);
 			 	break;
-			case(5):
+			}
+			case(5):{
 				double areaFlat,valorCondominio;
 	    		string arCondicionado,internet,tvACabo,lavanderia,limpeza,recepcao24,piscina,sauna,salaDeGinastica;
-	    		cout<<"Indique o endereco do seu imovel, primeiramente a cidade: "
+	    		cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
 				cin>>cidade;
 				cout<<"Bairro: ";
 				cin>>bairro;
 				cout<<"Lougradouro: ";
-				cin>>lougradouro;
+				cin>>logradouro;
 				cout<<"CEP: ";
 				cin>>cep;
 				cout<<"Numero: ";
@@ -168,15 +172,15 @@ void cadastraImovel(Imovel *imovel){
 				cout<<"Area total do terreno: ";
 				cin>>areaFlat;
 				cout<<"Valor do condominio: ";
-				cin>>valorDoCondominio;
+				cin>>valorCondominio;
 				cout<<"Agora algumas informacoes extras, diga se tem ar condicionado (se sim: s, se nao: n): ";
-				cin>>arCondiconado;
+				cin>>arCondicionado;
 				cout<<"Internet?(se sim: s, se nao: n): ";
 				cin>>internet;
 				cout<<"TV a cabo?(se sim: s, se nao: n): ";
 				cin>>tvACabo;
 				cout<<"Lavandeiria?(se sim: s, se nao: n): ";
-				cin>>lavandeiria;
+				cin>>lavanderia;
 				cout<<"Limpeza?(se sim: s, se nao: n): ";
 				cin>>limpeza;
 				cout<<"Recepcao 24 horas?(se sim: s, se nao: n): ";
@@ -188,10 +192,11 @@ void cadastraImovel(Imovel *imovel){
 				cout<<"Sala de ginastica?(se sim: s, se nao: n): ";
 				cin>>salaDeGinastica;
 				cout<<"Obrigado!";
-				imovel = new Studio(double areaStudio, double valorCondominio, char arCondicionado, char internet, char tvACabo,
-			 						char lavanderia, char limpeza, char recepcao24, char piscina, char sauna, char salaDeGinastica,
-			  						int tipoDeOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero);
+				imovel = new Studio(areaStudio, valorCondominio, arCondicionado, internet, tvACabo,
+			 						lavanderia, limpeza, recepcao24, piscina, sauna, salaDeGinastica,
+			  						tipoDeOferta, valor, cidade, bairro, logradouro, cep, numero);
 			  	break;
+			}
 		}
 		if(a==1 || a==2 || a==3 || a==4 || a==5){
 			break;
