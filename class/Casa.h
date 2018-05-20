@@ -3,7 +3,7 @@
 #include <string>
 
 #include "Imovel.h" // Herda da classe abstrata imovel
-
+using namespace std;
 class Casa : public Imovel{
 
 	private:
@@ -18,7 +18,8 @@ class Casa : public Imovel{
 
 		Casa();
 		Casa(int numeroDePavimetos, int numeroDeQuartos, double areaDoTerrreno,
-			double areaConstruida, int tipoDeOferta, double valor, Endereco endereco);
+			double areaConstruida, int tipoDeOferta, double valor, string cidade,
+			 string bairro,string logradouro,string cep,int numero);
 
 		virtual~Casa();
 

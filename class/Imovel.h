@@ -6,7 +6,7 @@
 #define IMOVEL_PARA_ALUGAR 2
 
 #include "Endereco.h"
-
+using namespace std;
 // Classe imovel abstrata
 
 class Imovel {
@@ -19,12 +19,12 @@ class Imovel {
     public:
     //Construtpres e Destrutores da classe
         Imovel();
-        Imovel(int tipoDeOferta, double valor, Endereco endereco);
+        Imovel(int tipoDeOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero);
 
         virtual~Imovel(void);
 
     //Metodos da classe
-        virtual std::string getDescricao(void) = 0; //vitual puro,
+        virtual string getDescricao(void) = 0; //vitual puro,
                                                     // a classe que herdar é obrigada a implementar
 
         virtual double getValor(void);
