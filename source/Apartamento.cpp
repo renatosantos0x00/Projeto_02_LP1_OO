@@ -30,5 +30,5 @@ string Apartamento::getDescricao(){
 								"\nArea: " + to_string(area) + 
 								"\nAndar: " + to_string(andar);
 
-	return apartamento+getEndereco();
+	return apartamento+endereco.getEndereco();
 }

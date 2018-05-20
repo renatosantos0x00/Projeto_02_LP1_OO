@@ -31,8 +31,8 @@ int Imovel::getTipoDeOferta(void){
 
 }
 
-std::string Imovel::getEndereco(void){
-	return endereco.getEndereco();
+Endereco Imovel::getEndereco(void){
+	return endereco;
 
 }
 

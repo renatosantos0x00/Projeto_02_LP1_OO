@@ -120,6 +120,6 @@ string Studio::getDescricao(){
 					"\nSauna: " + sauna + 
 					"\nSala de ginastica: " + salaDeGinastica;
 
-	return studio+getEndereco();
+	return studio+endereco.getEndereco();
 
 }

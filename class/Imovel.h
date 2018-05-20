@@ -29,7 +29,7 @@ class Imovel {
 
         virtual double getValor(void);
         virtual int getTipoDeOferta(void);
-        virtual std::string getEndereco(void);
+        virtual Endereco getEndereco(void);
 
 };
 

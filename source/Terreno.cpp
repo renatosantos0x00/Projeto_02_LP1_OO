@@ -28,5 +28,5 @@ void Terreno::setArea(double area){
 string Terreno::getDescricao(){
 	std::string terreno = "TERRENO \n\nArea: " + to_string(area);
 
-	return terreno+getEndereco();
+	return terreno+endereco.getEndereco();
 }

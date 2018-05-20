@@ -81,12 +81,12 @@ Flat::~Flat(){
 std::string Flat::getDescricao(){
     std::string flat =  "FLAT\n\nArea: "+std::to_string(areaFlat)+
                         "\nValor do Condominio: "+ std::to_string(valorCondominio)+
-                        "\nAr condiconado: "+arCondicionado+
-                        "\nINternet: "+internet+
+                        "\nAr Condicionado: "+arCondicionado+
+                        "\nInternet: "+internet+
                         "\nTV a Cabo: "+tvACabo+
-                        "\nLAvanderia: "+lavanderia+
+                        "\nLavanderia: "+lavanderia+
                         "\nLimpeza: "+limpeza+
-                        "\nRecepição 24 horas: "+recepcao24;
+                        "\nRecepção 24 horas: "+recepcao24;
 
-    return flat+getEndereco();
+    return flat+endereco.getEndereco();
 }
