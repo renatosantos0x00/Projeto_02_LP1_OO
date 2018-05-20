@@ -9,7 +9,7 @@ SistemaImobiliaria::~SistemaImobiliaria(){
 
 }
 
-void cadastraImovel(Imovel *imovel){
+void SistemaImobiliaria::cadastraImovel(Imovel *imovel){
 	cout<<"Indique o tipo de imovel que quer cadastrar:\n";
 	cout<<"Digite 1 se for uma casa\n";
 	cout<<"Digite 2 se for um apartamento\n";
