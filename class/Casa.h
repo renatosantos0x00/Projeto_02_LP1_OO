@@ -7,9 +7,9 @@ using namespace std;
 class Casa : public Imovel{
 
 	private:
-		int numeroDePavimetos;
+		int numeroDePavimentos;
 		int numeroDeQuartos;
-		double areaDoTerrreno;
+		double areaDoTerreno;
 		double areaConstruida;
 
 
@@ -17,7 +17,7 @@ class Casa : public Imovel{
 	//Contrutores e destrutores da classe
 
 		Casa();
-		Casa(int numeroDePavimetos, int numeroDeQuartos, double areaDoTerrreno,
+		Casa(int numeroDePavimentos, int numeroDeQuartos, double areaDoTerreno,
 			double areaConstruida, int tipoDeOferta, double valor, string cidade,
 			 string bairro,string logradouro,string cep,int numero);
 
