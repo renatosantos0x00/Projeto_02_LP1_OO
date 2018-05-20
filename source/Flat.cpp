@@ -15,8 +15,9 @@ Flat::Flat() : Imovel(){
 }
 
 Flat::Flat(double areaFlat, double valorCondominio, char arCondicionado, char internet, char tvACabo,
-		   char lavanderia, char limpeza, char recepcao24, int tipoDeOferta, double valor, Endereco endereco)	   
-		   : Imovel(tipoDeOferta, valor, endereco){
+		   char lavanderia, char limpeza, char recepcao24, int tipoDeOferta, double valor,string cidade, 
+		   string bairro,string logradouro,string cep,int numero)	   
+		   : Imovel(tipoDeOferta, valor, cidade,  bairro, logradouro, cep, numero){
 	
 	this->areaFlat = areaFlat;
     this->valorCondominio = valorCondominio;
@@ -79,14 +80,14 @@ Flat::~Flat(){
 //Metodos Da Classe
 
 std::string Flat::getDescricao(){
-    std::string flat =  "FLAT\n\nArea: "+std::to_string(areaFlat)+
-                        "\nValor do Condominio: "+ std::to_string(valorCondominio)+
-                        "\nAr Condicionado: "+arCondicionado+
-                        "\nInternet: "+internet+
-                        "\nTV a Cabo: "+tvACabo+
-                        "\nLavanderia: "+lavanderia+
-                        "\nLimpeza: "+limpeza+
-                        "\nRecepção 24 horas: "+recepcao24;
+    string flat =  "FLAT\n\nArea: "+to_string(areaFlat)+
+                    "\nValor do Condominio: "+ to_string(valorCondominio)+
+                    "\nAr Condicionado: "+arCondicionado+
+                    "\nInternet: "+internet+
+                    "\nTV a Cabo: "+tvACabo+
+                    "\nLavanderia: "+lavanderia+
+                    "\nLimpeza: "+limpeza+
+                    "\nRecepcao 24 horas: "+recepcao24;
 
     return flat+endereco.getEndereco();
 }

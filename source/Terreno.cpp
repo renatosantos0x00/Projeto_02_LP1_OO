@@ -7,8 +7,8 @@ Terreno::Terreno():Imovel(){
 }
 
 Terreno::Terreno(int tipoDeOferta, double valor, Endereco endereco,
-				double area)
-		:Imovel(tipoDeOferta, valor, endereco){
+				double area,string cidade, string bairro,string logradouro,string cep,int numero)
+		:Imovel(tipoDeOferta, valor, cidade, bairro,logradouro, cep,numero){
 
 
 	this->area = area;
@@ -26,7 +26,7 @@ void Terreno::setArea(double area){
 }
 
 string Terreno::getDescricao(){
-	std::string terreno = "TERRENO \n\nArea: " + to_string(area);
+	string terreno = "TERRENO \n\nArea: " + to_string(area);
 
 	return terreno+endereco.getEndereco();
 }

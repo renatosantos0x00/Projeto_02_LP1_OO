@@ -19,8 +19,8 @@ Studio::Studio() : Imovel(){
 
 Studio::Studio(double areaStudio, double valorCondominio, char arCondicionado, char internet, char tvACabo,
 		   char lavanderia, char limpeza, char recepcao24, char piscina, char sauna, char salaDeGinastica, 
-		   int tipoDeOferta, double valor, Endereco endereco)
-		   : Imovel(tipoDeOferta, valor, endereco){
+		   int tipoDeOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero)
+		   : Imovel(tipoDeOferta, valor,  cidade,  bairro, logradouro, cep, numero){
 
 	this->areaStudio = areaStudio;
     this->valorCondominio = valorCondominio;
