@@ -1,23 +1,22 @@
 #ifndef GERENTEDEPERSISTENCIA_H
 #define GERENTEDEPERSISTENCIA_H
 
-#include "../nlohmann/json.hpp"
+#include "SistemaImobiliaria.h"
 
-using json = nlohmann::json;
 using namespace std;
 
 class GerenteDePersistencia {
-    public:
-        json lista;
+    private:
+        list<Imovel*> lista;
         
-    
+    public:
         GerenteDePersistencia();
         virtual ~GerenteDePersistencia();
 
-        json getLista();
-        void setLista(json lista);
+        list getLista();
+        void setLista(list lista);
         
-        void salvaListaImoveis(json novaLista);
+        void salvaListaImoveis(lista novaLista);
 };
 
 #endif
