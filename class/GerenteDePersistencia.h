@@ -7,16 +7,16 @@ using namespace std;
 
 class GerenteDePersistencia {
     private:
-        //list<Imovel*> lista;
+        //SistemaImobiliario lista;
         
     public:
-        GerenteDePersistencia();
-        virtual ~GerenteDePersistencia();
+        //GerenteDePersistencia();
+        //virtual ~GerenteDePersistencia();
 
         //list getLista();
-        void setLista();
+        //void recuperaLista();
         
-        void salvaListaImoveis();
+        //void salvaListaImoveis(lista);
 };
 
 #endif

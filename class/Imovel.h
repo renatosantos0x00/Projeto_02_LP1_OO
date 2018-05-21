@@ -12,7 +12,7 @@ using namespace std;
 class Imovel {
 
     protected:
-    	int tipoDeOferta;
+    	string tipoDeOferta;
     	double valor;
     	Endereco endereco;
 
@@ -25,10 +25,11 @@ class Imovel {
 
     //Metodos da classe
         virtual string getDescricao(void) = 0; //vitual puro,
-                                                    // a classe que herdar é obrigada a implementar
+                                                // a classe que herdar é obrigada a implementar
+
 
         virtual double getValor(void);
-        virtual int getTipoDeOferta(void);
+        virtual string getTipoDeOferta(void);
         virtual Endereco getEndereco(void);
 
 };

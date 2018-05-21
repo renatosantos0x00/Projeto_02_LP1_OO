@@ -21,7 +21,7 @@ prog: bib main
 
 bib: $(CODIGO) $(BIBLIOTECAS)
 	@echo "Compilado Bibliotecas: gerando objetos -> *.o\n"
-	$(COMPILADOR) $(OPCAO) -c $(CODIGO)/*.cpp $(CODIGO)/*.hpp -I$(BIBLIOTECAS)
+	$(COMPILADOR) $(OPCAO) -c $(CODIGO)/*.cpp -I$(BIBLIOTECAS)
 	ls -l *.o
 
 main: $(MAIN) $(BIBLIOTECAS)

@@ -173,9 +173,10 @@ int main(int argc, char const *argv[])
 			 	break;
 			}
 			case 5:{
+				string tipo;
 				double areaStudio,valorCondominio;
 	    		char arCondicionado,internet,tvACabo,lavanderia,limpeza,recepcao24,piscina,sauna,salaDeGinastica;
-	    		cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
+				cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
 				cin>>cidade;
 				cout<<"Bairro: ";
 				cin>>bairro;
@@ -231,7 +232,6 @@ int main(int argc, char const *argv[])
 	cout << endl << meusImoveis.size()<< endl << endl;
 
 	for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
-	//it.getDescricao();
 		imovel = *it;
 		cout << imovel->getDescricao() << endl;							
 	}
