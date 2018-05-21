@@ -9,11 +9,11 @@ GerenteDePersistencia::GerenteDePersistencia(){
     ifstream this->lista("../dados/dados.json");
 }
 
-GerenteDePersistencia::~GerenteDePersistenciaa(){
+GerenteDePersistencia::~GerenteDePersistencia(){
 
 }
 
-GerenteDePersistencia::salvaListaImoveis(json novaLista){
+void GerenteDePersistencia::salvaListaImoveis(json novaLista){
     ofstream arquivo("../dados/dados.json");
 
     arquivo << setw(4) << novaLista << endl;
