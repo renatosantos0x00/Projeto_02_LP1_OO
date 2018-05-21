@@ -1,12 +1,13 @@
 #include "GerenteDePersistencia.h"
 
+#include <fstream>
 #include "../nlohmann/json.hpp"
 
 using json = nlohmann::json;
 using namespace std;
 
 GerenteDePersistencia::GerenteDePersistencia(){
-    ifstream this->lista("../dados/dados.json");
+    ifstream lista("../dados/dados.json");
 }
 
 GerenteDePersistencia::~GerenteDePersistencia(){
