@@ -29,6 +29,4 @@ class Casa : public Imovel{
 
 };
 
-
-
 #endif

@@ -4,6 +4,7 @@
 #include <string>
 #include "Imovel.h"
 using namespace std;
+
 class Flat : public Imovel{
 	private:
 		double areaFlat;
@@ -27,6 +28,5 @@ class Flat : public Imovel{
 		//Metodos da classe
 		string getDescricao();
 };
-
 
 #endif
