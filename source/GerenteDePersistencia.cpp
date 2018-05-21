@@ -14,6 +14,6 @@ GerenteDePersistencia::~GerenteDePersistencia(){
 
 }
 
-void GerenteDePersistencia::salvaListaImoveis(json novaLista){
+void GerenteDePersistencia::salvaListaImoveis(){
 
 }

@@ -1,23 +1,20 @@
 #ifndef SISTEMAIMOBILIARIA_H 
 #define SISTEMAIMOBILIARIA_H 
+#include <list>
 
-#include "Imovel.h"
-#include "Casa.h"
-#include "Apartamento.h"
-#include "Terreno.h"
-#include "Flat.h"
-#include "Studio.h"
+#include "Imovel.h" 
 
 class SistemaImobiliaria{
 	private:
-		Imovel *imoveis[100];
+		list <Imovel*> meusImoveis;
 
 	public:
-		//SistemaImobiliaria();
+		SistemaImobiliaria();
 		virtual~SistemaImobiliaria();
 
 	//Metodos da classe;
 		void cadastraImovel(Imovel *imovel);
+		list <Imovel*> getImovel(void);
 
 };
 

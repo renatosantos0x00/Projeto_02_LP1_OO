@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 
 #include "Interface.h"
 
@@ -13,6 +13,7 @@ void Interface::ExibeMenuItem(){
     printf("5 - Consutar imoveis disponíveis para alugar\n");
     printf("6 - Sair\n");
     printf("-------------------------------------------------\n");
+    printf("Digite a opcao desejada: ");
 
 }
 
@@ -27,6 +28,7 @@ void Interface::ExibeMenuSubItem1(){
     printf("5 - Cadastrar studio\n\n");
     printf("6 - Voltar\n");
     printf("-------------------------------------------------\n");
+    printf("Digite a opcao desejada: ");
 }
 
 void Interface::ExibeMenuSubItem2(){
