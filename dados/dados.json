@@ -1,21 +1,6 @@
 {
-    "imoveis": [
-        {
-            "imovelParaVender": 0,
-            "imovelParaAlugar": 0,
-            "valor": 300.0,
-            "tipoOferta": 0,
-            "endereco":{
-                "logradouro": "Eita",
-                "numero": 0,
-                "bairro": "Bessa",
-                "Cidade": "JP",
-                "cep": "58036-818"
-            },
-            "numPavimentos": 0,
-            "numQuartos": 0,
-            "areaTerreno": 1.2,
-            "areaConstruida": 1.1
-        }
-    ]
+    "pos1":1,
+    "pos2":{
+        "pos2.1":21
+    }
 }

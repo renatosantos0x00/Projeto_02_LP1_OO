@@ -7,12 +7,15 @@ using json = nlohmann::json;
 using namespace std;
 
 class GerenteDePersistencia {
-    private:
+    public:
         json lista;
         
-    public:
+    
         GerenteDePersistencia();
         virtual ~GerenteDePersistencia();
+
+        json getLista();
+        void setLista(json lista);
         
         void salvaListaImoveis(json novaLista);
 };

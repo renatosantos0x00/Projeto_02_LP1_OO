@@ -1,5 +1,6 @@
 #include "GerenteDePersistencia.h"
 
+#include <iostream>
 #include <fstream>
 #include "../nlohmann/json.hpp"
 
@@ -7,7 +8,11 @@ using json = nlohmann::json;
 using namespace std;
 
 GerenteDePersistencia::GerenteDePersistencia(){
-    ifstream lista("../dados/dados.json");
+    ifstream i("../dados/dados.json");
+    json k;
+    i >> k;
+    cout << k["pos1"];
+
 }
 
 GerenteDePersistencia::~GerenteDePersistencia(){
