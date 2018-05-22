@@ -43,3 +43,7 @@ std::string Casa::getDescricao(void){
 
 
 }
+
+unsigned long int Casa::getTamanhoDaClasse(void){
+	return sizeof(Casa);
+}

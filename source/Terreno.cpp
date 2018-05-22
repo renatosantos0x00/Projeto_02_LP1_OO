@@ -30,3 +30,6 @@ string Terreno::getDescricao(){
 
 	return terreno+endereco.getEndereco();
 }
+unsigned long int Terreno::getTamanhoDaClasse(void){
+	return sizeof(Terreno);
+}

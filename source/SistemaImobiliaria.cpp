@@ -55,13 +55,14 @@ list<Imovel*> SistemaImobiliaria::getDescricaoBairro(string bairro, int tipoOfer
 	}
 
 	for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
-		endereco = imovel->getEndereco();
 		imovel = *it;
+		endereco = imovel->getEndereco();
 		
 		if(endereco.getBairro() == bairro &&(imovel->getTipoDeOferta() == tipoDeOferta)){
 			lista.push_back(imovel);
 		}
 	}
+	
 	return lista;
 }
 
@@ -71,8 +72,8 @@ list<Imovel*> SistemaImobiliaria::getDescricaoCidade(string cidade){
 	list<Imovel*> lista;
 
 	for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
-		endereco = imovel->getEndereco();
 		imovel = *it;
+		endereco = imovel->getEndereco();
 		
 		if(endereco.getBairro() == cidade  ){
 			lista.push_back(imovel);

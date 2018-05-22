@@ -123,3 +123,7 @@ string Studio::getDescricao(){
 	return studio+endereco.getEndereco();
 
 }
+
+unsigned long int Studio::getTamanhoDaClasse(void){
+    return sizeof(Studio);
+}

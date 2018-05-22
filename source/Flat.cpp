@@ -90,4 +90,9 @@ std::string Flat::getDescricao(){
                     "\nRecepcao 24 horas: "+recepcao24;
 
     return flat+endereco.getEndereco();
+
+}
+
+unsigned long int Flat::getTamanhoDaClasse(void){
+    return sizeof(Flat);
 }

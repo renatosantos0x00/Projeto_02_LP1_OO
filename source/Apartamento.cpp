@@ -34,3 +34,6 @@ string Apartamento::getDescricao(){
 
 	return apartamento+endereco.getEndereco();
 }
+unsigned long int Apartamento::getTamanhoDaClasse(void){
+	return sizeof(Apartamento);
+}

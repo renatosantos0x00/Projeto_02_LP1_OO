@@ -28,6 +28,7 @@ class Studio : public Imovel{
 		virtual ~Studio();
 		
 		string getDescricao();
+		unsigned long int getTamanhoDaClasse(void);
 };
 
 

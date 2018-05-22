@@ -19,6 +19,7 @@ class Terreno : public Imovel{
 		void setArea(double area);
 		
 		string getDescricao();
+		unsigned long int getTamanhoDaClasse(void);
 };
 
 #endif

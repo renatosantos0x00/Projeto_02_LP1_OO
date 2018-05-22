@@ -24,6 +24,7 @@ class Apartamento : public Imovel{
 
 		virtual ~Apartamento();
 		string getDescricao();
+		unsigned long int getTamanhoDaClasse(void);
 	//Metodos da classe
 		
 

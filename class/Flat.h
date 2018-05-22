@@ -27,6 +27,7 @@ class Flat : public Imovel{
 
 		//Metodos da classe
 		string getDescricao();
+		unsigned long int getTamanhoDaClasse(void);
 };
 
 #endif

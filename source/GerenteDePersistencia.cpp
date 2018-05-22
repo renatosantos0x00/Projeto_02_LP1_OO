@@ -1,12 +1,7 @@
 #include "GerenteDePersistencia.h"
-/*
-#include <fstream>
-#include <list>
 
-using namespace std;
 
 GerenteDePersistencia::GerenteDePersistencia(){
-
 
 }
 
@@ -14,16 +9,60 @@ GerenteDePersistencia::~GerenteDePersistencia(){
 
 }
 
+//Metodos da classe
 
-void GerenteDePersistencia::salvaListaImoveis(SistemaImobiliario lista){
-    ifstream inFile;
-	ofstream outFile;
+int GerenteDePersistencia::salvaListaDeImoveis(std::list<Imovel*> salvarMeusImoveis){
+	Imovel *imoveis;
+	std::list<Imovel*>::iterator it;
+	unsigned long int tamanho = 0;
 
-    inFile.open("input.bin", ios::binary | ios::in);
-	outFile.open("output.bin", ios::binary |ios::out);
+	arquivoDeSaida.open("dados/imoveis.bin", ios::binary | ios::out | ios::app);
 
-    outFile.write(arrayBytes,blockSize);
+	if(!arquivoDeSaida.is_open()){
+		for(it = salvarMeusImoveis.begin(); it != salvarMeusImoveis.end(); it++){
+			imoveis = *it;
 
-    outFile.close();
+			tamanho = imoveis->getTamanhoDaClasse();
+			arquivoDeSaida.write((const char *)imoveis, tamanho);
+		
+		}
+
+		arquivoDeSaida.close();
+
+	}else{
+		return -1;
+	}
+
 }
-*/
+//falta terminar
+
+int GerenteDePersistencia::recuperaListaDeImoveis(void){
+	unsigned long int tamanho=0;
+	Imovel *imoveis;
+
+	arquivoDeEntrada.open("dados/imoveis.bin", ios::binary | ios::in );
+
+	if(!arquivoDeEntrada.is_open()){
+		
+		while(1){
+			if(!arquivoDeEntrada.eof()){
+				break;
+			}
+
+			//arquivoDeEntrada.read();
+
+		}
+
+	}else{
+	
+		return -1;
+	}
+
+
+}
+
+
+
+std::list<Imovel*> GerenteDePersistencia::getListaImoveis(void){
+	return this->meusImoveis;
+}

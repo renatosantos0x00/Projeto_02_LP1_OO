@@ -28,11 +28,13 @@ class Imovel {
         virtual string getDescricao(void) = 0; //vitual puro,
                                                 // a classe que herdar é obrigada a implementar
 
+        virtual unsigned long int getTamanhoDaClasse(void)=0; // retorna o tamnho da classe par usar em arquivos
 
         virtual double getValor(void);
         virtual string getTipoDeOferta(void);
         virtual Endereco getEndereco(void);
         virtual int getTipoDeImovel(void);
+
 
 };
 

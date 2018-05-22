@@ -26,6 +26,7 @@ class Casa : public Imovel{
 	//Metodos da class
 
 		virtual std::string getDescricao(void);
+		unsigned long int getTamanhoDaClasse(void);
 
 };
 

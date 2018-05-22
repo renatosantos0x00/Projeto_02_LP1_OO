@@ -1,22 +1,28 @@
 #ifndef GERENTEDEPERSISTENCIA_H
 #define GERENTEDEPERSISTENCIA_H
+#include <fstream>
+#include <list>
 
 #include "SistemaImobiliaria.h"
-
-using namespace std;
+#include "Imovel.h"
 
 class GerenteDePersistencia {
     private:
-        //SistemaImobiliario lista;
-        
-    public:
-        //GerenteDePersistencia();
-        //virtual ~GerenteDePersistencia();
 
-        //list getLista();
-        //void recuperaLista();
-        
-        //void salvaListaImoveis(lista);
+		std::list<Imovel*> meusImoveis;
+	    std::ifstream arquivoDeEntrada;
+		std::ofstream arquivoDeSaida; 
+		
+    
+    public:
+        GerenteDePersistencia();
+        virtual ~GerenteDePersistencia();
+
+        int salvaListaDeImoveis(std::list<Imovel*> salvarMeusImoveis);
+        int recuperaListaDeImoveis(void);
+        std::list<Imovel*> getListaImoveis(void);
+
+
 };
 
 #endif
