@@ -32,6 +32,7 @@ class Imovel {
         virtual double getValor(void);
         virtual string getTipoDeOferta(void);
         virtual Endereco getEndereco(void);
+        virtual int getTipoDeImovel(void);
 
 };
 

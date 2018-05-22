@@ -18,7 +18,7 @@ class SistemaImobiliaria{
 		list <Imovel*> getDescricao();
 		list <Imovel*> getDescricaoBairro(string bairro, int tipoDeOferta);
 		list <Imovel*> getDescricaoCidade(string cidade);
-
+		list <Imovel*> getDescricaoPorTipo(int tipo);
 };
 
 #endif

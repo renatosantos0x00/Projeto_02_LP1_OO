@@ -46,3 +46,6 @@ Endereco Imovel::getEndereco(void){
 
 }
 
+int Imovel::getTipoDeImovel(void){
+	return tipoDeImovel;
+}
