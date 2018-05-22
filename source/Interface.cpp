@@ -43,9 +43,9 @@ void Interface::ExibeMenuSubItem2(){
 }
 
 void Interface::ExibeMenuSubSubItem2(){
-    //Sub item 2 de imoveis disponiveis (Pesquisar por cidade)
+    //Sub item 2 de imoveis disponiveis
     printf("-------------------------------------------------\n");
-    printf("Menu de imoveis disponveis por cidade\n");
+    printf("Menu de imoveis disponveis\n");
     printf("-------------------------------------------------\n");
     printf("1 - Casas disponveis\n");
     printf("2 - Apartamentos disponiveis\n");
