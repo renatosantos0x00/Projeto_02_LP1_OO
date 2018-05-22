@@ -35,11 +35,12 @@ int main(int argc, char const *argv[])
 		cin >> opcaoItem;
 
 		switch(opcaoItem){
+			
 			case 1://Cadastra imoveis
 				while(1){
 					interface.ExibeMenuSubItem1();
 
-					cin>>opcaoSubItem;
+					cin>>opcaoSubItem; //laço infinito se a opção não tiver correta
 					
 					switch(opcaoSubItem){
 						case 1:{
@@ -244,6 +245,7 @@ int main(int argc, char const *argv[])
 					if(opcaoSubItem == 6){
 						break;
 					} 
+
 				}//Fim while case 1
 
 				break;

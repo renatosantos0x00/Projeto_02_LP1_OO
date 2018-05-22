@@ -22,10 +22,12 @@ list <Imovel*> SistemaImobiliaria::getImovel(void){
 list <Imovel*> SistemaImobiliaria::getDescricao(){
 	Imovel *imovel;
 	list <Imovel*>  lista;
+	
 	for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
 		imovel = *it;
 		lista.push_back(imovel);						
 	}
+	
 	return lista;
 }
 
