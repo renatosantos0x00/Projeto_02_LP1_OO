@@ -72,6 +72,17 @@ void Interface::ExibeMenuSubItem4(){
 }
 
 void Interface::ExibeMenuSubItem5(){
+    //Item imoveis disponiveis para alugar - 5
+    printf("-------------------------------------------------\n");
+    printf("Menu de imoveis disponveis para alugar\n");
+    printf("-------------------------------------------------\n");
+    printf("1 - Todos os imoveis\n");
+    printf("2 - Pesquisar por bairro\n\n");
+    printf("3 - Voltar\n");
+    printf("-------------------------------------------------\n");
+}
+
+void Interface::ExibeMenuSubSubItem5(){
     //Sub item 2 de imoveis para alugar (Pesquisar por bairro)
     printf("-------------------------------------------------\n");
     printf("Menu de imoveis disponveis para alugar\n");
@@ -85,13 +96,4 @@ void Interface::ExibeMenuSubItem5(){
     printf("-------------------------------------------------\n");
 }
 
-void Interface::ExibeMenuSubSubItem5(){
-    //Item imoveis disponiveis para alugar - 5
-    printf("-------------------------------------------------\n");
-    printf("Menu de imoveis disponveis para alugar\n");
-    printf("-------------------------------------------------\n");
-    printf("1 - Todos os imoveis\n");
-    printf("2 - Pesquisar por bairro\n\n");
-    printf("3 - Voltar\n");
-    printf("-------------------------------------------------\n");
-}
+

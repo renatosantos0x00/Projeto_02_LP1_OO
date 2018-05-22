@@ -401,21 +401,13 @@ int main(int argc, char const *argv[])
 					}
 					case 3:{
 						break;
-					}
-					
+					}				
 					default:{
 						cout << "Opcao invalida" << endl;
 					}
-
-					if(opcaoSubItem == 3){
-						break;
-					}
 				}
 				
-				if(opcaoSubItem == 6){
-					break;
-				} 
-			case 3:{
+			case 3:{//Mostrar descrição de todos os imóveis
 				meusImoveis = imobiliaria.getDescricao();
 				Imovel *imovel;
 
@@ -426,10 +418,81 @@ int main(int argc, char const *argv[])
 				
 				break;
 			}
-			case 4:{
+			case 4:{//Consultar imoveis disponiveis para venda
+				interface.ExibeMenuSubItem4();
+				cin >> opcaoItem;
 
+				switch(opcaoItem){
+					case 1:{//Casas disponíveis
+					}
+					case 2:{//Apartamentos disponíveis
+					}
+					case 3:{//Terrenos disponíveis
+					}
+					case 4:{//Flats disponíveis
+					}
+					case 5:{//Studios disponíveis
+					}
+					case 6:{
+						break;
+					}
+					default:{
+						cout << "Opcao invalida." << endl;
+						break;
+					}
+				}
+			}
+			case 5:{//Consutar imoveis disponíveis para alugar
+				interface.ExibeMenuSubItem5();
+				cin >> opcaoItem;
+
+				switch(opcaoItem){
+					case 1:{//Todos os imóveis
+						interface.ExibeMenuSubSubItem5();
+						cin >> opcaoItem;
+
+						switch(opcaoItem){
+							case 1:{//Casas disponíveis
+							}
+							case 2:{//Apartamentos disponíveis
+							}
+							case 3:{//Terrenos disponíveis
+							}
+							case 4:{//Flats disponíveis
+							}
+							case 5:{//Studios disponíveis
+							}
+							case 6:{
+								break;
+							}
+							default:{
+								cout << "Opcao invalida." << endl;
+								break;
+							}
+						}
+					}
+					case 2:{//Pesquisar por bairro
+
+					}
+					case 3:{
+						break;
+					}
+					default:{
+						cout << "Opcao invalida." << endl;
+						break;
+					}
+				}
+			}
+			case 6:{
+				break;
+			}
+			default:{
+				cout << "Opcao invalida." << endl;
+				break;
 			}
 		}//Switch maior
+
+		if(opcaoItem == 6) break;
 
 	}
 
