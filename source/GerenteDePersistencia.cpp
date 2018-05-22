@@ -21,11 +21,13 @@ int GerenteDePersistencia::salvaListaDeImoveis(std::list<Imovel*> salvarMeusImov
 	if(!arquivoDeSaida.is_open()){
 		for(it = salvarMeusImoveis.begin(); it != salvarMeusImoveis.end(); it++){
 			imoveis = *it;
-
+			
 			tamanho = imoveis->getTamanhoDaClasse();
 			arquivoDeSaida.write((const char *)imoveis, tamanho);
 		
 		}
+
+		//arquivoDeSaida.write((const char *)imoveis, tamanho);
 
 		arquivoDeSaida.close();
 

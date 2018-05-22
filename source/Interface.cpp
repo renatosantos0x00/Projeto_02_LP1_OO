@@ -51,8 +51,9 @@ void Interface::ExibeMenuSubSubItem2(){
     printf("2 - Apartamentos disponiveis\n");
     printf("3 - Terrenos disponveis\n");
     printf("4 - Flats disponiveis\n");
-    printf("5 - Studio dispoiveis\n\n");
-    printf("6 - Voltar\n");
+    printf("5 - Studio dispoiveis\n");
+    printf("6 - Todos os tipos de imóveis disponíveis\n\n");
+    printf("7 - Voltar\n");
     printf("-------------------------------------------------\n");
 }
 

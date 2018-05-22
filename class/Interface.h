@@ -20,6 +20,8 @@ class Interface {
         void ExibeMenuSubItem5();
 
         void ExibeMenuSubSubItem5();
+
+        void CadastraCasa();
 };
 
 #endif

@@ -21,10 +21,12 @@ list <Imovel*> SistemaImobiliaria::getImovel(void){
 
 list <Imovel*> SistemaImobiliaria::getDescricao(){
 	Imovel *imovel;
+	list <Imovel*>  lista;
 	for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
 		imovel = *it;
-		cout << imovel->getDescricao() << endl;							
+		lista.push_back(imovel);						
 	}
+	return lista;
 }
 
 list <Imovel*> SistemaImobiliaria::getDescricaoPorTipo(int tipoDeImovel){
@@ -38,6 +40,7 @@ list <Imovel*> SistemaImobiliaria::getDescricaoPorTipo(int tipoDeImovel){
 			lista.push_back(imovel);
 		}						
 	}
+	return lista;
 }
 
 list<Imovel*> SistemaImobiliaria::getDescricaoBairro(string bairro, int tipoOferta){
