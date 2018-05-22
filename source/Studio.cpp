@@ -19,13 +19,13 @@ Studio::Studio() : Imovel(){
 
 Studio::Studio(double areaStudio, double valorCondominio, char arCondicionado, char internet, char tvACabo,
 		   char lavanderia, char limpeza, char recepcao24, char piscina, char sauna, char salaDeGinastica, 
-		   int tipoDeOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero)
-		   : Imovel(tipoDeOferta, valor,  cidade,  bairro, logradouro, cep, numero){
+		   int tipoDeImovel, int tipoDeOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero)
+		   : Imovel(tipoDeImovel, tipoDeOferta, valor,  cidade,  bairro, logradouro, cep, numero){
 
 	this->areaStudio = areaStudio;
     this->valorCondominio = valorCondominio;
 
-    // Parametro é um caractere mas o atributo e uma string
+    // Parametro ï¿½ um caractere mas o atributo e uma string
     // Arcondicionado
     if(arCondicionado == 's' || arCondicionado == 'S'){
     	this->arCondicionado = "Sim Possui.";
@@ -67,7 +67,7 @@ Studio::Studio(double areaStudio, double valorCondominio, char arCondicionado, c
     }else{
     	this->limpeza = "Nenhum.";
     }
-    //Recepição 
+    //Recepiï¿½ï¿½o 
     if(recepcao24 == 's' || recepcao24 == 'S'){
     	this->recepcao24 = "Sim Possui.";
     }else if(recepcao24 == 'n' || recepcao24 == 'N'){
@@ -115,7 +115,7 @@ string Studio::getDescricao(){
 					"\nTV a cabo: " + tvACabo + 
 					"\nLavandaria: " + lavanderia + 
 					"\nLimpeza: " + limpeza + 
-					"\nRecepção 24 horas: " + recepcao24+ 
+					"\nRecepï¿½ï¿½o 24 horas: " + recepcao24+ 
 					"\nPiscina: " + piscina + 
 					"\nSauna: " + sauna + 
 					"\nSala de ginastica: " + salaDeGinastica;

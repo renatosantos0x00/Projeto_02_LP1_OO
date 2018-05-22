@@ -18,7 +18,7 @@ class Casa : public Imovel{
 
 		Casa();
 		Casa(int numeroDePavimentos, int numeroDeQuartos, double areaDoTerreno,
-			double areaConstruida, int tipoDeOferta, double valor, string cidade,
+			double areaConstruida, int tipoDeImovel, int tipoDeOferta, double valor, string cidade,
 			 string bairro,string logradouro,string cep,int numero);
 
 		virtual~Casa();

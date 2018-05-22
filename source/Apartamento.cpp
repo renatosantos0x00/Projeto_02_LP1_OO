@@ -9,10 +9,10 @@ Apartamento::Apartamento() : Imovel(){
 }
 
 Apartamento::Apartamento(string posicao, int numeroDeQuartos, double valorCondominio,
-                    	 int vagasGaragem, double area,int andar, int tipoDeOferta, 
+                    	 int vagasGaragem, double area,int andar, int tipoDeImovel, int tipoDeOferta, 
 						 double valor, string cidade, string bairro,string logradouro,
 						 string cep,int numero) 
-						 : Imovel(tipoDeOferta, valor, cidade, bairro, logradouro,cep,numero){
+						 : Imovel(tipoDeImovel, tipoDeOferta, valor, cidade, bairro, logradouro,cep,numero){
 	this->posicao = posicao;
 	this->numeroDeQuartos = numeroDeQuartos;
 	this->valorCondominio = valorCondominio;

@@ -8,8 +8,9 @@ Imovel::Imovel(){
 	endereco = Endereco();
 
 }
-Imovel::Imovel(int tipoOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero)
+Imovel::Imovel(int tipoDeImovel, int tipoOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero)
 {
+	this->tipoDeOferta = tipoDeOferta;
 	string tipoDeOferta;
 	
 	if(tipoOferta == IMOVEL_PARA_VENDER){

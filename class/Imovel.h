@@ -12,6 +12,7 @@ using namespace std;
 class Imovel {
 
     protected:
+        int tipoDeImovel;
     	string tipoDeOferta;
     	double valor;
     	Endereco endereco;
@@ -19,7 +20,7 @@ class Imovel {
     public:
     //Construtpres e Destrutores da classe
         Imovel();
-        Imovel(int tipoDeOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero);
+        Imovel(int tipoDeImovel, int tipoDeOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero);
 
         virtual~Imovel(void);
 

@@ -1,6 +1,12 @@
 #include <iostream>
 #include <list>
 
+#define TIPO_CASA 1
+#define TIPO_APARTAMENTO 2
+#define TIPO_TERRENO 3
+#define TIPO_FLAT 4
+#define TIPO_STUDIO 5
+
 #include "SistemaImobiliaria.h"
 #include "Interface.h"
 #include "Casa.h"
@@ -26,7 +32,7 @@ int main(int argc, char const *argv[])
 
     interface.ExibeMenuSubItem1();
 
-	int a,numero,tipoDeOferta;
+	int a,numero,tipoDeOferta, tipoDeImovel;
 	string cidade, bairro, logradouro, cep;
 	double valor;
 	cin>>a;
@@ -35,6 +41,7 @@ int main(int argc, char const *argv[])
 		
 		switch(a){
 			case 1:{
+				tipoDeImovel = TIPO_CASA;
 				int numeroDePavimentos,numeroDeQuartos;
 				double areaDoTerreno,areaConstruida;
 				cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
@@ -62,7 +69,7 @@ int main(int argc, char const *argv[])
 				cout<<"Obrigado!";
 
 				imovel = new Casa(numeroDePavimentos, numeroDeQuartos, areaDoTerreno,
-						 		areaConstruida, tipoDeOferta, valor, cidade,
+						 		areaConstruida, tipoDeImovel, tipoDeOferta, valor, cidade,
 			 			 		bairro, logradouro, cep, numero);
 				
 				imobiliaria.cadastraImovel(imovel);
@@ -71,6 +78,7 @@ int main(int argc, char const *argv[])
 				break;
 			}
 			case 2:{
+				tipoDeImovel = TIPO_APARTAMENTO;
 				string posicao;
 				int numeroDeQuartos,vagasGaragem,andar;
 				double valorCondominio,area;
@@ -102,13 +110,14 @@ int main(int argc, char const *argv[])
 				cin>>valorCondominio;
 				cout<<"Obrigado!";
 				imovel = new Apartamento(posicao, numeroDeQuartos, valorCondominio,
-						 				vagasGaragem, area, andar, tipoDeOferta, 
+						 				vagasGaragem, area, andar, tipoDeImovel, tipoDeOferta, 
 						 				valor, cidade, bairro, logradouro,
 						 				cep, numero);
 				imobiliaria.cadastraImovel(imovel);
 				break;
 			}
 			case 3:{
+				tipoDeImovel = TIPO_TERRENO;
 				double area;
 				cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
 				cin>>cidade;
@@ -127,12 +136,13 @@ int main(int argc, char const *argv[])
 				cout<<"Area total do terreno: ";
 				cin>>area;
 				cout<<"Obrigado!";
-				imovel = new Terreno(tipoDeOferta, valor, area,
+				imovel = new Terreno(tipoDeImovel, tipoDeOferta, valor, area,
 						 			cidade, bairro, logradouro, cep, numero);
 				imobiliaria.cadastraImovel(imovel);
 				break;
 			}
 			case 4:{
+				tipoDeImovel = TIPO_FLAT;
 				double areaFlat,valorCondominio;
 	    		char arCondicionado,internet,tvACabo,lavanderia,limpeza,recepcao24;
 	    		cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
@@ -167,12 +177,13 @@ int main(int argc, char const *argv[])
 				cin>>recepcao24;
 				cout<<"Obrigado!";
 				imovel = new Flat(areaFlat, valorCondominio, arCondicionado, internet, tvACabo,
-			 			 		lavanderia, limpeza, recepcao24, tipoDeOferta, valor, cidade,
+			 			 		lavanderia, limpeza, recepcao24, tipoDeImovel, tipoDeOferta, valor, cidade,
 			 			 		bairro, logradouro, cep, numero);
 				imobiliaria.cadastraImovel(imovel);
 			 	break;
 			}
 			case 5:{
+				tipoDeImovel = TIPO_STUDIO;
 				string tipo;
 				double areaStudio,valorCondominio;
 	    		char arCondicionado,internet,tvACabo,lavanderia,limpeza,recepcao24,piscina,sauna,salaDeGinastica;
@@ -215,7 +226,7 @@ int main(int argc, char const *argv[])
 				cout<<"Obrigado!";
 				imovel = new Studio(areaStudio, valorCondominio, arCondicionado, internet, tvACabo,
 			 						lavanderia, limpeza, recepcao24, piscina, sauna, salaDeGinastica,
-			  						tipoDeOferta, valor, cidade, bairro, logradouro, cep, numero);
+			  						tipoDeImovel, tipoDeOferta, valor, cidade, bairro, logradouro, cep, numero);
 				imobiliaria.cadastraImovel(imovel);
 			  	break;
 			}

@@ -12,7 +12,7 @@ class Terreno : public Imovel{
 
 	public:
 		Terreno();
-		Terreno(int tipoDeOferta, double valor, double area, string cidade, string bairro,string logradouro,string cep,int numero);
+		Terreno(int tipoDeImovel, int tipoDeOferta, double valor, double area, string cidade, string bairro,string logradouro,string cep,int numero);
 		virtual ~Terreno();
 
 		double getArea();

@@ -20,7 +20,7 @@ class Flat : public Imovel{
 	public:
 		Flat();
 		Flat(double areaFlat, double valorCondominio, char arCondicionado, char internet, char tvACabo,
-			 char lavanderia, char limpeza, char recepcao24, int tipoDeOferta, double valor, string cidade,
+			 char lavanderia, char limpeza, char recepcao24, int tipoDeImovel, int tipoDeOferta, double valor, string cidade,
 			 string bairro,string logradouro,string cep,int numero);
 		virtual ~Flat();
 
