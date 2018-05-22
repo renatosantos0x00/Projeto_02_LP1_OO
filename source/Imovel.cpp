@@ -10,6 +10,7 @@ Imovel::Imovel(){
 }
 Imovel::Imovel(int tipoDeImovel, int tipoOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero)
 {
+	this->tipoDeImovel = tipoDeImovel;
 	this->tipoDeOferta = tipoDeOferta;
 	string tipoDeOferta;
 	

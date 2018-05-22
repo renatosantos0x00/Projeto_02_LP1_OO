@@ -1,6 +1,7 @@
 #include <iostream>
 #include <list>
 
+#define TIPO_TODOSIMOVEIS 0
 #define TIPO_CASA 1
 #define TIPO_APARTAMENTO 2
 #define TIPO_TERRENO 3
@@ -258,43 +259,156 @@ int main(int argc, char const *argv[])
 
 					switch(opcaoSubItem){
 						case 1: { // Casas disponíveis
-							meusImoveis = imobiliaria.getDescricaoPorTipo(1);
-
+							meusImoveis = imobiliaria.getDescricaoPorTipo(TIPO_CASA);
 							Imovel *imovel;
-
-							cout << meusImoveis.size() << endl;
 
 							for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
 								imovel = *it;
 								cout << imovel->getDescricao() << endl;							
 							}
 						}
-						case 2:{}
-						case 3:{}
-						case 4:{}
-						case 5:{}
-						case 6:{}
+						case 2:{
+							meusImoveis = imobiliaria.getDescricaoPorTipo(TIPO_APARTAMENTO);
+							Imovel *imovel;
+
+							for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+								imovel = *it;
+								cout << imovel->getDescricao() << endl;							
+							}
+						}
+						case 3:{
+							meusImoveis = imobiliaria.getDescricaoPorTipo(TIPO_TERRENO);
+							Imovel *imovel;
+
+							for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+								imovel = *it;
+								cout << imovel->getDescricao() << endl;							
+							}
+						}
+						case 4:{
+							meusImoveis = imobiliaria.getDescricaoPorTipo(TIPO_FLAT);
+							Imovel *imovel;
+
+							for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+								imovel = *it;
+								cout << imovel->getDescricao() << endl;							
+							}
+						}
+						case 5:{
+							meusImoveis = imobiliaria.getDescricaoPorTipo(TIPO_STUDIO);
+							Imovel *imovel;
+
+							for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+								imovel = *it;
+								cout << imovel->getDescricao() << endl;							
+							}
+						}
+						case 6:{
+							meusImoveis = imobiliaria.getDescricao();
+							Imovel *imovel;
+
+							for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+								imovel = *it;
+								cout << imovel->getDescricao() << endl;							
+							}
+						}
 						case 7:{
 							break;
 						}
 						default:{
 							cout << "Opcao invalida" << endl;
 						}
+						if(opcaoSubItem == 7){
+							break;
+						}
 					}
 
 					break;
 				}
-				case 2:{
-					
+				case 2:{//Imoveis disponíveis por cidade
+					string cidade;
+					interface.ExibeMenuSubSubItem2();
+					cin >> opcaoSubItem;
+					cout << "Digite a cidade em deseja procurar: ";
+					cin >> cidade;
+
+					switch(opcaoSubItem){
+						case 1: { // Casas disponíveis
+							meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_CASA);
+							Imovel *imovel;
+
+							for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+								imovel = *it;
+								cout << imovel->getDescricao() << endl;							
+							}
+						}
+						case 2:{
+							meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_APARTAMENTO);
+							Imovel *imovel;
+
+							for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+								imovel = *it;
+								cout << imovel->getDescricao() << endl;							
+							}
+						}
+						case 3:{
+							meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_TERRENO);
+							Imovel *imovel;
+
+							for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+								imovel = *it;
+								cout << imovel->getDescricao() << endl;							
+							}
+						}
+						case 4:{
+							meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_FLAT);
+							Imovel *imovel;
+
+							for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+								imovel = *it;
+								cout << imovel->getDescricao() << endl;							
+							}
+						}
+						case 5:{
+							meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_STUDIO);
+							Imovel *imovel;
+
+							for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+								imovel = *it;
+								cout << imovel->getDescricao() << endl;							
+							}
+						}
+						case 6:{
+							meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_TODOSIMOVEIS);
+							Imovel *imovel;
+
+							for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+								imovel = *it;
+								cout << imovel->getDescricao() << endl;							
+							}
+						}
+						case 7:{
+							break;
+						}
+						default:{
+							cout << "Opcao invalida" << endl;
+						}
+						if(opcaoSubItem == 7){
+							break;
+						}
+					}
 					break;
 				}
 				case 3:{
-					
 					break;
 				}
 				
 				default:{
 					cout << "Opcao invalida" << endl;
+				}
+
+				if(opcaoSubItem == 3){
+					break;
 				}
 			}
 
