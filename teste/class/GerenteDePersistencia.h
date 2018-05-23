@@ -1,5 +1,6 @@
 #ifndef GERENTEDEPERSISTENCIA_H
 #define GERENTEDEPERSISTENCIA_H
+#include <iostream>
 #include <fstream>
 #include <list>
 
@@ -15,8 +16,6 @@
 
 class GerenteDePersistencia {
     private:
-
-		std::list<Imovel*> meusImoveis;
 	    std::ifstream arquivoDeEntrada, iCasa, iApartamento, iFlat, iStudio, iTerreno;
 		std::ofstream arquivoDeSaida, oCasa, oApartamento, oFlat, oStudio, oTerreno;
 		
@@ -26,9 +25,7 @@ class GerenteDePersistencia {
         virtual ~GerenteDePersistencia();
 
         int salvaListaDeImoveis(std::list<Imovel*> salvarMeusImoveis);
-        int recuperaListaDeImoveis(void);
-        std::list<Imovel*> getListaImoveis(void);
-
+        std::list<Imovel*> recuperaListaDeImoveis(void);
 
 };
 

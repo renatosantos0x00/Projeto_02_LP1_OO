@@ -1,5 +1,6 @@
 #include <iostream>
 #include <list>
+
 #include "GerenteDePersistencia.h"
 #include "Imovel.h"
 #include "Casa.h"
@@ -10,11 +11,17 @@ using namespace std;
 int main(void){
 	GerenteDePersistencia gp;
 	
-	Imovel *im1, *im2, *im3, *im4;
-		im1 = new Casa();
-		im2 = new Terreno();
-		im3 = new Casa();
-		im4 = new Terreno();		
+	list<Imovel*> meusImoveis;
+	list<Imovel*>::iterator it;
+
+	Imovel *im1, *im2, *im3, *im4, *ptrImoveis;
+		
+		im1 = new Casa(2, 2, 2, 2, 1, 2,1, "a", "b", "c", "d", 2);
+		//int tipoDeImovel, int tipoDeOferta, double valor,
+		//double area,string cidade, string bairro,string logradouro,string cep,int numero
+		im2 = new Terreno(3, 1, 11, 22, "a", "a", "a", "a", 2222);
+		im3 = new Casa(2, 2, 2, 2, 1, 2,1, "a", "b", "c", "d", 2);
+		im4 = new Terreno(3, 1, 11, 22, "aaa", "aaaa", "aaa", "aaa", 2222);		
 	
 	list<Imovel*> l;
 	l.push_back(im1);
@@ -23,8 +30,18 @@ int main(void){
 	l.push_back(im4);
 
 	cout<< "TAMANHO: "<<l.size()<<endl;
-	
+	//l.sort();
 	cout<<"RETORNO:"<<gp.salvaListaDeImoveis(l)<<endl;
+	
+	//cout<<"RECUPERADO: "<< gp.recuperaListaDeImoveis() << endl;
+	meusImoveis = gp.recuperaListaDeImoveis();
+	cout<< "MEUS IMOVEIS: "<< meusImoveis.size() <<endl;
+
+	for(it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+		ptrImoveis = *it;
+		cout<< endl;
+		cout<< ptrImoveis->getDescricao() <<endl;						
+	}
 	
 	return 0;
 }

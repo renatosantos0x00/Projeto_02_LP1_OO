@@ -13,15 +13,16 @@ GerenteDePersistencia::~GerenteDePersistencia(){
 //Metodos da classe
 
 int GerenteDePersistencia::salvaListaDeImoveis(std::list<Imovel*> salvarMeusImoveis){
+	std::cout << std::endl << "Tamanhoooo " << salvarMeusImoveis.size() << std::endl;
 	Imovel *imoveis;
 	std::list<Imovel*>::iterator it;
 	unsigned long int tamanho = 0;
 
-	oCasa.open("dados/casa.bin", ios::binary | ios::out | ios::app);	
-	oApartamento.open("dados/apartamento.bin", ios::binary | ios::out | ios::app);
-	oFlat.open("dados/flat.bin", ios::binary | ios::out | ios::app);
-	oStudio.open("dados/studio.bin", ios::binary | ios::out | ios::app);
-	oTerreno.open("dados/terreno.bin", ios::binary | ios::out | ios::app);
+	oCasa.open("dados/casa.bin", ios::binary | ios::out );	
+	oApartamento.open("dados/apartamento.bin", ios::binary | ios::out );
+	oFlat.open("dados/flat.bin", ios::binary | ios::out );
+	oStudio.open("dados/studio.bin", ios::binary | ios::out );
+	oTerreno.open("dados/terreno.bin", ios::binary | ios::out );
 	
 	/*
 	if(oCasa.is_open() && oApartamento.is_open() && oFlat.is_open() 
@@ -33,29 +34,25 @@ int GerenteDePersistencia::salvaListaDeImoveis(std::list<Imovel*> salvarMeusImov
 	*/
 	for(it = salvarMeusImoveis.begin(); it != salvarMeusImoveis.end(); it++){
 		imoveis = *it;
-
-		if(imoveis->getTipoDeImovel() == TIPO_CASA){
-
-			tamanho = imoveis->getTamanhoDaClasse();
+		
+		if(imoveis->getTipoDeImovel() == 1){
+			tamanho = sizeof(Casa);
 			oCasa.write((const char *)imoveis, tamanho);
 
-		}else if(imoveis->getTipoDeImovel() == TIPO_APARTAMENTO){
-			tamanho = imoveis->getTamanhoDaClasse();
+		}else if(imoveis->getTipoDeImovel() == 2){
+			tamanho = sizeof(Apartamento);
 			oApartamento.write((const char *)imoveis, tamanho);
 
-		}else if(imoveis->getTipoDeImovel() == TIPO_TERRENO){
-			
-			tamanho = imoveis->getTamanhoDaClasse();
+		}else if(imoveis->getTipoDeImovel() == 3){
+			tamanho = sizeof(Terreno);
 			oTerreno.write((const char *)imoveis, tamanho);
 
-		}else if(imoveis->getTipoDeImovel() == TIPO_FLAT){
-
-			tamanho = imoveis->getTamanhoDaClasse();
+		}else if(imoveis->getTipoDeImovel() == 4){
+			tamanho = sizeof(Flat);
 			oFlat.write((const char *)imoveis, tamanho);
 
-		}else if(imoveis->getTipoDeImovel() == TIPO_STUDIO){
-
-			tamanho = imoveis->getTamanhoDaClasse();
+		}else if(imoveis->getTipoDeImovel() == 5){
+			tamanho = sizeof(Studio);
 			oStudio.write((const char *)imoveis, tamanho);
 
 		}
@@ -75,37 +72,42 @@ int GerenteDePersistencia::salvaListaDeImoveis(std::list<Imovel*> salvarMeusImov
 
 //falta terminar
 
-int GerenteDePersistencia::recuperaListaDeImoveis(void){
-	unsigned long int tamanho=0;
-	Imovel *imoveis;
+std::list<Imovel*> GerenteDePersistencia::recuperaListaDeImoveis(void){
+	long tamanho = 0;
+	std::list<Imovel*> listaRecuperada;
+	Imovel *imovel;
 
-	Casa *ptrCasa, casa;
-	Apartamento *ptrApartamento, apartamento;
-	Flat *ptrFlat, flat;
-	Studio *ptrStudio, ;
+	Casa *ptrCasa;
+	Apartamento *ptrApartamento;
+	Flat *ptrFlat;
+	Studio *ptrStudio;
 	Terreno *ptrTerreno;
-
-	iCasa.open("dados/casa.bin", ios::binary | ios::in);	
+	
 	iApartamento.open("dados/apartamento.bin", ios::binary | ios::in);
 	iFlat.open("dados/flat.bin", ios::binary | ios::in);
 	iStudio.open("dados/studio.bin", ios::binary | ios::in);
 	iTerreno.open("dados/terreno.bin", ios::binary | ios::in);
+	iCasa.open("dados/casa.bin", ios::binary | ios::in);
 	
-
+/*
 	if(iCasa.is_open() && iApartamento.is_open() && iFlat.is_open() 
 		&& iStudio.is_open() && iTerreno.is_open())
 	{
-		while(1){
-			if(!iCasa.eof()){
-				break;
-			
-			}
 
+*/	;
+		while(!iCasa.eof()){
+			std::cout << "passei aq casa" << std::endl;
 			
-			iCasa.read( , );
+
+			tamanho = sizeof(Casa);
+			imovel = new Casa();
+				
+			iCasa.read((char *)imovel, tamanho);
+			//this->meusImoveis.push_back(ptrCasa);
+			listaRecuperada.push_back(imovel);
 
 		}
-		
+
 		while(1){
 
 			if(!iApartamento.eof()){
@@ -113,9 +115,12 @@ int GerenteDePersistencia::recuperaListaDeImoveis(void){
 			
 			}
 
+			tamanho = sizeof(Apartamento);
+			ptrApartamento = new Apartamento();
 
-
-
+			iApartamento.read((char *)ptrApartamento, tamanho);
+			//this->meusImoveis.push_back(ptrApartamento);
+			listaRecuperada.push_back(ptrApartamento);
 
 		}
 
@@ -125,9 +130,13 @@ int GerenteDePersistencia::recuperaListaDeImoveis(void){
 				break;
 			
 			}
+	
+			tamanho = sizeof(Flat);
+			ptrFlat = new Flat();
 
-
-
+			iFlat.read((char *)ptrFlat, tamanho);
+			//this->meusImoveis.push_back(ptrFlat);
+			listaRecuperada.push_back(ptrFlat);
 
 
 		}
@@ -139,36 +148,41 @@ int GerenteDePersistencia::recuperaListaDeImoveis(void){
 			
 			}
 
+			tamanho = sizeof(Studio);
+			ptrStudio = new Studio();
 
-
-
+			iStudio.read((char*)ptrStudio, tamanho);
+			//this->meusImoveis.push_back(ptrStudio);
+			listaRecuperada.push_back(ptrStudio);
 
 		}
 
 		while(1){
-
-			if(!iTerreno.eof()){
+			std::cout << "passei aq terreno" << std::endl;
+			if(iTerreno.eof()){
 				break;
 			
 			}
+			tamanho = sizeof(Terreno);
+			ptrTerreno = new Terreno();
 			
-
-
-
-
+			iTerreno.read((char*)ptrTerreno, tamanho);
+			//this->meusImoveis.push_back(ptrTerreno);
+			listaRecuperada.push_back(ptrTerreno);
 		}
 
-
+/*
 	}else{
 	
 		return -1;
 	}
+*/	
 
-	return 1;
-}
-
-
-
-std::list<Imovel*> GerenteDePersistencia::getListaImoveis(void){
-	return this->meusImoveis;
+	iCasa.close();	
+	iApartamento.close();
+	iFlat.close();
+	iStudio.close();
+	iTerreno.close();
+	std::cout << "Lista recuperada " << listaRecuperada.size() << std::endl;
+	return listaRecuperada;
 }
