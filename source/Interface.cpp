@@ -40,6 +40,7 @@ void Interface::ExibeMenuSubItem2(){
     printf("2 - Pesquisar por cidade\n\n");
     printf("3 - Voltar\n");
     printf("-------------------------------------------------\n");
+    printf("Digite a opcao desejada: ");
 }
 
 void Interface::ExibeMenuSubSubItem2(){
@@ -55,6 +56,7 @@ void Interface::ExibeMenuSubSubItem2(){
     printf("6 - Todos os tipos de imóveis disponíveis\n\n");
     printf("7 - Voltar\n");
     printf("-------------------------------------------------\n");
+    printf("Digite a opcao desejada: ");
 }
 
 void Interface::ExibeMenuSubItem4(){
@@ -62,38 +64,16 @@ void Interface::ExibeMenuSubItem4(){
     printf("-------------------------------------------------\n");
     printf("Menu de imoveis disponveis para venda\n");
     printf("-------------------------------------------------\n");
-    printf("1 - Casas disponveis\n");
-    printf("2 - Apartamentos disponiveis\n");
-    printf("3 - Terrenos disponveis\n");
-    printf("4 - Flats disponiveis\n");
-    printf("5 - Studio dispoiveis\n\n");
-    printf("6 - Voltar\n");
-    printf("-------------------------------------------------\n");
+    printf("Digite a opcao desejada: ");
 }
 
 void Interface::ExibeMenuSubItem5(){
     //Item imoveis disponiveis para alugar - 5
     printf("-------------------------------------------------\n");
-    printf("Menu de imoveis disponveis para alugar\n");
+    printf("Menu de imoveis disponveis para alugar por bairro\n");
     printf("-------------------------------------------------\n");
-    printf("1 - Todos os imoveis\n");
-    printf("2 - Pesquisar por bairro\n\n");
-    printf("3 - Voltar\n");
-    printf("-------------------------------------------------\n");
+    printf("Entre com o Bairro: ");
 }
 
-void Interface::ExibeMenuSubSubItem5(){
-    //Sub item 2 de imoveis para alugar (Pesquisar por bairro)
-    printf("-------------------------------------------------\n");
-    printf("Menu de imoveis disponveis para alugar\n");
-    printf("-------------------------------------------------\n");
-    printf("1 - Casas disponveis\n");
-    printf("2 - Apartamentos disponiveis\n");
-    printf("3 - Terrenos disponveis\n");
-    printf("4 - Flats disponiveis\n");
-    printf("5 - Studio dispoiveis\n\n");
-    printf("6 - Voltar\n");
-    printf("-------------------------------------------------\n");
-}
 
 

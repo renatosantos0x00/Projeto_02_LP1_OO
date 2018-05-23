@@ -133,6 +133,140 @@ int main(int argc, char const *argv[])
 							cout<<"Numero: ";
 							cin>>numero;
 							cout<<"Valor do imovel: ";
+							cin>>val#include <iostream>
+#include <list>
+
+#define TIPO_TODOSIMOVEIS 0
+#define TIPO_CASA 1
+#define TIPO_APARTAMENTO 2
+#define TIPO_TERRENO 3
+#define TIPO_FLAT 4
+#define TIPO_STUDIO 5
+
+#include "SistemaImobiliaria.h"
+#include "Interface.h"
+#include "Casa.h"
+#include "Apartamento.h"
+#include "Flat.h"
+#include "Studio.h"
+#include "Terreno.h"
+
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+    Interface interface;
+	SistemaImobiliaria imobiliaria;
+	Imovel *imovel;
+	list <Imovel*> meusImoveis;
+
+	int opcaoItem, opcaoSubItem,numero,tipoDeOferta, tipoDeImovel;
+	double valor;
+	string cidade, bairro, logradouro, cep;
+
+	while(1){
+		interface.ExibeMenuItem();
+
+		cin >> opcaoItem;
+
+		switch(opcaoItem){
+			case 1://Cadastra imoveis
+				while(1){
+					interface.ExibeMenuSubItem1();
+
+					cin>>opcaoSubItem;
+					
+					switch(opcaoSubItem){
+						case 1:{
+							tipoDeImovel = TIPO_CASA;
+							int numeroDePavimentos,numeroDeQuartos;
+							double areaDoTerreno,areaConstruida;
+							
+							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
+							cin>>cidade;
+							cout<<"Bairro: ";
+							cin>>bairro;
+							cout<<"Lougradouro: ";
+							cin>>logradouro;
+							cout<<"CEP: ";
+							cin>>cep;
+							cout<<"Numero: ";
+							cin>>numero;
+							cout<<"Valor do imovel: ";
+							cin>>valor;
+							cout<<"Se o imovel for para vender, digite 1, se for para alugar, digite 2: ";
+							cin>>tipoDeOferta;
+							cout<<"Agora com algumas informacoes extra, diga o numero de pavimentos da sua casa: ";
+							cin>>numeroDePavimentos;
+							cout<<"Numero de quarto: ";
+							cin>>numeroDeQuartos;
+							cout<<"Area total do terreno: ";
+							cin>>areaDoTerreno;
+							cout<<"Area construida: ";
+							cin>>areaConstruida;
+							cout<<"Obrigado!" << endl;
+
+							imovel = new Casa(numeroDePavimentos, numeroDeQuartos, areaDoTerreno,
+											areaConstruida, tipoDeImovel, tipoDeOferta, valor, cidade,
+											bairro, logradouro, cep, numero);
+							
+							imobiliaria.cadastraImovel(imovel);
+
+							break;
+						}
+						case 2:{
+							tipoDeImovel = TIPO_APARTAMENTO;
+							string posicao;
+							int numeroDeQuartos,vagasGaragem,andar;
+							double valorCondominio,area;
+							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
+							cin>>cidade;
+							cout<<"Bairro: ";
+							cin>>bairro;
+							cout<<"Lougradouro: ";
+							cin>>logradouro;
+							cout<<"CEP: ";
+							cin>>cep;
+							cout<<"Numero: ";
+							cin>>numero;
+							cout<<"Valor do imovel: ";
+							cin>>valor;
+							cout<<"Se o imovel for para vender, digite 1, se for para alugar, digite 2: ";
+							cin>>tipoDeOferta;
+							cout<<"Agora algumas informacoes extras, indique a posicao do apartamento (norte, sul, leste, oeste): ";
+							cin>>posicao;
+							cout<<"Numero de quarto: ";
+							cin>>numeroDeQuartos;
+							cout<<"Area total do terreno: ";
+							cin>>area;
+							cout<<"Numero de vagas na garagem: ";
+							cin>>vagasGaragem;
+							cout<<"Qual o andar: ";
+							cin>>andar;
+							cout<<"Valor do condominio: ";
+							cin>>valorCondominio;
+							cout<<"Obrigado!" << endl;
+							imovel = new Apartamento(posicao, numeroDeQuartos, valorCondominio,
+													vagasGaragem, area, andar, tipoDeImovel, tipoDeOferta, 
+													valor, cidade, bairro, logradouro,
+													cep, numero);
+							imobiliaria.cadastraImovel(imovel);
+							break;
+						}
+						case 3:{
+							tipoDeImovel = TIPO_TERRENO;
+							double area;
+							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
+							cin>>cidade;
+							cout<<"Bairro: ";
+							cin>>bairro;
+							cout<<"Lougradouro: ";
+							cin>>logradouro;
+							cout<<"CEP: ";
+							cin>>cep;
+							cout<<"Numero: ";
+							cin>>numero;
+							cout<<"Valor do imovel: ";
 							cin>>valor;
 							cout<<"Se o imovel for para vender, digite 1, se for para alugar, digite 2: ";
 							cin>>tipoDeOferta;
@@ -250,12 +384,12 @@ int main(int argc, char const *argv[])
 
 				break;
 
-			case 2://Consulta imoveis disponíveis
+			case 2://Consulta imoveis disponíveis por tipo
 				interface.ExibeMenuSubItem2();
 				cin>>opcaoSubItem;
 						
 				switch(opcaoSubItem){
-					case 1:{ //Todos os Imóveis
+					case 1:{//Todos os Imóveis
 						interface.ExibeMenuSubSubItem2();
 						cin >> opcaoSubItem;
 
@@ -420,74 +554,38 @@ int main(int argc, char const *argv[])
 				
 				break;
 			}
-			case 4:{//Consultar imoveis disponiveis para venda
+			case 4:{//Consultar imoveis disponiveis para venda por bairro
 				interface.ExibeMenuSubItem4();
-				cin >> opcaoItem;
+				cin >> bairro;
 
-				switch(opcaoItem){
-					case 1:{//Casas disponíveis
-					}
-					case 2:{//Apartamentos disponíveis
-					}
-					case 3:{//Terrenos disponíveis
-					}
-					case 4:{//Flats disponíveis
-					}
-					case 5:{//Studios disponíveis
-					}
-					case 6:{
-						break;
-					}
-					default:{
-						cout << "Opcao invalida." << endl;
-						break;
-					}
-				}
+                meusImoveis = imobiliaria.getDescricaoPorBairro(bairro, IMOVEL_PARA_VENDER);
+                
+                Imovel *imovel;
+
+                for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+                    imovel = *it;
+                    cout << imovel->getDescricao() << endl;							
+                }
 			}
-			case 5:{//Consutar imoveis disponíveis para alugar
+			
+			case 5:{//Consultar imoveis disponíveis para alugar por bairro
 				interface.ExibeMenuSubItem5();
-				cin >> opcaoItem;
+				cin >> bairro;
 
-				switch(opcaoItem){
-					case 1:{//Todos os imóveis
-						interface.ExibeMenuSubSubItem5();
-						cin >> opcaoItem;
+                meusImoveis = imobiliaria.getDescricaoPorBairro(bairro, IMOVEL_PARA_ALUGAR);
+                
+                Imovel *imovel;
 
-						switch(opcaoItem){
-							case 1:{//Casas disponíveis
-							}
-							case 2:{//Apartamentos disponíveis
-							}
-							case 3:{//Terrenos disponíveis
-							}
-							case 4:{//Flats disponíveis
-							}
-							case 5:{//Studios disponíveis
-							}
-							case 6:{
-								break;
-							}
-							default:{
-								cout << "Opcao invalida." << endl;
-								break;
-							}
-						}
-					}
-					case 2:{//Pesquisar por bairro
-
-					}
-					case 3:{
-						break;
-					}
-					default:{
-						cout << "Opcao invalida." << endl;
-						break;
-					}
-				}
+                for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+                    imovel = *it;
+                    cout << imovel->getDescricao() << endl;							
+                }
 			}
+
 			case 6:{
 				break;
 			}
+
 			default:{
 				cout << "Opcao invalida." << endl;
 				break;
@@ -501,3 +599,5 @@ int main(int argc, char const *argv[])
 
 	return 0;
 }
+r;
+						
