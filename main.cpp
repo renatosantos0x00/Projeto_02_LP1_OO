@@ -431,6 +431,7 @@ int main(int argc, char const *argv[])
                     imovel = *it;
                     cout << imovel->getDescricao() << endl;							
                 }
+				break;
 			}
 			
 			case 5:{//Consultar imoveis disponíveis para alugar por bairro
@@ -445,6 +446,7 @@ int main(int argc, char const *argv[])
                     imovel = *it;
                     cout << imovel->getDescricao() << endl;							
                 }
+				break;
 			}
 
 			case 6:{
@@ -460,7 +462,6 @@ int main(int argc, char const *argv[])
 		if(opcaoItem == 6) break;
 
 	}
-
 
 	return 0;
 }
