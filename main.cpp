@@ -331,7 +331,7 @@ int main(int argc, char const *argv[])
 						string cidade;
 						interface.ExibeMenuSubSubItem2();
 						cin >> opcaoSubItem;
-						cout << "Digite a cidade em deseja procurar: ";
+						cout << "Digite a cidade que deseja procurar: ";
 						cin >> cidade;
 
 						switch(opcaoSubItem){
@@ -422,10 +422,10 @@ int main(int argc, char const *argv[])
 				break;
 			}
 			case 4:{//Consultar imoveis disponiveis para venda por bairro
-				interface.ExibeMenuSubItem4();
+				interface.ExibeMenuSubItem6();
 				cin >> bairro;
 
-                meusImoveis = imobiliaria.getDescricaoPorBairro(bairro, IMOVEL_PARA_VENDER, TIPO_TODOSIMOVEIS);
+                meusImoveis = imobiliaria.getDescricaoPorBairro(bairro, IMOVEL_PARA_VENDER);
                 
                 Imovel *imovel;
 
@@ -440,7 +440,7 @@ int main(int argc, char const *argv[])
 				interface.ExibeMenuSubItem5();
 				cin >> bairro;
 
-                meusImoveis = imobiliaria.getDescricaoPorBairro(bairro, IMOVEL_PARA_ALUGAR, TIPO_TODOSIMOVEIS);
+                meusImoveis = imobiliaria.getDescricaoPorBairro(bairro, IMOVEL_PARA_ALUGAR);
                 
                 Imovel *imovel;
 
@@ -450,8 +450,33 @@ int main(int argc, char const *argv[])
                 }
 				break;
 			}
+			case 6:{//Consultar imoveis disponiveis para venda
+				interface.ExibeMenuSubItem4();
 
-			case 6:{
+                meusImoveis = imobiliaria.getDescricaoPorOferta(IMOVEL_PARA_VENDER);
+                
+                Imovel *imovel;
+
+                for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+                    imovel = *it;
+                    cout << imovel->getDescricao() << endl;							
+                }
+				break;
+			}	
+			case 7:{//Consultar imoveis disponiveis para alugar
+				interface.ExibeMenuSubItem7();
+
+                meusImoveis = imobiliaria.getDescricaoPorOferta(IMOVEL_PARA_ALUGAR);
+                
+                Imovel *imovel;
+
+                for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+                    imovel = *it;
+                    cout << imovel->getDescricao() << endl;							
+                }
+				break;
+			}	
+			case 8:{
 				break;
 			}
 
@@ -461,7 +486,7 @@ int main(int argc, char const *argv[])
 			}
 		}//Switch maior
 
-		if(opcaoItem == 6) break;
+		if(opcaoItem == 8) break;
 
 	}
 
