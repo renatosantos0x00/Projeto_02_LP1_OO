@@ -22,6 +22,7 @@ int GerenteDePersistencia::salvaListaDeImoveis(std::list<Imovel*> salvarMeusImov
 	oFlat.open("dados/flat.bin", ios::binary | ios::out | ios::app);
 	oStudio.open("dados/studio.bin", ios::binary | ios::out | ios::app);
 	oTerreno.open("dados/terreno.bin", ios::binary | ios::out | ios::app);
+	
 	/*
 	if(oCasa.is_open() && oApartamento.is_open() && oFlat.is_open() 
 		&& oStudio.is_open() && oTerreno.is_open()){
@@ -33,21 +34,21 @@ int GerenteDePersistencia::salvaListaDeImoveis(std::list<Imovel*> salvarMeusImov
 	for(it = salvarMeusImoveis.begin(); it != salvarMeusImoveis.end(); it++){
 		imoveis = *it;
 
-		if(imoveis->getTipoDeImovel() == TIPO_CASA || 1){
+		if(imoveis->getTipoDeImovel() == TIPO_CASA){
 
 			tamanho = imoveis->getTamanhoDaClasse();
 			oCasa.write((const char *)imoveis, tamanho);
 
-		}else if(imoveis->getTipoDeImovel() == TIPO_APARTAMENTO || 1){
+		}else if(imoveis->getTipoDeImovel() == TIPO_APARTAMENTO){
 			tamanho = imoveis->getTamanhoDaClasse();
 			oApartamento.write((const char *)imoveis, tamanho);
 
-		}else if(/*imoveis->getTipoDeImovel() == TIPO_TERRENO ||*/ 1){
+		}else if(imoveis->getTipoDeImovel() == TIPO_TERRENO){
 			
 			tamanho = imoveis->getTamanhoDaClasse();
 			oTerreno.write((const char *)imoveis, tamanho);
 
-		}else if(imoveis->getTipoDeImovel() == TIPO_FLAT || 1){
+		}else if(imoveis->getTipoDeImovel() == TIPO_FLAT){
 
 			tamanho = imoveis->getTamanhoDaClasse();
 			oFlat.write((const char *)imoveis, tamanho);
@@ -67,6 +68,8 @@ int GerenteDePersistencia::salvaListaDeImoveis(std::list<Imovel*> salvarMeusImov
 	oFlat.close();
 	oStudio.close();
 	oTerreno.close();
+	
+	return 1;
 }
 
 
@@ -76,25 +79,92 @@ int GerenteDePersistencia::recuperaListaDeImoveis(void){
 	unsigned long int tamanho=0;
 	Imovel *imoveis;
 
-	arquivoDeEntrada.open("dados/imoveis.bin", ios::binary | ios::in );
+	Casa *ptrCasa, casa;
+	Apartamento *ptrApartamento, apartamento;
+	Flat *ptrFlat, flat;
+	Studio *ptrStudio, ;
+	Terreno *ptrTerreno;
 
-	if(!arquivoDeEntrada.is_open()){
-		
+	iCasa.open("dados/casa.bin", ios::binary | ios::in);	
+	iApartamento.open("dados/apartamento.bin", ios::binary | ios::in);
+	iFlat.open("dados/flat.bin", ios::binary | ios::in);
+	iStudio.open("dados/studio.bin", ios::binary | ios::in);
+	iTerreno.open("dados/terreno.bin", ios::binary | ios::in);
+	
+
+	if(iCasa.is_open() && iApartamento.is_open() && iFlat.is_open() 
+		&& iStudio.is_open() && iTerreno.is_open())
+	{
 		while(1){
-			if(!arquivoDeEntrada.eof()){
+			if(!iCasa.eof()){
 				break;
+			
 			}
 
-			//arquivoDeEntrada.read();
+			
+			iCasa.read( , );
 
 		}
+		
+		while(1){
+
+			if(!iApartamento.eof()){
+				break;
+			
+			}
+
+
+
+
+
+		}
+
+		while(1){
+
+			if(!iFlat.eof()){
+				break;
+			
+			}
+
+
+
+
+
+		}
+
+		while(1){
+
+			if(!iStudio.eof()){
+				break;
+			
+			}
+
+
+
+
+
+		}
+
+		while(1){
+
+			if(!iTerreno.eof()){
+				break;
+			
+			}
+			
+
+
+
+
+		}
+
 
 	}else{
 	
 		return -1;
 	}
 
-
+	return 1;
 }
 
 

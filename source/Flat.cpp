@@ -87,7 +87,9 @@ std::string Flat::getDescricao(){
                     "\nTV a Cabo: "+tvACabo+
                     "\nLavanderia: "+lavanderia+
                     "\nLimpeza: "+limpeza+
-                    "\nRecepcao 24 horas: "+recepcao24;
+                    "\nRecepcao 24 horas: "+recepcao24 +
+                    "\nTipo de oferta: " + tipoDeOferta +
+						"\nValor do imovel: " + std::to_string(valor);
 
     return flat+endereco.getEndereco();
 

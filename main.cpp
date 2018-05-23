@@ -333,9 +333,8 @@ int main(int argc, char const *argv[])
 								break;
 							}
 						}
-
-						break;
 					}
+					break;
 
 					case 2:{//Imoveis disponíveis por cidade
 						string cidade;
@@ -421,9 +420,8 @@ int main(int argc, char const *argv[])
 								break;
 							}
 						}
-						
-						break;
 					}
+					break;
 
 					case 3:{
 						break;
@@ -445,12 +443,12 @@ int main(int argc, char const *argv[])
 					imovel = *it;
 					cout << imovel->getDescricao() << endl;							
 				}
-				
-				break;
 			}
+			break;
 
 			case 4:{//Consultar imoveis disponiveis para venda por bairro
 				interface.ExibeMenuSubItem6();
+				cout << "Digite o bairro que deseja procurar: ";
 				cin >> bairro;
 
                 meusImoveis = imobiliaria.getDescricaoPorBairro(bairro, IMOVEL_PARA_VENDER);
@@ -461,11 +459,12 @@ int main(int argc, char const *argv[])
                     imovel = *it;
                     cout << imovel->getDescricao() << endl;							
                 }
-				break;
-			}	
+			}
+			break;
 
 			case 5:{//Consultar imoveis disponíveis para alugar por bairro
 				interface.ExibeMenuSubItem5();
+				cout << "Digite o bairro que deseja procurar: ";
 				cin >> bairro;
 
                 meusImoveis = imobiliaria.getDescricaoPorBairro(bairro, IMOVEL_PARA_ALUGAR);
@@ -476,8 +475,8 @@ int main(int argc, char const *argv[])
                     imovel = *it;
                     cout << imovel->getDescricao() << endl;							
                 }
-				break;
 			}
+			break;
 
 			case 6:{//Consultar imoveis disponiveis para venda
 				interface.ExibeMenuSubItem6();
@@ -490,8 +489,8 @@ int main(int argc, char const *argv[])
                     imovel = *it;
                     cout << imovel->getDescricao() << endl;							
                 }
-				break;
 			}
+			break;
 
 			case 7:{//Consultar imoveis disponiveis para alugar
 				interface.ExibeMenuSubItem7();
@@ -504,8 +503,8 @@ int main(int argc, char const *argv[])
                     imovel = *it;
                     cout << imovel->getDescricao() << endl;							
                 }
-				break;
-			}	
+			}
+			break;
 
 			case 8:{
 				break;

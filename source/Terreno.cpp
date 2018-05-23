@@ -26,7 +26,9 @@ void Terreno::setArea(double area){
 }
 
 string Terreno::getDescricao(){
-	string terreno = "TERRENO \n\nArea: " + to_string(area);
+	string terreno = "TERRENO \n\nArea: " + to_string(area) +
+	"\nTipo de oferta: " + tipoDeOferta +
+	"\nValor do imovel: " + std::to_string(valor);
 
 	return terreno+endereco.getEndereco();
 }

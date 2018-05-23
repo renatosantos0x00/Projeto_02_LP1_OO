@@ -118,7 +118,9 @@ string Studio::getDescricao(){
 					"\nRecep��o 24 horas: " + recepcao24+ 
 					"\nPiscina: " + piscina + 
 					"\nSauna: " + sauna + 
-					"\nSala de ginastica: " + salaDeGinastica;
+					"\nSala de ginastica: " + salaDeGinastica +
+					"\nTipo de oferta: " + tipoDeOferta +
+					"\nValor do imovel: " + std::to_string(valor);
 
 	return studio+endereco.getEndereco();
 

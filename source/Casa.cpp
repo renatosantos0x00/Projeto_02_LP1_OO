@@ -37,7 +37,9 @@ std::string Casa::getDescricao(void){
 	std::string casa = 	"CASA \n\nNumero de Quartos: " + std::to_string(numeroDeQuartos) +
 						"\nNumero de Pavimentos: " + std::to_string(numeroDePavimentos) +
 						"\nArea do Terreno: " + std::to_string(areaDoTerreno) +
-						"\nArea Construida: " + std::to_string(areaConstruida);
+						"\nArea Construida: " + std::to_string(areaConstruida) +
+						"\nTipo de oferta: " + tipoDeOferta +
+						"\nValor do imovel: " + std::to_string(valor);
 
 	return casa + endereco.getEndereco();
 

@@ -34,8 +34,6 @@ class Imovel {
         virtual string getTipoDeOferta(void);
         virtual Endereco getEndereco(void);
         virtual int getTipoDeImovel(void);
-
-
 };
 
 
