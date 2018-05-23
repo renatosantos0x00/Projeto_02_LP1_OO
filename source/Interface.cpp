@@ -7,11 +7,13 @@ void Interface::ExibeMenuItem(){
     printf("Main Menu\n");
     printf("-------------------------------------------------\n");
     printf("1 - Cadastrar imovel\n");
-    printf("2 - Consutar imoveis disponiveis para venda e aluguel \n");
+    printf("2 - Consutar imoveis disponiveis \n");
     printf("3 - Consultar descricao de todos os imoveis\n");
     printf("4 - Consultar imoveis disponiveis para venda por bairro\n");
     printf("5 - Consutar imoveis disponíveis para alugar por bairro\n\n");
-    printf("6 - Sair\n");
+    printf("6 - Consutar imoveis disponiveis para vender\n");
+    printf("7 - Consutar imoveis disponiveis para alugar \n");
+    printf("8 - Sair\n");
     printf("-------------------------------------------------\n");
     printf("Digite a opcao desejada: ");
 
@@ -64,15 +66,27 @@ void Interface::ExibeMenuSubItem4(){
     printf("-------------------------------------------------\n");
     printf("Menu de imoveis disponveis para venda\n");
     printf("-------------------------------------------------\n");
-    printf("Digite a opcao desejada: ");
 }
 
 void Interface::ExibeMenuSubItem5(){
-    //Item imoveis disponiveis para alugar - 5
+    //Item imoveis disponiveis para alugar por bairro - 5
     printf("-------------------------------------------------\n");
     printf("Menu de imoveis disponveis para alugar por bairro\n");
     printf("-------------------------------------------------\n");
+    printf("Entre com o Bairro: ");
 }
-
+void Interface::ExibeMenuSubItem6(){
+    //Item imoveis disponiveis para vender por bairro - 6
+    printf("-------------------------------------------------\n");
+    printf("Menu de imoveis disponveis para vender por bairro\n");
+    printf("-------------------------------------------------\n");
+    printf("Entre com o Bairro: ");
+}
+void Interface::ExibeMenuSubItem7(){
+    // Item imoveis disponveis para aluguel - 4
+    printf("-------------------------------------------------\n");
+    printf("Menu de imoveis disponveis para aluguel\n");
+    printf("-------------------------------------------------\n");
+}
 
 
