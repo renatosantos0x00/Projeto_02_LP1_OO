@@ -16,7 +16,7 @@ class SistemaImobiliaria{
 		void cadastraImovel(Imovel *imovel);
 		list <Imovel*> getImovel(void);
 		list <Imovel*> getDescricao();
-		list <Imovel*> getDescricaoPorBairro(string bairro, int tipoDeOferta);
+		list <Imovel*> getDescricaoPorBairro(string bairro, int tipoDeOferta, int tipoDeImovel);
 		list <Imovel*> getDescricaoPorCidade(string cidade, int tipoDeImovel);
 		list <Imovel*> getDescricaoPorTipo(int tipoDemovel);
 };

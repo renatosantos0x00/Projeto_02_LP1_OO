@@ -46,7 +46,7 @@ list <Imovel*> SistemaImobiliaria::getDescricaoPorTipo(int tipoDeImovel){
 	return lista;
 }
 
-list<Imovel*> SistemaImobiliaria::getDescricaoPorBairro(string bairro, int tipoOferta){
+list<Imovel*> SistemaImobiliaria::getDescricaoPorBairro(string bairro, int tipoOferta, int tipoDeImovel){
 	Imovel *imovel;
 	Endereco endereco;
 	string tipoDeOferta;
@@ -60,13 +60,24 @@ list<Imovel*> SistemaImobiliaria::getDescricaoPorBairro(string bairro, int tipoO
 		tipoDeOferta = "Desconhecida";
 	}
 
-	for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+	if(tipoDeImovel == 0){
+		for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+			imovel = *it;
+			endereco = imovel->getEndereco();
+			
+			if(endereco.getBairro() == bairro && (imovel->getTipoDeOferta() == tipoDeOferta)){
+				lista.push_back(imovel);
+			}
+		}	
+	}else{
+		for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
 		imovel = *it;
 		endereco = imovel->getEndereco();
 		
-		if(endereco.getBairro() == bairro &&(imovel->getTipoDeOferta() == tipoDeOferta)){
+		if(endereco.getBairro() == bairro && (imovel->getTipoDeOferta() == tipoDeOferta && imovel->getTipoDeImovel() == tipoDeImovel)){
 			lista.push_back(imovel);
 		}
+	}
 	}
 	
 	return lista;

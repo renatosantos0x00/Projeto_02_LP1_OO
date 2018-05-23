@@ -72,7 +72,6 @@ void Interface::ExibeMenuSubItem5(){
     printf("-------------------------------------------------\n");
     printf("Menu de imoveis disponveis para alugar por bairro\n");
     printf("-------------------------------------------------\n");
-    printf("Entre com o Bairro: ");
 }
 
 

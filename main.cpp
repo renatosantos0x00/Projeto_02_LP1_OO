@@ -425,7 +425,7 @@ int main(int argc, char const *argv[])
 				interface.ExibeMenuSubItem4();
 				cin >> bairro;
 
-                meusImoveis = imobiliaria.getDescricaoPorBairro(bairro, IMOVEL_PARA_VENDER);
+                meusImoveis = imobiliaria.getDescricaoPorBairro(bairro, IMOVEL_PARA_VENDER, TIPO_TODOSIMOVEIS);
                 
                 Imovel *imovel;
 
@@ -440,7 +440,7 @@ int main(int argc, char const *argv[])
 				interface.ExibeMenuSubItem5();
 				cin >> bairro;
 
-                meusImoveis = imobiliaria.getDescricaoPorBairro(bairro, IMOVEL_PARA_ALUGAR);
+                meusImoveis = imobiliaria.getDescricaoPorBairro(bairro, IMOVEL_PARA_ALUGAR, TIPO_TODOSIMOVEIS);
                 
                 Imovel *imovel;
 
