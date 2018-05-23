@@ -10,7 +10,7 @@ void Interface::ExibeMenuItem(){
     printf("2 - Consutar imoveis disponiveis \n");
     printf("3 - Consultar descricao de todos os imoveis\n");
     printf("4 - Consultar imoveis disponiveis para venda por bairro\n");
-    printf("5 - Consutar imoveis disponíveis para alugar por bairro\n\n");
+    printf("5 - Consutar imoveis disponíveis para alugar por bairro\n");
     printf("6 - Consutar imoveis disponiveis para vender\n");
     printf("7 - Consutar imoveis disponiveis para alugar \n");
     printf("8 - Sair\n");
@@ -62,10 +62,11 @@ void Interface::ExibeMenuSubSubItem2(){
 }
 
 void Interface::ExibeMenuSubItem4(){
-    // Item imoveis disponveis para venda - 4
+    //Item imoveis disponiveis para alugar por bairro - 5
     printf("-------------------------------------------------\n");
-    printf("Menu de imoveis disponveis para venda\n");
+    printf("Menu de imoveis disponveis para vender por bairro\n");
     printf("-------------------------------------------------\n");
+    printf("Entre com o Bairro: ");
 }
 
 void Interface::ExibeMenuSubItem5(){
@@ -75,15 +76,16 @@ void Interface::ExibeMenuSubItem5(){
     printf("-------------------------------------------------\n");
     printf("Entre com o Bairro: ");
 }
+
 void Interface::ExibeMenuSubItem6(){
-    //Item imoveis disponiveis para vender por bairro - 6
+    //Item imoveis disponiveis para vendero - 6
     printf("-------------------------------------------------\n");
-    printf("Menu de imoveis disponveis para vender por bairro\n");
+    printf("Menu de imoveis disponveis para vender\n");
     printf("-------------------------------------------------\n");
-    printf("Entre com o Bairro: ");
 }
+
 void Interface::ExibeMenuSubItem7(){
-    // Item imoveis disponveis para aluguel - 4
+    // Item imoveis disponveis para aluguel - 7
     printf("-------------------------------------------------\n");
     printf("Menu de imoveis disponveis para aluguel\n");
     printf("-------------------------------------------------\n");

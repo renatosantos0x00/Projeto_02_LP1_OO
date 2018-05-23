@@ -265,8 +265,10 @@ int main(int argc, char const *argv[])
 
 								for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
 									imovel = *it;
-									cout << imovel->getDescricao() << endl;							
+									cout << imovel->getDescricao() << endl;						
 								}
+
+								break;
 							}
 							case 2:{
 								meusImoveis = imobiliaria.getDescricaoPorTipo(TIPO_APARTAMENTO);
@@ -276,6 +278,8 @@ int main(int argc, char const *argv[])
 									imovel = *it;
 									cout << imovel->getDescricao() << endl;							
 								}
+
+								break;
 							}
 							case 3:{
 								meusImoveis = imobiliaria.getDescricaoPorTipo(TIPO_TERRENO);
@@ -285,6 +289,8 @@ int main(int argc, char const *argv[])
 									imovel = *it;
 									cout << imovel->getDescricao() << endl;							
 								}
+
+								break;
 							}
 							case 4:{
 								meusImoveis = imobiliaria.getDescricaoPorTipo(TIPO_FLAT);
@@ -294,6 +300,8 @@ int main(int argc, char const *argv[])
 									imovel = *it;
 									cout << imovel->getDescricao() << endl;							
 								}
+
+								break;
 							}
 							case 5:{
 								meusImoveis = imobiliaria.getDescricaoPorTipo(TIPO_STUDIO);
@@ -303,6 +311,8 @@ int main(int argc, char const *argv[])
 									imovel = *it;
 									cout << imovel->getDescricao() << endl;							
 								}
+
+								break;
 							}
 							case 6:{
 								meusImoveis = imobiliaria.getDescricao();
@@ -312,14 +322,14 @@ int main(int argc, char const *argv[])
 									imovel = *it;
 									cout << imovel->getDescricao() << endl;							
 								}
+
+								break;
 							}
 							case 7:{
 								break;
 							}
 							default:{
 								cout << "Opcao invalida" << endl;
-							}
-							if(opcaoSubItem == 7){
 								break;
 							}
 						}
@@ -343,6 +353,8 @@ int main(int argc, char const *argv[])
 									imovel = *it;
 									cout << imovel->getDescricao() << endl;							
 								}
+
+								break;
 							}
 							case 2:{
 								meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_APARTAMENTO);
@@ -352,6 +364,8 @@ int main(int argc, char const *argv[])
 									imovel = *it;
 									cout << imovel->getDescricao() << endl;							
 								}
+
+								break;
 							}
 							case 3:{
 								meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_TERRENO);
@@ -361,6 +375,8 @@ int main(int argc, char const *argv[])
 									imovel = *it;
 									cout << imovel->getDescricao() << endl;							
 								}
+
+								break;
 							}
 							case 4:{
 								meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_FLAT);
@@ -370,6 +386,8 @@ int main(int argc, char const *argv[])
 									imovel = *it;
 									cout << imovel->getDescricao() << endl;							
 								}
+
+								break;
 							}
 							case 5:{
 								meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_STUDIO);
@@ -379,6 +397,8 @@ int main(int argc, char const *argv[])
 									imovel = *it;
 									cout << imovel->getDescricao() << endl;							
 								}
+
+								break;
 							}
 							case 6:{
 								meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_TODOSIMOVEIS);
@@ -386,30 +406,37 @@ int main(int argc, char const *argv[])
 
 								for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
 									imovel = *it;
-									cout << imovel->getDescricao() << endl;							
+									//cout << imovel->getDescricao() << endl;							
 								}
+
+								break;
 							}
+
 							case 7:{
 								break;
 							}
+
 							default:{
 								cout << "Opcao invalida" << endl;
-							}
-							if(opcaoSubItem == 7){
 								break;
 							}
 						}
+						
 						break;
 					}
+
 					case 3:{
 						break;
-					}				
+					}	
+
 					default:{
 						cout << "Opcao invalida" << endl;
+						break;
 					}
 				}
+
+				break;
 				
-			
 			case 3:{//Mostrar descrição de todos os imóveis
 				meusImoveis = imobiliaria.getDescricao();
 				Imovel *imovel;
@@ -421,6 +448,7 @@ int main(int argc, char const *argv[])
 				
 				break;
 			}
+
 			case 4:{//Consultar imoveis disponiveis para venda por bairro
 				interface.ExibeMenuSubItem6();
 				cin >> bairro;
@@ -450,8 +478,9 @@ int main(int argc, char const *argv[])
                 }
 				break;
 			}
+
 			case 6:{//Consultar imoveis disponiveis para venda
-				interface.ExibeMenuSubItem4();
+				interface.ExibeMenuSubItem6();
 
                 meusImoveis = imobiliaria.getDescricaoPorOferta(IMOVEL_PARA_VENDER);
                 
@@ -462,7 +491,8 @@ int main(int argc, char const *argv[])
                     cout << imovel->getDescricao() << endl;							
                 }
 				break;
-			}	
+			}
+
 			case 7:{//Consultar imoveis disponiveis para alugar
 				interface.ExibeMenuSubItem7();
 
@@ -476,6 +506,7 @@ int main(int argc, char const *argv[])
                 }
 				break;
 			}	
+
 			case 8:{
 				break;
 			}
@@ -492,5 +523,3 @@ int main(int argc, char const *argv[])
 
 	return 0;
 }
-
-						

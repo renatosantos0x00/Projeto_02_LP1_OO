@@ -39,7 +39,7 @@ std::string Casa::getDescricao(void){
 						"\nArea do Terreno: " + std::to_string(areaDoTerreno) +
 						"\nArea Construida: " + std::to_string(areaConstruida);
 
-	return casa+endereco.getEndereco();
+	return casa + endereco.getEndereco();
 
 
 }
