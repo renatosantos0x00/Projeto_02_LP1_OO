@@ -1,6 +1,5 @@
 #include "GerenteDePersistencia.h"
 
-
 GerenteDePersistencia::GerenteDePersistencia(){
 
 
@@ -16,7 +15,7 @@ int GerenteDePersistencia::salvaListaDeImoveis(std::list<Imovel*> salvarMeusImov
 	std::cout << std::endl << "Tamanhoooo " << salvarMeusImoveis.size() << std::endl;
 	Imovel *imoveis;
 	std::list<Imovel*>::iterator it;
-	unsigned long int tamanho = 0;
+	int tamanho = 0;
 
 	oCasa.open("dados/casa.bin", ios::binary | ios::out );	
 	oApartamento.open("dados/apartamento.bin", ios::binary | ios::out );
@@ -36,6 +35,7 @@ int GerenteDePersistencia::salvaListaDeImoveis(std::list<Imovel*> salvarMeusImov
 		imoveis = *it;
 		
 		if(imoveis->getTipoDeImovel() == 1){
+			cout << tamanho << " opaa" << endl;
 			tamanho = sizeof(Casa);
 			oCasa.write((const char *)imoveis, tamanho);
 
@@ -94,26 +94,17 @@ std::list<Imovel*> GerenteDePersistencia::recuperaListaDeImoveis(void){
 		&& iStudio.is_open() && iTerreno.is_open())
 	{
 
-*/	;
-		while(!iCasa.eof()){
-			std::cout << "passei aq casa" << std::endl;
-			
-
-			tamanho = sizeof(Casa);
+*/	tamanho = 0;
+		while(iCasa.good()){
+			tamanho = sizeof(imovel);
 			imovel = new Casa();
 				
-			iCasa.read((char *)imovel, tamanho);
+			iCasa.read((char *)imovel, sizeof(Casa));
 			//this->meusImoveis.push_back(ptrCasa);
 			listaRecuperada.push_back(imovel);
-
 		}
 
-		while(1){
-
-			if(!iApartamento.eof()){
-				break;
-			
-			}
+		while(iApartamento.good()){
 
 			tamanho = sizeof(Apartamento);
 			ptrApartamento = new Apartamento();
@@ -124,12 +115,7 @@ std::list<Imovel*> GerenteDePersistencia::recuperaListaDeImoveis(void){
 
 		}
 
-		while(1){
-
-			if(!iFlat.eof()){
-				break;
-			
-			}
+		while(iFlat.good()){
 	
 			tamanho = sizeof(Flat);
 			ptrFlat = new Flat();
@@ -141,13 +127,7 @@ std::list<Imovel*> GerenteDePersistencia::recuperaListaDeImoveis(void){
 
 		}
 
-		while(1){
-
-			if(!iStudio.eof()){
-				break;
-			
-			}
-
+		while(iStudio.good()){
 			tamanho = sizeof(Studio);
 			ptrStudio = new Studio();
 
@@ -157,12 +137,8 @@ std::list<Imovel*> GerenteDePersistencia::recuperaListaDeImoveis(void){
 
 		}
 
-		while(1){
-			std::cout << "passei aq terreno" << std::endl;
-			if(iTerreno.eof()){
-				break;
-			
-			}
+		while(iTerreno.good()){
+
 			tamanho = sizeof(Terreno);
 			ptrTerreno = new Terreno();
 			

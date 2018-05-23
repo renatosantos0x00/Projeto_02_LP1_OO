@@ -409,11 +409,14 @@ int main(int argc, char const *argv[])
 							opcaoInvalida = 0;
 							interface.ExibeMenuSubSubItem2();
 							cin >> opcaoSubItem;
-							cout << "Digite a cidade que deseja procurar: ";
-							cin >> cidade;
 
 							switch(opcaoSubItem){
-								case 1: { // Casas disponíveis
+								cout << "Digite a cidade que deseja procurar: ";
+								cin >> cidade;
+
+								case 1: {
+									cout << "Digite a cidade que deseja procurar: ";
+									cin >> cidade; // Casas disponíveis
 									while(1){
 										meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_CASA);
 										Imovel *imovel;
@@ -432,6 +435,8 @@ int main(int argc, char const *argv[])
 								break;
 
 								case 2:{
+									cout << "Digite a cidade que deseja procurar: ";
+									cin >> cidade;
 									while(1){
 										meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_APARTAMENTO);
 										Imovel *imovel;
@@ -450,6 +455,8 @@ int main(int argc, char const *argv[])
 								break;
 
 								case 3:{
+									cout << "Digite a cidade que deseja procurar: ";
+									cin >> cidade;
 									while(1){
 														break;			meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_TERRENO);
 										Imovel *imovel;
@@ -468,6 +475,8 @@ int main(int argc, char const *argv[])
 								break;
 
 								case 4:{
+									cout << "Digite a cidade que deseja procurar: ";
+									cin >> cidade;
 									while(1){
 										meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_FLAT);
 										Imovel *imovel;
@@ -486,6 +495,8 @@ int main(int argc, char const *argv[])
 								break;
 
 								case 5:{
+									cout << "Digite a cidade que deseja procurar: ";
+									cin >> cidade;
 									while(1){
 										meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_STUDIO);
 										Imovel *imovel;
@@ -504,6 +515,8 @@ int main(int argc, char const *argv[])
 								break;
 
 								case 6:{
+									cout << "Digite a cidade que deseja procurar: ";
+									cin >> cidade;
 									while(1){
 										meusImoveis = imobiliaria.getDescricaoPorCidade(cidade, TIPO_TODOSIMOVEIS);
 										Imovel *imovel;
@@ -522,24 +535,31 @@ int main(int argc, char const *argv[])
 								break;
 
 								case 7:{
+									break;
 								}
 								break;
 
 								default:{
 									opcaoInvalida = 1;
 								}
+							
 							}
+							break;
 						}
 						break;
 
 						case 3:{
-						}	
 						break;
+						}	
+						
 
 						default:{
 							opcaoInvalida = 1;
 						}
+								
 					}
+				
+					break;
 				}
 			}break;
 			case 3:{//Mostrar descrição de todos os imóveis

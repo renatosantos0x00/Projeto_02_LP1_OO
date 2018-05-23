@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <list>
 
@@ -29,6 +30,7 @@ int main(void){
 	l.push_back(im3);
 	l.push_back(im4);
 
+
 	cout<< "TAMANHO: "<<l.size()<<endl;
 	//l.sort();
 	cout<<"RETORNO:"<<gp.salvaListaDeImoveis(l)<<endl;
@@ -37,10 +39,9 @@ int main(void){
 	meusImoveis = gp.recuperaListaDeImoveis();
 	cout<< "MEUS IMOVEIS: "<< meusImoveis.size() <<endl;
 
-	for(it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
-		ptrImoveis = *it;
+	for(Imovel *i: meusImoveis){
 		cout<< endl;
-		cout<< ptrImoveis->getDescricao() <<endl;						
+		cout<< i->getDescricao() <<endl;						
 	}
 	
 	return 0;
