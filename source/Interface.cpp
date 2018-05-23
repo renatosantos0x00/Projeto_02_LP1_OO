@@ -7,10 +7,10 @@ void Interface::ExibeMenuItem(){
     printf("Main Menu\n");
     printf("-------------------------------------------------\n");
     printf("1 - Cadastrar imovel\n");
-    printf("2 - Consutar imoveis disponiveis para venda e aluguel\n");
+    printf("2 - Consutar imoveis disponiveis para venda e aluguel \n");
     printf("3 - Consultar descricao de todos os imoveis\n");
-    printf("4 - Consultar imoveis disponiveis para venda\n");
-    printf("5 - Consutar imoveis disponíveis para alugar\n\n");
+    printf("4 - Consultar imoveis disponiveis para venda por bairro\n");
+    printf("5 - Consutar imoveis disponíveis para alugar por bairro\n\n");
     printf("6 - Sair\n");
     printf("-------------------------------------------------\n");
     printf("Digite a opcao desejada: ");

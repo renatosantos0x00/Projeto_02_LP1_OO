@@ -326,6 +326,7 @@ int main(int argc, char const *argv[])
 
 						break;
 					}
+
 					case 2:{//Imoveis disponíveis por cidade
 						string cidade;
 						interface.ExibeMenuSubSubItem2();
@@ -408,6 +409,7 @@ int main(int argc, char const *argv[])
 					}
 				}
 				
+			
 			case 3:{//Mostrar descrição de todos os imóveis
 				meusImoveis = imobiliaria.getDescricao();
 				Imovel *imovel;
@@ -432,8 +434,8 @@ int main(int argc, char const *argv[])
                     cout << imovel->getDescricao() << endl;							
                 }
 				break;
-			}
-			
+			}	
+
 			case 5:{//Consultar imoveis disponíveis para alugar por bairro
 				interface.ExibeMenuSubItem5();
 				cin >> bairro;
