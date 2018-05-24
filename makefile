@@ -28,13 +28,16 @@ main: $(MAIN) $(BIBLIOTECAS)
 	@echo "Compilado : gerando objeto -> "$(MAIN)
 	$(COMPILADOR) $(OPCAO) -c $(MAIN) -I$(BIBLIOTECAS)
 
-limpa:
+limpa: cx
 	@echo "Deletando arquivos objetos"
 	ls -l *.o
 	-rm -f *.o
 cx:
 	@echo "Deletando "$(NOME)
 	-rm -f $(NOME)
+
+ex:
+	./$(NOME)
 
 refaz: limpa cx prog
 
