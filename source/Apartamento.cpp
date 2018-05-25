@@ -1,4 +1,3 @@
-#include <iostream>
 #include <string>
 
 #include "Apartamento.h"
@@ -6,13 +5,25 @@
 using namespace std;
 
 Apartamento::Apartamento() : Imovel(){
+
+	tipoDeImovel = TIPO_APARTAMENTO;
+	posicao = "";
+	numeroDeQuartos = 0;
+	valorCondominio = 0;
+	vagasGaragem = 0;
+	area = 0;
+	andar = 0;
+
+
 }
 
 Apartamento::Apartamento(string posicao, int numeroDeQuartos, double valorCondominio,
-                    	 int vagasGaragem, double area,int andar, int tipoDeImovel, int tipoDeOferta, 
+                    	 int vagasGaragem, double area, int andar, int tipoDeOferta, 
 						 double valor, string cidade, string bairro,string logradouro,
 						 string cep,int numero) 
-						 : Imovel(tipoDeImovel, tipoDeOferta, valor, cidade, bairro, logradouro,cep,numero){
+						 : Imovel(tipoDeOferta, valor, cidade, bairro, logradouro, cep, numero){
+	
+	tipoDeImovel = TIPO_APARTAMENTO;
 	this->posicao = posicao;
 	this->numeroDeQuartos = numeroDeQuartos;
 	this->valorCondominio = valorCondominio;
@@ -22,6 +33,7 @@ Apartamento::Apartamento(string posicao, int numeroDeQuartos, double valorCondom
 }
 
 Apartamento::~Apartamento(){
+
 }
 
 string Apartamento::getDescricao(){
@@ -36,6 +48,7 @@ string Apartamento::getDescricao(){
 
 	return apartamento+endereco.getEndereco();
 }
-unsigned long int Apartamento::getTamanhoDaClasse(void){
-	return sizeof(Apartamento);
+
+int Apartamento::getTipoDeImovel(void){
+	return tipoDeImovel;	
 }

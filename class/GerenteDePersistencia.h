@@ -9,7 +9,6 @@
 class GerenteDePersistencia {
     private:
 
-		std::list<Imovel*> meusImoveis;
 	    std::ifstream arquivoDeEntrada;
 		std::ofstream arquivoDeSaida; 
 		
@@ -20,8 +19,6 @@ class GerenteDePersistencia {
 
         int salvaListaDeImoveis(std::list<Imovel*> salvarMeusImoveis);
         int recuperaListaDeImoveis(void);
-        std::list<Imovel*> getListaImoveis(void);
-
 
 };
 

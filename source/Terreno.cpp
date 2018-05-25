@@ -3,14 +3,15 @@
 using namespace std;
 
 Terreno::Terreno():Imovel(){
-	area = -1;
+	tipoDeImovel = TIPO_TERRENO;
+	area = 0;
 }
 
-Terreno::Terreno(int tipoDeImovel, int tipoDeOferta, double valor,
-				double area,string cidade, string bairro,string logradouro,string cep,int numero)
-		:Imovel(tipoDeImovel, tipoDeOferta, valor, cidade, bairro,logradouro, cep,numero){
+Terreno::Terreno(int tipoDeOferta, double valor, double area, 
+				string cidade, string bairro,string logradouro,string cep,int numero)
+		:Imovel(tipoDeOferta, valor, cidade, bairro, logradouro, cep, numero){
 
-
+	tipoDeImovel = TIPO_TERRENO;
 	this->area = area;
 
 }
@@ -32,6 +33,7 @@ string Terreno::getDescricao(){
 
 	return terreno+endereco.getEndereco();
 }
-unsigned long int Terreno::getTamanhoDaClasse(void){
-	return sizeof(Terreno);
+
+int Terreno::getTipoDeImovel(void){
+	return tipoDeImovel;
 }

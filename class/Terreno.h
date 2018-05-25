@@ -7,19 +7,18 @@ using namespace std;
 
 class Terreno : public Imovel{
 	private:
-
 		double area;
 
 	public:
 		Terreno();
-		Terreno(int tipoDeImovel, int tipoDeOferta, double valor, double area, string cidade, string bairro,string logradouro,string cep,int numero);
+		Terreno(int tipoDeOferta, double valor, double area, string cidade, string bairro,string logradouro,string cep,int numero);
 		virtual ~Terreno();
 
 		double getArea();
 		void setArea(double area);
 		
 		string getDescricao();
-		unsigned long int getTamanhoDaClasse(void);
+		int getTipoDeImovel(void);
 };
 
 #endif

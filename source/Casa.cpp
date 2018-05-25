@@ -5,24 +5,25 @@ Casa::Casa():
 	Imovel()
 	
 {
-
-	numeroDePavimentos = -1;
-	numeroDeQuartos = -1;
-	areaDoTerreno = -1;
-	areaConstruida = -1;
+	tipoDeImovel = TIPO_CASA;
+	numeroDePavimentos = 0;
+	numeroDeQuartos = 0;
+	areaDoTerreno = 0;
+	areaConstruida = 0;
 
 }
 
 Casa::Casa(int numeroDePavimentos, int numeroDeQuartos, double areaDoTerreno,
-			double areaConstruida, int tipoDeImovel, int tipoDeOferta, double valor, string cidade,
+			double areaConstruida, int tipoDeOferta, double valor, string cidade,
 			 string bairro,string logradouro,string cep,int numero):
-	Imovel(tipoDeImovel, tipoDeOferta, valor, cidade, bairro, logradouro, cep, numero)
+	Imovel(tipoDeOferta, valor, cidade, bairro, logradouro, cep, numero)
 {
 
-this->numeroDePavimentos = numeroDePavimentos;
-this->numeroDeQuartos = numeroDeQuartos;
-this->areaDoTerreno = areaDoTerreno;
-this->areaConstruida = areaConstruida;
+	tipoDeImovel = TIPO_CASA;
+	this->numeroDePavimentos = numeroDePavimentos;
+	this->numeroDeQuartos = numeroDeQuartos;
+	this->areaDoTerreno = areaDoTerreno;
+	this->areaConstruida = areaConstruida;
 
 }
 
@@ -46,6 +47,6 @@ std::string Casa::getDescricao(void){
 
 }
 
-unsigned long int Casa::getTamanhoDaClasse(void){
-	return sizeof(Casa);
+int Casa::getTipoDeImovel(void){
+	return tipoDeImovel;
 }

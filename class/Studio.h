@@ -23,12 +23,15 @@ class Studio : public Imovel{
 	public:
 		Studio();
 		Studio(double areaStudio, double valorCondominio, char arCondicionado, char internet, char tvACabo,
-			 char lavanderia, char limpeza, char recepcao24, char piscina, char sauna, char salaDeGinastica,
-			  int tipoDeImovel, int tipoDeOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero);
+			 char lavanderia, char limpeza, char recepcao24, char piscina, char sauna, char salaDeGinastica, 
+			 int tipoDeOferta, double valor, string cidade, string bairro, string logradouro, string cep, int numero);
 		virtual ~Studio();
 		
 		string getDescricao();
-		unsigned long int getTamanhoDaClasse(void);
+		int getTipoDeImovel(void);
+
+
+
 };
 
 

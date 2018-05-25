@@ -3,6 +3,7 @@
 
 Studio::Studio() : Imovel(){
     
+    tipoDeImovel = TIPO_STUDIO;
 	this->areaStudio = 0;
     this->valorCondominio = 0;
 
@@ -18,11 +19,13 @@ Studio::Studio() : Imovel(){
 }
 
 Studio::Studio(double areaStudio, double valorCondominio, char arCondicionado, char internet, char tvACabo,
-		   char lavanderia, char limpeza, char recepcao24, char piscina, char sauna, char salaDeGinastica, 
-		   int tipoDeImovel, int tipoDeOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero)
-		   : Imovel(tipoDeImovel, tipoDeOferta, valor,  cidade,  bairro, logradouro, cep, numero){
+		   char lavanderia, char limpeza, char recepcao24, char piscina, char sauna, char salaDeGinastica,
+            int tipoDeOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero)
+		   : Imovel(tipoDeOferta, valor,  cidade,  bairro, logradouro, cep, numero){
 
-	this->areaStudio = areaStudio;
+
+    tipoDeImovel = TIPO_STUDIO;
+    this->areaStudio = areaStudio;
     this->valorCondominio = valorCondominio;
 
     // Parametro � um caractere mas o atributo e uma string
@@ -126,6 +129,7 @@ string Studio::getDescricao(){
 
 }
 
-unsigned long int Studio::getTamanhoDaClasse(void){
-    return sizeof(Studio);
+int Studio::getTipoDeImovel(void){
+
+    return tipoDeImovel;
 }

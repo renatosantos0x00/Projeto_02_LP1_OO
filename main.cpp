@@ -1,13 +1,6 @@
 #include <iostream>
 #include <list>
 
-#define TIPO_TODOSIMOVEIS 0
-#define TIPO_CASA 1
-#define TIPO_APARTAMENTO 2
-#define TIPO_TERRENO 3
-#define TIPO_FLAT 4
-#define TIPO_STUDIO 5
-
 #include "SistemaImobiliaria.h"
 #include "Interface.h"
 #include "Casa.h"
@@ -26,7 +19,7 @@ int main(int argc, char const *argv[])
 	Imovel *imovel;
 	list <Imovel*> meusImoveis;
 
-	int opcaoItem, opcaoSubItem,numero,tipoDeOferta, tipoDeImovel, sair = 0, opcaoInvalida = 0;
+	int opcaoItem, opcaoSubItem,numero,tipoDeOferta, sair = 0, opcaoInvalida = 0;
 	double valor;
 	string cidade, bairro, logradouro, cep;
 
@@ -52,7 +45,6 @@ int main(int argc, char const *argv[])
 					
 					switch(opcaoSubItem){
 						case 1:{
-							tipoDeImovel = TIPO_CASA;
 							int numeroDePavimentos,numeroDeQuartos;
 							double areaDoTerreno,areaConstruida;
 							
@@ -81,7 +73,7 @@ int main(int argc, char const *argv[])
 							cout<<"Obrigado!" << endl;
 
 							imovel = new Casa(numeroDePavimentos, numeroDeQuartos, areaDoTerreno,
-											areaConstruida, tipoDeImovel, tipoDeOferta, valor, cidade,
+											areaConstruida, tipoDeOferta, valor, cidade,
 											bairro, logradouro, cep, numero);
 							
 							imobiliaria.cadastraImovel(imovel);
@@ -89,7 +81,6 @@ int main(int argc, char const *argv[])
 							break;
 						}
 						case 2:{
-							tipoDeImovel = TIPO_APARTAMENTO;
 							string posicao;
 							int numeroDeQuartos,vagasGaragem,andar;
 							double valorCondominio,area;
@@ -121,14 +112,13 @@ int main(int argc, char const *argv[])
 							cin>>valorCondominio;
 							cout<<"Obrigado!" << endl;
 							imovel = new Apartamento(posicao, numeroDeQuartos, valorCondominio,
-													vagasGaragem, area, andar, tipoDeImovel, tipoDeOferta, 
+													vagasGaragem, area, andar, tipoDeOferta, 
 													valor, cidade, bairro, logradouro,
 													cep, numero);
 							imobiliaria.cadastraImovel(imovel);
 							break;
 						}
 						case 3:{
-							tipoDeImovel = TIPO_TERRENO;
 							double area;
 							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
 							cin>>cidade;
@@ -147,13 +137,12 @@ int main(int argc, char const *argv[])
 							cout<<"Area total do terreno: ";
 							cin>>area;
 							cout<<"Obrigado!" << endl;
-							imovel = new Terreno(tipoDeImovel, tipoDeOferta, valor, area,
+							imovel = new Terreno(tipoDeOferta, valor, area,
 												cidade, bairro, logradouro, cep, numero);
 							imobiliaria.cadastraImovel(imovel);
 							break;
 						}
 						case 4:{
-							tipoDeImovel = TIPO_FLAT;
 							double areaFlat,valorCondominio;
 							char arCondicionado,internet,tvACabo,lavanderia,limpeza,recepcao24;
 							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
@@ -188,13 +177,12 @@ int main(int argc, char const *argv[])
 							cin>>recepcao24;
 							cout<<"Obrigado!" << endl;
 							imovel = new Flat(areaFlat, valorCondominio, arCondicionado, internet, tvACabo,
-											lavanderia, limpeza, recepcao24, tipoDeImovel, tipoDeOferta, valor, cidade,
+											lavanderia, limpeza, recepcao24, tipoDeOferta, valor, cidade,
 											bairro, logradouro, cep, numero);
 							imobiliaria.cadastraImovel(imovel);
 							break;
 						}
 						case 5:{
-							tipoDeImovel = TIPO_STUDIO;
 							string tipo;
 							double areaStudio,valorCondominio;
 							char arCondicionado,internet,tvACabo,lavanderia,limpeza,recepcao24,piscina,sauna,salaDeGinastica;
@@ -236,8 +224,8 @@ int main(int argc, char const *argv[])
 							cin>>salaDeGinastica;
 							cout<<"Obrigado!" << endl;
 							imovel = new Studio(areaStudio, valorCondominio, arCondicionado, internet, tvACabo,
-												lavanderia, limpeza, recepcao24, piscina, sauna, salaDeGinastica,
-												tipoDeImovel, tipoDeOferta, valor, cidade, bairro, logradouro, cep, numero);
+												lavanderia, limpeza, recepcao24, piscina, sauna, salaDeGinastica, 
+												tipoDeOferta, valor, cidade, bairro, logradouro, cep, numero);
 							imobiliaria.cadastraImovel(imovel);
 							break;
 						}

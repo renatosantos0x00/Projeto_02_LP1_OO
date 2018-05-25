@@ -3,6 +3,7 @@
 
 Flat::Flat() : Imovel(){
 
+    tipoDeImovel = TIPO_FLAT;
 	this->areaFlat = 0;
     this->valorCondominio = 0;
 
@@ -15,10 +16,11 @@ Flat::Flat() : Imovel(){
 }
 
 Flat::Flat(double areaFlat, double valorCondominio, char arCondicionado, char internet, char tvACabo,
-		   char lavanderia, char limpeza, char recepcao24, int tipoDeImovel, int tipoDeOferta, double valor,string cidade, 
+		   char lavanderia, char limpeza, char recepcao24, int tipoDeOferta, double valor,string cidade, 
 		   string bairro,string logradouro,string cep,int numero)	   
-		   : Imovel(tipoDeImovel, tipoDeOferta, valor, cidade,  bairro, logradouro, cep, numero){
+		   : Imovel(tipoDeOferta, valor, cidade,  bairro, logradouro, cep, numero){
 	
+    tipoDeImovel = TIPO_FLAT;
 	this->areaFlat = areaFlat;
     this->valorCondominio = valorCondominio;
     
@@ -95,6 +97,6 @@ std::string Flat::getDescricao(){
 
 }
 
-unsigned long int Flat::getTamanhoDaClasse(void){
-    return sizeof(Flat);
+int Flat::getTipoDeImovel(void){
+    return tipoDeImovel;
 }

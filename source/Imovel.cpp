@@ -3,14 +3,14 @@ using namespace std;
 //Construtores e Destrutores da classe
 Imovel::Imovel(){
 
-	tipoDeOferta = -1;
-	valor = -1;
+	tipoDeImovel = 0;	
+	tipoDeOferta = "";
+	valor = 0;
 	endereco = Endereco();
-
 }
-Imovel::Imovel(int tipoDeImovel, int tipoOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero)
+Imovel::Imovel(int tipoOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero)
 {
-	this->tipoDeImovel = tipoDeImovel;
+	this->tipoDeImovel = 0;
 	this->tipoDeOferta = tipoDeOferta;
 	string tipoDeOferta;
 	
@@ -45,8 +45,4 @@ string Imovel::getTipoDeOferta(void){
 Endereco Imovel::getEndereco(void){
 	return endereco;
 
-}
-
-int Imovel::getTipoDeImovel(void){
-	return tipoDeImovel;
 }
