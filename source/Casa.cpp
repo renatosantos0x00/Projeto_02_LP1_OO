@@ -50,3 +50,13 @@ std::string Casa::getDescricao(void){
 int Casa::getTipoDeImovel(void){
 	return tipoDeImovel;
 }
+
+
+std::string Casa::getDescricaoCSV(void){
+
+	return  "__Casa__;_valor_;"+std::to_string(valor)+";_tipoDeOferta_;"+tipoDeOferta+
+			";_numeroDeQuartos_;"+std::to_string(numeroDeQuartos)+";_numeroDePavimentos_;"+std::to_string(numeroDePavimentos)+
+			";_areaDoTerreno_;"+std::to_string(areaDoTerreno)+";_areaConstruida_;"
+			 +std::to_string(areaConstruida)+";"+endereco.getEnderecoCSV();
+	
+}

@@ -18,7 +18,7 @@ class GerenteDePersistencia {
         virtual ~GerenteDePersistencia();
 
         int salvaListaDeImoveis(std::list<Imovel*> salvarMeusImoveis);
-        int recuperaListaDeImoveis(void);
+        std::list<Imovel*> recuperaListaDeImoveis(void);
 
 };
 

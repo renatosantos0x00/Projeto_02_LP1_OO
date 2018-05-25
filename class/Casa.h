@@ -28,6 +28,8 @@ class Casa : public Imovel{
 
 		virtual std::string getDescricao(void);
 		int getTipoDeImovel(void);
+		string getDescricaoCSV(void);
+
 };
 
 #endif

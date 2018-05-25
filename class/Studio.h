@@ -29,6 +29,7 @@ class Studio : public Imovel{
 		
 		string getDescricao();
 		int getTipoDeImovel(void);
+		string getDescricaoCSV(void);
 
 
 

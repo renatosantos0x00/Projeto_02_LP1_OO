@@ -37,3 +37,10 @@ string Terreno::getDescricao(){
 int Terreno::getTipoDeImovel(void){
 	return tipoDeImovel;
 }
+
+string Terreno::getDescricaoCSV(void){
+	return  "__Terreno__;_valor_;"+std::to_string(valor)+";_tipoDeOferta_;"+tipoDeOferta+
+			";_area_;"+to_string(area)+";"+endereco.getEnderecoCSV();
+
+	
+}

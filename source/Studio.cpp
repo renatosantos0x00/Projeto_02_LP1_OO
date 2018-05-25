@@ -133,3 +133,13 @@ int Studio::getTipoDeImovel(void){
 
     return tipoDeImovel;
 }
+
+string Studio::getDescricaoCSV(void){
+    
+    return "__Studio__;_valor_;"+std::to_string(valor)+";_tipoDeOferta_;"+tipoDeOferta+
+           ";_areaStudio_;"+to_string(areaStudio)+";_valorCondominio_;"+to_string(valorCondominio)+
+           ";_arCondicionado_;"+arCondicionado+";_internet_;"+internet+";_tvACabo_;"+tvACabo+
+           ";_lavanderia_;"+lavanderia+";_limpeza_;"+limpeza+";_recepcao24_;"+recepcao24+
+           ";_piscina_;"+piscina+";_sauna_;"+sauna+";_salaDeGinastica_;"+salaDeGinastica+
+           ";"+endereco.getEnderecoCSV();
+}

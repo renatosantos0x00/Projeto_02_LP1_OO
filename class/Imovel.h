@@ -32,10 +32,15 @@ class Imovel {
         virtual~Imovel(void);
 
     //Metodos da classe
-        virtual string getDescricao(void) = 0; //vitual puro,
-                                                // a classe que herdar é obrigada a implementar
-        virtual int getTipoDeImovel(void) = 0; //
-
+        virtual string getDescricao(void) = 0; // retorna uma string de forma formatada a descrição da classse
+        virtual int getTipoDeImovel(void) = 0; // 
+        
+        // Arquivo
+        virtual string getDescricaoCSV(void) = 0; // retorna uma string em formato .csv de todos os 
+                                                // atributos da classe que herda
+        //virtual void setDescricaoCSV(string descricao) = 0; // recebe como parametro uma string no  formato .csv
+                                                          // e atribui a todos os atributos da classe o conteudo
+        
         virtual double getValor(void);
         virtual string getTipoDeOferta(void);
         virtual Endereco getEndereco(void);

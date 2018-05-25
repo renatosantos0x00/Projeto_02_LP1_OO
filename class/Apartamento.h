@@ -23,9 +23,12 @@ class Apartamento : public Imovel{
 					string logradouro, string cep, int numero);
 
 		virtual ~Apartamento();
+	
 	//Metodos da classe
 		string getDescricao();
 		int getTipoDeImovel(void);
+		string getDescricaoCSV(void);
+
 		
 
 

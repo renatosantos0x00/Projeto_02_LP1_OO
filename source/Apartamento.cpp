@@ -52,3 +52,13 @@ string Apartamento::getDescricao(){
 int Apartamento::getTipoDeImovel(void){
 	return tipoDeImovel;	
 }
+
+string Apartamento::getDescricaoCSV(void){
+
+	return "__Apartamento__;_valor_;"+std::to_string(valor)+";_tipoDeOferta_;"+tipoDeOferta+
+			";_posicao_;"+posicao+";_numeroDeQuartos_;"+to_string(numeroDeQuartos)+";_valorCondominio_;"
+			+to_string(valorCondominio)+";_vagasGaragem_;"+to_string(vagasGaragem)+";_area_;"+to_string(area)+
+			";_andar_;"+to_string(andar)+";_valor_;"+std::to_string(valor)+";"+endereco.getEnderecoCSV();			
+
+
+}

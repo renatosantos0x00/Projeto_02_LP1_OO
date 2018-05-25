@@ -28,6 +28,8 @@ class Flat : public Imovel{
 		//Metodos da classe
 		string getDescricao();
 		int getTipoDeImovel(void);
+		string getDescricaoCSV(void);
+
 };
 
 #endif

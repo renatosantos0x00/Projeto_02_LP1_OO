@@ -79,3 +79,9 @@ std::string Endereco::getEndereco(void){
             "\nNumero: "+std::to_string(numero);
             
 }
+
+std::string Endereco::getEnderecoCSV(void){
+
+    return "__Endereco__;_cidade_;"+cidade+";_bairro_;"+bairro+
+            ";_logradouro_;"+logradouro+";_cep_;"+cep+";_numero_;"+std::to_string(numero);    
+}

@@ -91,7 +91,7 @@ std::string Flat::getDescricao(){
                     "\nLimpeza: "+limpeza+
                     "\nRecepcao 24 horas: "+recepcao24 +
                     "\nTipo de oferta: " + tipoDeOferta +
-						"\nValor do imovel: " + std::to_string(valor);
+					"\nValor do imovel: " + std::to_string(valor);
 
     return flat+endereco.getEndereco();
 
@@ -99,4 +99,14 @@ std::string Flat::getDescricao(){
 
 int Flat::getTipoDeImovel(void){
     return tipoDeImovel;
+}
+
+string Flat::getDescricaoCSV(void){
+    return  "__Flat__;_valor_;"+std::to_string(valor)+";_tipoDeOferta_;"+tipoDeOferta+
+            ";_areaFlat_;"+std::to_string(areaFlat)+";_valorCondominio_;"+std::to_string(valorCondominio)+
+            ";_arCondicionado_;"+arCondicionado+";_internet_;"+internet+";_tvACabo_;"+tvACabo+
+            ";_lavanderia_;"+lavanderia+";_limpeza_;"+limpeza+";_recepcao24_;"+recepcao24+
+            ";"+endereco.getEnderecoCSV();
+
+    
 }
