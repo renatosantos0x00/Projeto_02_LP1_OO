@@ -40,7 +40,26 @@ int GerenteDePersistencia::salvaListaDeImoveis(std::list<Imovel*> salvarMeusImov
 
 //falta terminar
 
-std::list<Imovel*>  GerenteDePersistencia::recuperaListaDeImoveis(void){
+std::list<Imovel*> GerenteDePersistencia::recuperaListaDeImoveis(void){
+	std::list<Imovel*> imoveisRecuperados;
+	Imovel *imovel;
+	std::list<Imovel*>::iterator it;
+	std::string linhaCSV;
 
+	arquivoDeEntrada.open("dados/imoveis.csv", std::ios::in);
 
+	if(!arquivoDeEntrada.is_open()){
+		std::cout<<"error! ao abrir arquivo"<<std::endl;
+	}else{
+		
+		while(!arquivoDeEntrada.eof()){
+
+			getline(arquivoDeEntrada, linhaCSV);
+			//terminar
+
+			//
+		}
+	}
+
+	return imoveisRecuperados;
 }

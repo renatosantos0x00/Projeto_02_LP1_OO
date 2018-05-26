@@ -6,7 +6,7 @@
 
 class SistemaImobiliaria{
 	private:
-		list <Imovel*> meusImoveis;
+		std::list <Imovel*> meusImoveis;
 
 	public:
 		SistemaImobiliaria();
@@ -14,12 +14,12 @@ class SistemaImobiliaria{
 
 	//Metodos da classe;
 		void cadastraImovel(Imovel *imovel);
-		list <Imovel*> getImovel(void);
-		list <Imovel*> getDescricao();
-		list <Imovel*> getDescricaoPorBairro(string bairro, int tipoDeOferta);
-		list <Imovel*> getDescricaoPorCidade(string cidade, int tipoDeImovel);
-		list <Imovel*> getDescricaoPorTipo(int tipoDeImovel);
-		list <Imovel*> getDescricaoPorOferta(int tipoOferta);
+		std::list <Imovel*> getImovel(void);
+		std::list <Imovel*> getDescricao();
+		std::list <Imovel*> getDescricaoPorBairro(std::string bairro, int tipoDeOferta);
+		std::list <Imovel*> getDescricaoPorCidade(std::string cidade, int tipoDeImovel);
+		std::list <Imovel*> getDescricaoPorTipo(int tipoDeImovel);
+		std::list <Imovel*> getDescricaoPorOferta(int tipoOferta);
 };
 
 #endif

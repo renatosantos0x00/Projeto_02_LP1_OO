@@ -8,7 +8,7 @@ Terreno::Terreno():Imovel(){
 }
 
 Terreno::Terreno(int tipoDeOferta, double valor, double area, 
-				string cidade, string bairro,string logradouro,string cep,int numero)
+				std::string cidade, std::string bairro,std::string logradouro,std::string cep,int numero)
 		:Imovel(tipoDeOferta, valor, cidade, bairro, logradouro, cep, numero){
 
 	tipoDeImovel = TIPO_TERRENO;
@@ -26,8 +26,8 @@ void Terreno::setArea(double area){
 	this->area = area;
 }
 
-string Terreno::getDescricao(){
-	string terreno = "TERRENO \n\nArea: " + to_string(area) +
+std::string Terreno::getDescricao(){
+	std::string terreno = "TERRENO \n\nArea: " + std::to_string(area) +
 	"\nTipo de oferta: " + tipoDeOferta +
 	"\nValor do imovel: " + std::to_string(valor);
 
@@ -38,9 +38,9 @@ int Terreno::getTipoDeImovel(void){
 	return tipoDeImovel;
 }
 
-string Terreno::getDescricaoCSV(void){
+std::string Terreno::getDescricaoCSV(void){
 	return  "__Terreno__;_valor_;"+std::to_string(valor)+";_tipoDeOferta_;"+tipoDeOferta+
-			";_area_;"+to_string(area)+";"+endereco.getEnderecoCSV();
+			";_area_;"+std::to_string(area)+";"+endereco.getEnderecoCSV();
 
 	
 }

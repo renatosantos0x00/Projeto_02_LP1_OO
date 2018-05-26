@@ -13,36 +13,36 @@
 #define IMOVEL_PARA_ALUGAR 2
 
 #include "Endereco.h"
-using namespace std;
+
 // Classe imovel abstrata
 
 class Imovel {
 
     protected:
         int tipoDeImovel;
-    	string tipoDeOferta;
+    	std::string tipoDeOferta;
     	double valor;
     	Endereco endereco;
 
     public:
     //Construtpres e Destrutores da classe
         Imovel();
-        Imovel(int tipoDeOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero);
+        Imovel(int tipoDeOferta, double valor, std::string cidade, std::string bairro,std::string logradouro,std::string cep,int numero);
 
         virtual~Imovel(void);
 
     //Metodos da classe
-        virtual string getDescricao(void) = 0; // retorna uma string de forma formatada a descrição da classse
+        virtual std::string getDescricao(void) = 0; // retorna uma std::string de forma formatada a descrição da classse
         virtual int getTipoDeImovel(void) = 0; // 
         
         // Arquivo
-        virtual string getDescricaoCSV(void) = 0; // retorna uma string em formato .csv de todos os 
+        virtual std::string getDescricaoCSV(void) = 0; // retorna uma std::string em formato .csv de todos os 
                                                 // atributos da classe que herda
-        //virtual void setDescricaoCSV(string descricao) = 0; // recebe como parametro uma string no  formato .csv
+        //virtual void setDescricaoCSV(std::string descricao) = 0; // recebe como parametro uma std::string no  formato .csv
                                                           // e atribui a todos os atributos da classe o conteudo
         
         virtual double getValor(void);
-        virtual string getTipoDeOferta(void);
+        virtual std::string getTipoDeOferta(void);
         virtual Endereco getEndereco(void);
 };
 

@@ -20,7 +20,7 @@ Studio::Studio() : Imovel(){
 
 Studio::Studio(double areaStudio, double valorCondominio, char arCondicionado, char internet, char tvACabo,
 		   char lavanderia, char limpeza, char recepcao24, char piscina, char sauna, char salaDeGinastica,
-            int tipoDeOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero)
+            int tipoDeOferta, double valor, std::string cidade, std::string bairro,std::string logradouro,std::string cep,int numero)
 		   : Imovel(tipoDeOferta, valor,  cidade,  bairro, logradouro, cep, numero){
 
 
@@ -109,10 +109,10 @@ Studio::Studio(double areaStudio, double valorCondominio, char arCondicionado, c
 Studio::~Studio(){
 }
 
-string Studio::getDescricao(){
+std::string Studio::getDescricao(){
 
-	string studio = "STUDIO \n\nArea: " + to_string(areaStudio) + 
-					"\nValor do condominio: " + to_string(valorCondominio) + 
+	std::string studio = "STUDIO \n\nArea: " + std::to_string(areaStudio) + 
+					"\nValor do condominio: " + std::to_string(valorCondominio) + 
 					"\nAr condicionado: " + arCondicionado +  
 					"\nInternet: " + internet + 
 					"\nTV a cabo: " + tvACabo + 
@@ -134,10 +134,10 @@ int Studio::getTipoDeImovel(void){
     return tipoDeImovel;
 }
 
-string Studio::getDescricaoCSV(void){
+std::string Studio::getDescricaoCSV(void){
     
     return "__Studio__;_valor_;"+std::to_string(valor)+";_tipoDeOferta_;"+tipoDeOferta+
-           ";_areaStudio_;"+to_string(areaStudio)+";_valorCondominio_;"+to_string(valorCondominio)+
+           ";_areaStudio_;"+std::to_string(areaStudio)+";_valorCondominio_;"+std::to_string(valorCondominio)+
            ";_arCondicionado_;"+arCondicionado+";_internet_;"+internet+";_tvACabo_;"+tvACabo+
            ";_lavanderia_;"+lavanderia+";_limpeza_;"+limpeza+";_recepcao24_;"+recepcao24+
            ";_piscina_;"+piscina+";_sauna_;"+sauna+";_salaDeGinastica_;"+salaDeGinastica+

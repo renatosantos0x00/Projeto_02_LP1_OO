@@ -1,5 +1,5 @@
 #include "Imovel.h"
-using namespace std;
+
 //Construtores e Destrutores da classe
 Imovel::Imovel(){
 
@@ -8,11 +8,11 @@ Imovel::Imovel(){
 	valor = 0;
 	endereco = Endereco();
 }
-Imovel::Imovel(int tipoOferta, double valor, string cidade, string bairro,string logradouro,string cep,int numero)
+Imovel::Imovel(int tipoOferta, double valor, std::string cidade, std::string bairro,std::string logradouro,std::string cep,int numero)
 {
 	this->tipoDeImovel = 0;
 	this->tipoDeOferta = tipoDeOferta;
-	string tipoDeOferta;
+	std::string tipoDeOferta;
 	
 	if(tipoOferta == IMOVEL_PARA_VENDER){
 		this->tipoDeOferta = "Alugar";
@@ -37,7 +37,7 @@ double Imovel::getValor(void){
 	return valor;
 
 }
-string Imovel::getTipoDeOferta(void){
+std::string Imovel::getTipoDeOferta(void){
 	return tipoDeOferta;
 
 }

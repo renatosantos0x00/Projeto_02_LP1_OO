@@ -3,33 +3,32 @@
 #include <string>
 
 #include "Imovel.h"
-using namespace std;
 
 class Studio : public Imovel{
 	private:
 		double areaStudio;
 	    double valorCondominio;
 	    
-	    string arCondicionado;
-	    string internet;
-	    string tvACabo;
-	    string lavanderia;
-	    string limpeza;
-		string recepcao24;
-		string piscina;
-		string sauna;
-		string salaDeGinastica;
+	    std::string arCondicionado;
+	    std::string internet;
+	    std::string tvACabo;
+	    std::string lavanderia;
+	    std::string limpeza;
+		std::string recepcao24;
+		std::string piscina;
+		std::string sauna;
+		std::string salaDeGinastica;
 
 	public:
 		Studio();
 		Studio(double areaStudio, double valorCondominio, char arCondicionado, char internet, char tvACabo,
 			 char lavanderia, char limpeza, char recepcao24, char piscina, char sauna, char salaDeGinastica, 
-			 int tipoDeOferta, double valor, string cidade, string bairro, string logradouro, string cep, int numero);
+			 int tipoDeOferta, double valor, std::string cidade, std::string bairro, std::string logradouro, std::string cep, int numero);
 		virtual ~Studio();
 		
-		string getDescricao();
+		std::string getDescricao();
 		int getTipoDeImovel(void);
-		string getDescricaoCSV(void);
+		std::string getDescricaoCSV(void);
 
 
 

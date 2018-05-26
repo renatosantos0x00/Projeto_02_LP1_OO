@@ -1,4 +1,3 @@
-#include <string>
 #include "Flat.h"
 
 Flat::Flat() : Imovel(){
@@ -16,8 +15,8 @@ Flat::Flat() : Imovel(){
 }
 
 Flat::Flat(double areaFlat, double valorCondominio, char arCondicionado, char internet, char tvACabo,
-		   char lavanderia, char limpeza, char recepcao24, int tipoDeOferta, double valor,string cidade, 
-		   string bairro,string logradouro,string cep,int numero)	   
+		   char lavanderia, char limpeza, char recepcao24, int tipoDeOferta, double valor,std::string cidade, 
+		   std::string bairro,std::string logradouro,std::string cep,int numero)	   
 		   : Imovel(tipoDeOferta, valor, cidade,  bairro, logradouro, cep, numero){
 	
     tipoDeImovel = TIPO_FLAT;
@@ -82,8 +81,8 @@ Flat::~Flat(){
 //Metodos Da Classe
 
 std::string Flat::getDescricao(){
-    string flat =  "FLAT\n\nArea: "+to_string(areaFlat)+
-                    "\nValor do Condominio: "+ to_string(valorCondominio)+
+    std::string flat =  "FLAT\n\nArea: "+std::to_string(areaFlat)+
+                    "\nValor do Condominio: "+ std::to_string(valorCondominio)+
                     "\nAr Condicionado: "+arCondicionado+
                     "\nInternet: "+internet+
                     "\nTV a Cabo: "+tvACabo+
@@ -101,7 +100,7 @@ int Flat::getTipoDeImovel(void){
     return tipoDeImovel;
 }
 
-string Flat::getDescricaoCSV(void){
+std::string Flat::getDescricaoCSV(void){
     return  "__Flat__;_valor_;"+std::to_string(valor)+";_tipoDeOferta_;"+tipoDeOferta+
             ";_areaFlat_;"+std::to_string(areaFlat)+";_valorCondominio_;"+std::to_string(valorCondominio)+
             ";_arCondicionado_;"+arCondicionado+";_internet_;"+internet+";_tvACabo_;"+tvACabo+

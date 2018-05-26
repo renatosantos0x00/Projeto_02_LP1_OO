@@ -1,5 +1,5 @@
 #include "Casa.h"
-using namespace std;
+
 //Contrutores e destrutores da classe
 Casa::Casa():
 	Imovel()
@@ -14,8 +14,8 @@ Casa::Casa():
 }
 
 Casa::Casa(int numeroDePavimentos, int numeroDeQuartos, double areaDoTerreno,
-			double areaConstruida, int tipoDeOferta, double valor, string cidade,
-			 string bairro,string logradouro,string cep,int numero):
+			double areaConstruida, int tipoDeOferta, double valor, std::string cidade,
+			 std::string bairro,std::string logradouro,std::string cep,int numero):
 	Imovel(tipoDeOferta, valor, cidade, bairro, logradouro, cep, numero)
 {
 

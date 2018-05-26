@@ -3,7 +3,6 @@
 #include "Imovel.h"
 #include <string>
 
-using namespace std;
 
 class Terreno : public Imovel{
 	private:
@@ -11,15 +10,15 @@ class Terreno : public Imovel{
 
 	public:
 		Terreno();
-		Terreno(int tipoDeOferta, double valor, double area, string cidade, string bairro,string logradouro,string cep,int numero);
+		Terreno(int tipoDeOferta, double valor, double area, std::string cidade, std::string bairro,std::string logradouro,std::string cep,int numero);
 		virtual ~Terreno();
 
 		double getArea();
 		void setArea(double area);
 		
-		string getDescricao();
+		std::string getDescricao();
 		int getTipoDeImovel(void);
-		string getDescricaoCSV(void);
+		std::string getDescricaoCSV(void);
 
 };
 

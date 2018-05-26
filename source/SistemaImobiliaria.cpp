@@ -2,9 +2,10 @@
 #include <list>
 #include <string>
 #include <iostream>
-using namespace std;
+
 
 SistemaImobiliaria::SistemaImobiliaria(){
+
 }
 
 SistemaImobiliaria::~SistemaImobiliaria(){
@@ -15,15 +16,15 @@ void SistemaImobiliaria::cadastraImovel(Imovel *imovel){
 	meusImoveis.push_back(imovel);
 }
 
-list <Imovel*> SistemaImobiliaria::getImovel(void){
+std::list <Imovel*> SistemaImobiliaria::getImovel(void){
 	return meusImoveis;
 }
 
-list <Imovel*> SistemaImobiliaria::getDescricao(){
+std::list <Imovel*> SistemaImobiliaria::getDescricao(){
 	Imovel *imovel;
-	list <Imovel*>  lista;
+	std::list <Imovel*>  lista;
 	
-	for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+	for(std::list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
 		imovel = *it;
 		lista.push_back(imovel);						
 	}
@@ -31,11 +32,11 @@ list <Imovel*> SistemaImobiliaria::getDescricao(){
 	return lista;
 }
 
-list <Imovel*> SistemaImobiliaria::getDescricaoPorTipo(int tipoDeImovel){
+std::list <Imovel*> SistemaImobiliaria::getDescricaoPorTipo(int tipoDeImovel){
 	Imovel *imovel;
-	list <Imovel*>  lista;
+	std::list <Imovel*>  lista;
 
-	for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+	for(std::list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
 		imovel = *it;
 		
 		if(imovel->getTipoDeImovel() == tipoDeImovel){
@@ -45,11 +46,11 @@ list <Imovel*> SistemaImobiliaria::getDescricaoPorTipo(int tipoDeImovel){
 	return lista;
 }
 
-list<Imovel*> SistemaImobiliaria::getDescricaoPorBairro(string bairro, int tipoOferta){
+std::list<Imovel*> SistemaImobiliaria::getDescricaoPorBairro(std::string bairro, int tipoOferta){
 	Imovel *imovel;
 	Endereco endereco;
-	string tipoDeOferta;
-	list<Imovel*> lista;
+	std::string tipoDeOferta;
+	std::list<Imovel*> lista;
 
 	if(tipoOferta == IMOVEL_PARA_VENDER){
 		tipoDeOferta = "Vender";
@@ -59,7 +60,7 @@ list<Imovel*> SistemaImobiliaria::getDescricaoPorBairro(string bairro, int tipoO
 		tipoDeOferta = "Desconhecida";
 	}
 
-	for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+	for(std::list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
 		imovel = *it;
 		endereco = imovel->getEndereco();
 		
@@ -71,14 +72,14 @@ list<Imovel*> SistemaImobiliaria::getDescricaoPorBairro(string bairro, int tipoO
 	return lista;
 }
 
-list<Imovel*> SistemaImobiliaria::getDescricaoPorCidade(string cidade, int tipoDeImovel){
+std::list<Imovel*> SistemaImobiliaria::getDescricaoPorCidade(std::string cidade, int tipoDeImovel){
 	Imovel *imovel;
 	Endereco endereco;
-	list<Imovel*> lista;
+	std::list<Imovel*> lista;
 
 
 	if(tipoDeImovel == 0){//Pesquisa para todos os imóveis
-		for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+		for(std::list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
 			imovel = *it;
 			endereco = imovel->getEndereco();
 			
@@ -87,7 +88,7 @@ list<Imovel*> SistemaImobiliaria::getDescricaoPorCidade(string cidade, int tipoD
 			}	
 		}	
 	}else{//Pesquisa para tipo de imóveis específicos
-		for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+		for(std::list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
 			imovel = *it;
 			endereco = imovel->getEndereco();
 			
@@ -99,11 +100,11 @@ list<Imovel*> SistemaImobiliaria::getDescricaoPorCidade(string cidade, int tipoD
 	
 	return lista;
 }
-list <Imovel*> SistemaImobiliaria::getDescricaoPorOferta(int tipoOferta){
+std::list <Imovel*> SistemaImobiliaria::getDescricaoPorOferta(int tipoOferta){
 	Imovel *imovel;
 	Endereco endereco;
-	string tipoDeOferta;
-	list<Imovel*> lista;
+	std::string tipoDeOferta;
+	std::list<Imovel*> lista;
 
 	if(tipoOferta == IMOVEL_PARA_VENDER){
 		tipoDeOferta = "Vender";
@@ -113,7 +114,7 @@ list <Imovel*> SistemaImobiliaria::getDescricaoPorOferta(int tipoOferta){
 		tipoDeOferta = "Desconhecida";
 	}
 
-	for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+	for(std::list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
 		imovel = *it;
 		endereco = imovel->getEndereco();
 		

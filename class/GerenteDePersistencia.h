@@ -1,5 +1,6 @@
 #ifndef GERENTEDEPERSISTENCIA_H
 #define GERENTEDEPERSISTENCIA_H
+#include <iostream>
 #include <fstream>
 #include <list>
 
