@@ -2,7 +2,7 @@
 #							
 #							
 # Definição de Macros
-OPCAO = 
+OPCAO =
 NOME = scci
 COMPILADOR = g++
 CODIGO = source
