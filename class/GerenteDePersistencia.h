@@ -7,6 +7,13 @@
 #include "SistemaImobiliaria.h"
 #include "Imovel.h"
 
+#include "Casa.h"
+#include "Apartamento.h"
+#include "Flat.h"
+#include "Studio.h"
+#include "Terreno.h"
+
+
 class GerenteDePersistencia {
     private:
 

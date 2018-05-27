@@ -3,7 +3,7 @@
 Apartamento::Apartamento() : Imovel(){
 
 	tipoDeImovel = TIPO_APARTAMENTO;
-	posicao = "";
+	posicao = "Nenhum";
 	numeroDeQuartos = 0;
 	valorCondominio = 0;
 	vagasGaragem = 0;
@@ -26,6 +26,7 @@ Apartamento::Apartamento(std::string posicao, int numeroDeQuartos, double valorC
 	this->vagasGaragem = vagasGaragem;
 	this->area = area;
 	this->andar = andar;
+
 }
 
 Apartamento::~Apartamento(){
@@ -58,3 +59,46 @@ std::string Apartamento::getDescricaoCSV(void){
 
 
 }
+
+void Apartamento::setDescricaoCSV(std::string *descricao){
+	std::string atributo, cep, cid, bai, log;
+	int num=0;
+
+	// Atributos de imovel
+	atributo = recuperaValorDeCelula(descricao,"_valor_");
+	this->valor = std::stod(atributo); 
+
+	this->tipoDeOferta = recuperaValorDeCelula(descricao,"_tipoDeOferta_");
+	
+	//Endereco
+	atributo = recuperaValorDeCelula(descricao,"_numero_");
+	num = std::stoi(atributo);
+
+	cep = recuperaValorDeCelula(descricao,"_cep_");
+	cid = recuperaValorDeCelula(descricao,"_cidade_");
+	bai = recuperaValorDeCelula(descricao,"_bairro_");
+	log = recuperaValorDeCelula(descricao,"_logradouro_");
+
+	endereco = Endereco(cid, bai, log, cep, num);
+
+	//atributos especiais da classe
+	
+	this->posicao = recuperaValorDeCelula(descricao,"_posicao_");
+	
+	atributo = recuperaValorDeCelula(descricao,"_numeroDeQuartos_");
+	this->numeroDeQuartos = std::stoi(atributo);
+	
+	atributo = recuperaValorDeCelula(descricao,"_valorCondominio_");
+	this->valorCondominio = std::stod(atributo);
+	
+	atributo = recuperaValorDeCelula(descricao,"_vagasGaragem_");
+	this->vagasGaragem = std::stoi(atributo);
+	
+	atributo = recuperaValorDeCelula(descricao,"_area_");
+	this->area = std::stod(atributo);
+
+	atributo = recuperaValorDeCelula(descricao,"_andar_");
+	this->andar = std::stoi(atributo);
+
+}
+

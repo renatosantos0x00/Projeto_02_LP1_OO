@@ -29,6 +29,7 @@ class Casa : public Imovel{
 		virtual std::string getDescricao(void);
 		int getTipoDeImovel(void);
 		std::string getDescricaoCSV(void);
+		void setDescricaoCSV(std::string *descricao);
 
 };
 

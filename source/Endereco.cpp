@@ -5,10 +5,10 @@
 Endereco::Endereco(){
 
     numero = 0;
-    cep = "";
-    cidade = "";
-    bairro = "";
-    logradouro = "";
+    cep = "Nenhum";
+    cidade = "Nenhum";
+    bairro = "Nenhum";
+    logradouro = "Nenhum";
 
 }
 

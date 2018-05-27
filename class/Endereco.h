@@ -38,7 +38,7 @@ class Endereco {
 
         std::string getEndereco(void);
         std::string getEnderecoCSV(void);
-
+        //void setEnderecoCSV(std::string);        
 };
 
 #endif

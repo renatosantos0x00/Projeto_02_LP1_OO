@@ -6,12 +6,12 @@ Flat::Flat() : Imovel(){
 	this->areaFlat = 0;
     this->valorCondominio = 0;
 
-	this->arCondicionado = "";
-	this->internet = "";
-	this->tvACabo = "";
-	this->lavanderia = "";
-	this->limpeza = "";
-	this->recepcao24 = "";
+	this->arCondicionado = "Nennhum";
+	this->internet = "Nennhum";
+	this->tvACabo = "Nennhum";
+	this->lavanderia = "Nennhum";
+	this->limpeza = "Nennhum";
+	this->recepcao24 = "Nennhum";
 }
 
 Flat::Flat(double areaFlat, double valorCondominio, char arCondicionado, char internet, char tvACabo,
@@ -108,4 +108,45 @@ std::string Flat::getDescricaoCSV(void){
             ";"+endereco.getEnderecoCSV();
 
     
+}
+
+void Flat::setDescricaoCSV(std::string *descricao){
+    std::string atributo, cep, cid, bai, log;
+    int num=0;
+
+
+    // Atributos de imovel
+    atributo = recuperaValorDeCelula(descricao,"_valor_");
+    this->valor = std::stod(atributo); 
+    this->tipoDeOferta = recuperaValorDeCelula(descricao,"_tipoDeOferta_");
+
+    //Endereco
+    atributo = recuperaValorDeCelula(descricao,"_numero_");
+    num = std::stoi(atributo);
+
+    cep = recuperaValorDeCelula(descricao,"_cep_");
+    cid = recuperaValorDeCelula(descricao,"_cidade_");
+    bai = recuperaValorDeCelula(descricao,"_bairro_");
+    log = recuperaValorDeCelula(descricao,"_logradouro_");
+
+    endereco = Endereco(cid, bai, log, cep, num);
+
+    //atributos especiais da classe
+
+    atributo = recuperaValorDeCelula(descricao, "_areaFlat_");
+    this->areaFlat = std::stod(atributo);
+    
+    atributo = recuperaValorDeCelula(descricao, "_valorCondominio_");
+    this->valorCondominio = std::stod(atributo);
+
+    this->arCondicionado = recuperaValorDeCelula(descricao, "_arCondicionado_");
+    this->internet = recuperaValorDeCelula(descricao, "_internet_");
+    this->tvACabo = recuperaValorDeCelula(descricao, "_tvACabo_");
+    this->lavanderia = recuperaValorDeCelula(descricao, "_lavanderia_");
+    this->limpeza = recuperaValorDeCelula(descricao, "_limpeza_");
+    this->recepcao24 = recuperaValorDeCelula(descricao, "_recepcao24_");
+
+
+
+
 }

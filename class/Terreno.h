@@ -19,7 +19,7 @@ class Terreno : public Imovel{
 		std::string getDescricao();
 		int getTipoDeImovel(void);
 		std::string getDescricaoCSV(void);
-
+		void setDescricaoCSV(std::string *descricao);
 };
 
 #endif

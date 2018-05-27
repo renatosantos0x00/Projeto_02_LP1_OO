@@ -24,6 +24,8 @@ class Imovel {
     	double valor;
     	Endereco endereco;
 
+        std::string recuperaValorDeCelula(const std::string *linhaCSV, std::string atributo);
+
     public:
     //Construtpres e Destrutores da classe
         Imovel();
@@ -38,12 +40,13 @@ class Imovel {
         // Arquivo
         virtual std::string getDescricaoCSV(void) = 0; // retorna uma std::string em formato .csv de todos os 
                                                 // atributos da classe que herda
-        //virtual void setDescricaoCSV(std::string descricao) = 0; // recebe como parametro uma std::string no  formato .csv
+        virtual void setDescricaoCSV(std::string *descricao) = 0; // recebe como parametro uma std::string no  formato .csv
                                                           // e atribui a todos os atributos da classe o conteudo
         
         virtual double getValor(void);
         virtual std::string getTipoDeOferta(void);
         virtual Endereco getEndereco(void);
+
 };
 
 

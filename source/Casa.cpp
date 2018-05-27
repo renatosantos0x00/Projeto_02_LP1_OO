@@ -60,3 +60,40 @@ std::string Casa::getDescricaoCSV(void){
 			 +std::to_string(areaConstruida)+";"+endereco.getEnderecoCSV();
 	
 }
+
+void Casa::setDescricaoCSV(std::string *descricao){
+	std::string atributo, cep, cid, bai, log;
+	int num=0;
+
+
+	// Atributos de imovel
+	atributo = recuperaValorDeCelula(descricao,"_valor_");
+	this->valor = std::stod(atributo); 
+	this->tipoDeOferta = recuperaValorDeCelula(descricao,"_tipoDeOferta_");
+
+	//Endereco
+	atributo = recuperaValorDeCelula(descricao,"_numero_");
+	num = std::stoi(atributo);
+
+	cep = recuperaValorDeCelula(descricao,"_cep_");
+	cid = recuperaValorDeCelula(descricao,"_cidade_");
+	bai = recuperaValorDeCelula(descricao,"_bairro_");
+	log = recuperaValorDeCelula(descricao,"_logradouro_");
+
+	endereco = Endereco(cid, bai, log, cep, num);
+
+	//atributos especiais da classe
+
+	atributo = recuperaValorDeCelula(descricao, "_numeroDePavimentos_");
+	this->numeroDePavimentos = std::stoi(atributo);
+	
+	atributo = recuperaValorDeCelula(descricao, "_numeroDeQuartos_");
+	this->numeroDeQuartos = std::stoi(atributo);
+
+	atributo = recuperaValorDeCelula(descricao , "_areaDoTerreno_");
+	this->areaDoTerreno = std::stod(atributo);
+
+	atributo = recuperaValorDeCelula(descricao, "_areaConstruida_");
+	this->areaConstruida = std::stod(atributo);
+
+}

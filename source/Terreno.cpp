@@ -44,3 +44,31 @@ std::string Terreno::getDescricaoCSV(void){
 
 	
 }
+
+void Terreno::setDescricaoCSV(std::string *descricao){
+    std::string atributo, cep, cid, bai, log;
+    int num=0;
+
+
+    // Atributos de imovel
+    atributo = recuperaValorDeCelula(descricao,"_valor_");
+    this->valor = std::stod(atributo); 
+    this->tipoDeOferta = recuperaValorDeCelula(descricao,"_tipoDeOferta_");
+
+    //Endereco
+    atributo = recuperaValorDeCelula(descricao,"_numero_");
+    num = std::stoi(atributo);
+
+    cep = recuperaValorDeCelula(descricao,"_cep_");
+    cid = recuperaValorDeCelula(descricao,"_cidade_");
+    bai = recuperaValorDeCelula(descricao,"_bairro_");
+    log = recuperaValorDeCelula(descricao,"_logradouro_");
+
+    endereco = Endereco(cid, bai, log, cep, num);
+
+    //atributos especiais da classe
+
+    atributo = recuperaValorDeCelula(descricao, "_area_");
+	this->area = std::stod(atributo);
+}
+		
