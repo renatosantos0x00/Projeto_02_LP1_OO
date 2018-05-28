@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <iostream>
 
 #include "Interface.h"
+
+using namespace std;
 
 void Interface::ExibeMenuItem(){
     printf("-------------------------------------------------\n");
@@ -61,7 +64,7 @@ void Interface::ExibeMenuSubSubItem2(){
     printf("Digite a opcao desejada: ");
 }
 
-void Interface::ExibeMenuSubItem4(){
+void Interface::ExibeMenuSubItem3(){
     //Item imoveis disponiveis para alugar por bairro - 5
     printf("-------------------------------------------------\n");
     printf("Menu de imoveis disponveis para vender por bairro\n");
@@ -69,7 +72,7 @@ void Interface::ExibeMenuSubItem4(){
     printf("Entre com o Bairro: ");
 }
 
-void Interface::ExibeMenuSubItem5(){
+void Interface::ExibeMenuSubItem4(){
     //Item imoveis disponiveis para alugar por bairro - 5
     printf("-------------------------------------------------\n");
     printf("Menu de imoveis disponveis para alugar por bairro\n");
@@ -77,18 +80,103 @@ void Interface::ExibeMenuSubItem5(){
     printf("Entre com o Bairro: ");
 }
 
-void Interface::ExibeMenuSubItem6(){
+void Interface::ExibeMenuSubItem5(){
     //Item imoveis disponiveis para vendero - 6
     printf("-------------------------------------------------\n");
     printf("Menu de imoveis disponveis para vender\n");
     printf("-------------------------------------------------\n");
 }
 
-void Interface::ExibeMenuSubItem7(){
+void Interface::ExibeMenuSubItem6(){
     // Item imoveis disponveis para aluguel - 7
     printf("-------------------------------------------------\n");
     printf("Menu de imoveis disponveis para aluguel\n");
     printf("-------------------------------------------------\n");
 }
+
+void Interface::Descricao(int tipoDescricao, string nomeLugar, int constant, SistemaImobiliaria imobiliaria){
+    list <Imovel*> meusImoveis;
+    Imovel *imovel;
+
+    switch(tipoDescricao){
+        case 0:
+            meusImoveis = imobiliaria.getDescricao();
+            break;
+        case 1:
+            meusImoveis = imobiliaria.getDescricaoPorTipo(constant);
+            break;
+        case 2: 
+            meusImoveis = imobiliaria.getDescricaoPorOferta(constant);
+            break;
+        case 3:
+            meusImoveis = imobiliaria.getDescricaoPorBairro(nomeLugar, constant);
+            break;
+        case 4:
+            meusImoveis = imobiliaria.getDescricaoPorCidade(nomeLugar, constant);
+            break;
+        default:
+            break;
+    }
+    
+    for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
+        imovel = *it;
+        cout << imovel->getDescricao() << endl;						
+    }
+}
+
+int Interface::Limpa(bool *opcaoInvalida, int opcaoInterface){
+    int opcao;
+
+    limpaTela();
+    
+    if(*opcaoInvalida) cout << "Opcao invalida!" << endl;
+    *opcaoInvalida = false;
+    
+    switch(opcaoInterface){
+        case 0:
+            ExibeMenuItem();
+            break;
+        case 1:
+            ExibeMenuSubItem1();
+            break;
+        case 2:
+            ExibeMenuSubItem2();
+            break;
+        case 22:
+            ExibeMenuSubSubItem2();
+            break;
+        case 3:
+            ExibeMenuSubItem3();
+            break;
+        case 4:
+            ExibeMenuSubItem4();
+            break;
+        case 5:
+            ExibeMenuSubItem5();
+            break;
+        case 6:
+            ExibeMenuSubItem6();
+            break;
+        default: 
+            break;
+    }
+
+    if( (opcaoInterface >= 0 && opcaoInterface <= 2) || opcaoInterface == 22 ) cin >> opcao;
+    return opcao;
+}
+
+#ifdef OS_Windows
+    /* Codigo Windows */
+    int Interface::limpaTela(){
+        system("cls");
+    }
+
+#else
+    /* Codigo GNU/Linux */
+    int Interface::limpaTela(){
+        system("clear");
+    }
+
+#endif
 
 

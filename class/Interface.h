@@ -3,6 +3,9 @@
 
 #include <string.h>
 
+#include "SistemaImobiliaria.h"
+#include "Imovel.h"
+
 using namespace std;
 
 class Interface {
@@ -15,13 +18,19 @@ class Interface {
 
         void ExibeMenuSubSubItem2();
 
-        void ExibeMenuSubItem4();
+        void ExibeMenuSubItem3();
 
+        void ExibeMenuSubItem4();
+        
         void ExibeMenuSubItem5();
         
         void ExibeMenuSubItem6();
-        
-        void ExibeMenuSubItem7();
+
+        int limpaTela();
+
+        int Limpa(bool *opcaoInvalida, int opcaoInterface);
+
+        void Descricao(int tipoDescricao, string nomeLugar, int constant, SistemaImobiliaria imobiliaria);
 };
 
 #endif
