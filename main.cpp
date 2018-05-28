@@ -47,13 +47,13 @@ int main(int argc, char const *argv[]){
                     switch(opcaoSubItem){
                         case 1:
 							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
-							cin>>cidade;
+							getline(cin, cidade);
 							cout<<"Bairro: ";
-							cin>>bairro;
+							getline(cin, bairro);
 							cout<<"Lougradouro: ";
-							cin>>logradouro;
+							getline(cin, logradouro);
 							cout<<"CEP: ";
-							cin>>cep;
+							getline(cin, cep);
 							cout<<"Numero: ";
 							cin>>numero;
 							cout<<"Valor do imovel: ";
@@ -79,13 +79,13 @@ int main(int argc, char const *argv[]){
 							break;
                         case 2:
 							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
-							cin>>cidade;
+							getline(cin, cidade);
 							cout<<"Bairro: ";
-							cin>>bairro;
+							getline(cin, bairro);
 							cout<<"Lougradouro: ";
-							cin>>logradouro;
+							getline(cin, logradouro);
 							cout<<"CEP: ";
-							cin>>cep;
+							getline(cin, cep);
 							cout<<"Numero: ";
 							cin>>numero;
 							cout<<"Valor do imovel: ";
@@ -93,7 +93,7 @@ int main(int argc, char const *argv[]){
 							cout<<"Se o imovel for para alugar, digite 1, se for para vender, digite 2: ";
 							cin>>tipoDeOferta;
 							cout<<"Agora algumas informacoes extras, indique a posicao do apartamento (norte, sul, leste, oeste): ";
-							cin>>posicao;
+							getline(cin, posicao);
 							cout<<"Numero de quarto: ";
 							cin>>numeroDeQuartos;
 							cout<<"Area total do terreno: ";
@@ -116,13 +116,13 @@ int main(int argc, char const *argv[]){
 							break;
                         case 3:
 							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
-							cin>>cidade;
+							getline(cin, cidade);
 							cout<<"Bairro: ";
-							cin>>bairro;
+							getline(cin, bairro);
 							cout<<"Lougradouro: ";
-							cin>>logradouro;
+							getline(cin, logradouro);
 							cout<<"CEP: ";
-							cin>>cep;
+							getline(cin, cep);
 							cout<<"Numero: ";
 							cin>>numero;
 							cout<<"Valor do imovel: ";
@@ -140,13 +140,13 @@ int main(int argc, char const *argv[]){
 							break;
                         case 4:
 							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
-							cin>>cidade;
+							getline(cin, cidade);
 							cout<<"Bairro: ";
-							cin>>bairro;
+							getline(cin, bairro);
 							cout<<"Lougradouro: ";
-							cin>>logradouro;
+							getline(cin, logradouro);
 							cout<<"CEP: ";
-							cin>>cep;
+							getline(cin, cep);
 							cout<<"Numero: ";
 							cin>>numero;
 							cout<<"Valor do imovel: ";
@@ -180,13 +180,13 @@ int main(int argc, char const *argv[]){
 							break;
                         case 5:
 							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
-							cin>>cidade;
+							getline(cin, cidade);
 							cout<<"Bairro: ";
-							cin>>bairro;
+							getline(cin, bairro);
 							cout<<"Lougradouro: ";
-							cin>>logradouro;
+							getline(cin, logradouro);
 							cout<<"CEP: ";
-							cin>>cep;
+							getline(cin, cep);
 							cout<<"Numero: ";
 							cin>>numero;
 							cout<<"Valor do imovel: ";
