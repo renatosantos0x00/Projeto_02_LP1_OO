@@ -47,27 +47,39 @@ int main(int argc, char const *argv[]){
                     switch(opcaoSubItem){
                         case 1:
 							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
+							getchar();
 							getline(cin, cidade);
+							
 							cout<<"Bairro: ";
 							getline(cin, bairro);
-							cout<<"Lougradouro: ";
+							
+							cout<<"Logradouro: ";
 							getline(cin, logradouro);
+							
 							cout<<"CEP: ";
-							getline(cin, cep);
+							cin >> cep;
+
 							cout<<"Numero: ";
 							cin>>numero;
+
 							cout<<"Valor do imovel: ";
 							cin>>valor;
+
 							cout<<"Se o imovel for para alugar, digite 1, se for para vender, digite 2: ";
 							cin>>tipoDeOferta;
+
 							cout<<"Agora com algumas informacoes extra, diga o numero de pavimentos da sua casa: ";
 							cin>>numeroDePavimentos;
+
 							cout<<"Numero de quarto: ";
 							cin>>numeroDeQuartos;
+
 							cout<<"Area total do terreno: ";
 							cin>>areaDoTerreno;
+
 							cout<<"Area construida: ";
 							cin>>areaConstruida;
+
 							cout<<"Obrigado!" << endl;
 
 							imovel = new Casa(numeroDePavimentos, numeroDeQuartos, areaDoTerreno,
@@ -79,31 +91,48 @@ int main(int argc, char const *argv[]){
 							break;
                         case 2:
 							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
+							getchar();
 							getline(cin, cidade);
+							
 							cout<<"Bairro: ";
+							getchar();
 							getline(cin, bairro);
-							cout<<"Lougradouro: ";
+							
+							cout<<"Logradouro: ";
+							getchar();
 							getline(cin, logradouro);
+							
 							cout<<"CEP: ";
-							getline(cin, cep);
+							cin >> cep;
+
 							cout<<"Numero: ";
 							cin>>numero;
+
 							cout<<"Valor do imovel: ";
 							cin>>valor;
+
 							cout<<"Se o imovel for para alugar, digite 1, se for para vender, digite 2: ";
 							cin>>tipoDeOferta;
+							
 							cout<<"Agora algumas informacoes extras, indique a posicao do apartamento (norte, sul, leste, oeste): ";
+							getchar();
 							getline(cin, posicao);
+
 							cout<<"Numero de quarto: ";
 							cin>>numeroDeQuartos;
+
 							cout<<"Area total do terreno: ";
 							cin>>area;
+
 							cout<<"Numero de vagas na garagem: ";
 							cin>>vagasGaragem;
+
 							cout<<"Qual o andar: ";
 							cin>>andar;
+
 							cout<<"Valor do condominio: ";
 							cin>>valorCondominio;
+
 							cout<<"Obrigado!" << endl;
 
 							imovel = new Apartamento(posicao, numeroDeQuartos, valorCondominio,
@@ -116,21 +145,32 @@ int main(int argc, char const *argv[]){
 							break;
                         case 3:
 							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
+							getchar();
 							getline(cin, cidade);
+							
 							cout<<"Bairro: ";
+							getchar();
 							getline(cin, bairro);
-							cout<<"Lougradouro: ";
+							
+							cout<<"Logradouro: ";
+							getchar();
 							getline(cin, logradouro);
+							
 							cout<<"CEP: ";
-							getline(cin, cep);
+							cin >> cep;
+
 							cout<<"Numero: ";
 							cin>>numero;
+
 							cout<<"Valor do imovel: ";
 							cin>>valor;
+
 							cout<<"Se o imovel for para alugar, digite 1, se for para vender, digite 2: ";
 							cin>>tipoDeOferta;
+
 							cout<<"Area total do terreno: ";
 							cin>>area;
+
 							cout<<"Obrigado!" << endl;
 
 							imovel = new Terreno(tipoDeOferta, valor, area,
@@ -140,35 +180,53 @@ int main(int argc, char const *argv[]){
 							break;
                         case 4:
 							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
+							getchar();
 							getline(cin, cidade);
+							
 							cout<<"Bairro: ";
+							getchar();
 							getline(cin, bairro);
-							cout<<"Lougradouro: ";
+							
+							cout<<"Logradouro: ";
+							getchar();
 							getline(cin, logradouro);
+							
 							cout<<"CEP: ";
-							getline(cin, cep);
+							cin >> cep;
+
 							cout<<"Numero: ";
 							cin>>numero;
+
 							cout<<"Valor do imovel: ";
 							cin>>valor;
+
 							cout<<"Se o imovel for para alugar, digite 1, se for para vender, digite 2: ";
 							cin>>tipoDeOferta;
+
 							cout<<"Area total do terreno: ";
 							cin>>area;
+
 							cout<<"Valor do condominio: ";
 							cin>>valorCondominio;
+
 							cout<<"Agora algumas informacoes extras, diga se tem ar condicionado (se sim: s, se nao: n): ";
 							cin>>arCondicionado;
+
 							cout<<"Internet?(se sim: s, se nao: n): ";
 							cin>>internet;
+
 							cout<<"TV a cabo?(se sim: s, se nao: n): ";
 							cin>>tvACabo;
+
 							cout<<"Lavandeiria?(se sim: s, se nao: n): ";
 							cin>>lavanderia;
+
 							cout<<"Limpeza?(se sim: s, se nao: n): ";
 							cin>>limpeza;
+
 							cout<<"Recepcao 24 horas?(se sim: s, se nao: n): ";
 							cin>>recepcao24;
+
 							cout<<"Obrigado!" << endl;
 
 							imovel = new Flat(area, valorCondominio, arCondicionado, internet, tvACabo,
@@ -180,41 +238,62 @@ int main(int argc, char const *argv[]){
 							break;
                         case 5:
 							cout<<"Indique o endereco do seu imovel, primeiramente a cidade: ";
+							getchar();
 							getline(cin, cidade);
+							
 							cout<<"Bairro: ";
+							getchar();
 							getline(cin, bairro);
-							cout<<"Lougradouro: ";
+							
+							cout<<"Logradouro: ";
+							getchar();
 							getline(cin, logradouro);
+							
 							cout<<"CEP: ";
-							getline(cin, cep);
+							cin >> cep;
+
 							cout<<"Numero: ";
 							cin>>numero;
+
 							cout<<"Valor do imovel: ";
 							cin>>valor;
+
 							cout<<"Se o imovel for para alugar, digite 1, se for para vender, digite 2: ";
 							cin>>tipoDeOferta;
+
 							cout<<"Area total do terreno: ";
 							cin>>area;
+
 							cout<<"Valor do condominio: ";
 							cin>>valorCondominio;
+
 							cout<<"Agora algumas informacoes extras, diga se tem ar condicionado (se sim: s, se nao: n): ";
 							cin>>arCondicionado;
+							
 							cout<<"Internet?(se sim: s, se nao: n): ";
 							cin>>internet;
+
 							cout<<"TV a cabo?(se sim: s, se nao: n): ";
 							cin>>tvACabo;
+
 							cout<<"Lavandeiria?(se sim: s, se nao: n): ";
 							cin>>lavanderia;
+
 							cout<<"Limpeza?(se sim: s, se nao: n): ";
 							cin>>limpeza;
+
 							cout<<"Recepcao 24 horas?(se sim: s, se nao: n): ";
 							cin>>recepcao24;
+
 							cout<<"Piscina?(se sim: s, se nao: n): ";
 							cin>>piscina;
+
 							cout<<"Sauna(se sim: s, se nao: n): ";
 							cin>>sauna;
+
 							cout<<"Sala de ginastica?(se sim: s, se nao: n): ";
 							cin>>salaDeGinastica;
+
 							cout<<"Obrigado!" << endl;
 
 							imovel = new Studio(area, valorCondominio, arCondicionado, internet, tvACabo,
@@ -239,6 +318,7 @@ int main(int argc, char const *argv[]){
                         case 1:
                             while(1){
 								opcaoSubItem = interface.Limpa(&opcaoInvalida, 22);
+								if(opcaoSubItem == 7) break;
 
 								switch(opcaoSubItem){
 									case 1:
@@ -280,9 +360,11 @@ int main(int argc, char const *argv[]){
                         case 2:
 							while(1){
 								opcaoSubItem = interface.Limpa(&opcaoInvalida, 22);
+								if(opcaoSubItem == 7) break;
 
 								cout << "Digite a cidade que deseja procurar: ";
-								cin >> cidade; // Casas disponíveis
+								getchar(); // Casas disponíveis
+								getline(cin, cidade);
 
 								switch(opcaoSubItem){
 									case 1:
@@ -343,8 +425,8 @@ int main(int argc, char const *argv[]){
             case 4:// Consultar imoveis disponiveis para venda por bairro
 				while(1){
 					interface.Limpa(&opcaoInvalida, 3);
-					cout << "Digite o bairro que deseja procurar: ";
-					cin >> bairro;
+					getchar();
+					getline(cin, bairro);
 
 					interface.Descricao(3, bairro, IMOVEL_PARA_VENDER, imobiliaria);
 
@@ -357,8 +439,8 @@ int main(int argc, char const *argv[]){
             case 5:
 				while(1){
 					interface.Limpa(&opcaoInvalida, 4);
-					cout << "Digite o bairro que deseja procurar: ";
-					cin >> bairro;
+					getchar();
+					getline(cin, bairro);
 					
 					interface.Descricao(3, bairro, IMOVEL_PARA_ALUGAR, imobiliaria);
 

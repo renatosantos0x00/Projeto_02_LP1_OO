@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 
+using namespace std;
 
 SistemaImobiliaria::SistemaImobiliaria(){
 
@@ -77,7 +78,6 @@ std::list<Imovel*> SistemaImobiliaria::getDescricaoPorCidade(std::string cidade,
 	Endereco endereco;
 	std::list<Imovel*> lista;
 
-
 	if(tipoDeImovel == 0){//Pesquisa para todos os imóveis
 		for(std::list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
 			imovel = *it;
@@ -92,7 +92,7 @@ std::list<Imovel*> SistemaImobiliaria::getDescricaoPorCidade(std::string cidade,
 			imovel = *it;
 			endereco = imovel->getEndereco();
 			
-			if(endereco.getBairro() == cidade && imovel->getTipoDeImovel() == tipoDeImovel){
+			if(endereco.getCidade() == cidade && imovel->getTipoDeImovel() == tipoDeImovel){
 				lista.push_back(imovel);
 			}	
 		}
