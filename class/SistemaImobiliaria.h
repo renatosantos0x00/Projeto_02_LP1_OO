@@ -14,7 +14,10 @@ class SistemaImobiliaria{
 
 	//Metodos da classe;
 		void cadastraImovel(Imovel *imovel);
+		
 		std::list <Imovel*> getImovel(void);
+		void setImoveis(std::list<Imovel*> imoveisRecuperados);
+	
 		std::list <Imovel*> getDescricao();
 		std::list <Imovel*> getDescricaoPorBairro(std::string bairro, int tipoDeOferta);
 		std::list <Imovel*> getDescricaoPorCidade(std::string cidade, int tipoDeImovel);

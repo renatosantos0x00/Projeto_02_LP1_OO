@@ -16,7 +16,7 @@ int GerenteDePersistencia::salvaListaDeImoveis(std::list<Imovel*> salvarMeusImov
 	std::string descricaoCSV;
 	std::list<Imovel*>::iterator it;
 
-	arquivoDeSaida.open("dados/imoveis.csv", std::ios::out | std::ios::app); // proteger com try
+	arquivoDeSaida.open("dados/imoveis.csv", std::ios::out ); // proteger com try
 	
 	if(!arquivoDeSaida.is_open()){
 		return -1;

@@ -120,7 +120,13 @@ void Interface::Descricao(int tipoDescricao, string nomeLugar, int constant, Sis
     
     for(list<Imovel*>::iterator  it = meusImoveis.begin(); it!=meusImoveis.end(); ++it){
         imovel = *it;
-        cout << imovel->getDescricao() << endl;						
+        cout<< "--------------------------------------------------" <<endl;
+        cout<<"Pressione Enter."<<endl;
+        cin.get();
+        cout << endl <<imovel->getDescricao() << endl;						
+        cin.get();
+        cout<< "--------------------------------------------------" <<endl;
+        
     }
 }
 

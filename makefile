@@ -4,7 +4,7 @@
 # Definição de Macros
 OPCAO =
 NOME = scci
-COMPILADOR = g++-7
+COMPILADOR = g++
 CODIGO = source
 BIBLIOTECAS = class
 MAIN = main.cpp

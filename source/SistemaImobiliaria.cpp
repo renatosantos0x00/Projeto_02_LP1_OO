@@ -17,9 +17,18 @@ void SistemaImobiliaria::cadastraImovel(Imovel *imovel){
 	meusImoveis.push_back(imovel);
 }
 
+//set
+void SistemaImobiliaria::setImoveis(std::list<Imovel*> imoveisRecuperados){
+	this->meusImoveis = imoveisRecuperados;
+}
+
+//get
 std::list <Imovel*> SistemaImobiliaria::getImovel(void){
 	return meusImoveis;
 }
+
+
+
 
 std::list <Imovel*> SistemaImobiliaria::getDescricao(){
 	Imovel *imovel;

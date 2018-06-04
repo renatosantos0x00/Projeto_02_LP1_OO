@@ -2,6 +2,7 @@
 #include <list>
 #include <string>
 
+#include "GerenteDePersistencia.h"
 #include "SistemaImobiliaria.h"
 #include "Interface.h"
 #include "Casa.h"
@@ -17,14 +18,18 @@ using namespace std;
 int main(int argc, char const *argv[]){
 
     //Ponteiros
+	list <Imovel*> imoveisParaSalvar;
+	list <Imovel*> imoveisRecuperados;
 	list <Imovel*> meusImoveis;
     Imovel *imovel;
     
     //Objetos
-    Interface interface;
+	Interface interface;
 	SistemaImobiliaria imobiliaria;
+	GerenteDePersistencia arquivo;
 
     //Tipos 
+	size_t numImoveisNovos = 0;
 	int opcaoItem, opcaoSubItem, numero, tipoDeOferta, sair = 0; 
     bool opcaoInvalida = false;
 	double valor;
@@ -35,6 +40,11 @@ int main(int argc, char const *argv[]){
     int numeroDePavimentos, numeroDeQuartos, vagasGaragem, andar;
 	double areaDoTerreno, areaConstruida, valorCondominio, area;
     char arCondicionado, internet, tvACabo, lavanderia, limpeza, recepcao24, piscina, sauna, salaDeGinastica;
+
+	imoveisRecuperados = arquivo.recuperaListaDeImoveis(); // coloca na lista todos os imoveis que está no arquivo
+	numImoveisNovos = imoveisRecuperados.size();
+	imobiliaria.setImoveis(imoveisRecuperados); // seta pra imobiliaria os imovies recuperdos
+    
 
     while(1){
        opcaoItem = interface.Limpa(&opcaoInvalida, 0);
@@ -479,7 +489,21 @@ int main(int argc, char const *argv[]){
             default:
                 opcaoInvalida = true;
         } // Fim Switch
-        if(opcaoItem == 8) break; 
+        if(opcaoItem == 8){
+
+			imoveisParaSalvar = imobiliaria.getImovel();		
+			
+			if(numImoveisNovos !=  imoveisParaSalvar.size()){
+
+				arquivo.salvaListaDeImoveis(imoveisParaSalvar);
+				cout<< endl << "IMOVEIS SALVOS!!" <<endl;
+
+				for(list<Imovel*>::iterator it = imoveisParaSalvar.begin(); it != imoveisParaSalvar.end() ; it++){
+					delete *it;
+				}
+			}
+			break;
+		} 
     } // Fim While
     cout << "Fim do Programa!!!" << endl;
     return 0;
